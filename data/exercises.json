@@ -1,0 +1,877 @@
+{
+  "exercises": [
+    {
+      "id": "push-ups",
+      "name": "Push-Ups",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "cues": [
+        "Hands shoulder-width apart, fingers pointing forward.",
+        "Body in a straight line from head to heels.",
+        "Lower your chest to the floor, keeping elbows at a 45-degree angle.",
+        "Press through your palms to return to the start."
+      ],
+      "regression": {
+        "name": "Incline Push-Ups",
+        "cues": [
+          "Place hands on a bench or elevated surface.",
+          "The higher the surface, the easier the exercise.",
+          "Maintain a straight body line.",
+          "Focus on full range of motion."
+        ]
+      },
+      "progression": {
+        "name": "Decline Push-Ups",
+        "cues": [
+          "Place feet on a bench or elevated surface.",
+          "This increases the load on your upper chest and shoulders.",
+          "Keep your core tight to prevent your back from sagging.",
+          "Control the movement throughout."
+        ]
+      }
+    },
+    {
+      "id": "bodyweight-squats",
+      "name": "Bodyweight Squats",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "cues": [
+        "Stand with feet shoulder-width apart, toes slightly out.",
+        "Keep your chest up and core engaged.",
+        "Push your hips back and bend your knees as if sitting in a chair.",
+        "Go down until thighs are at least parallel to the floor.",
+        "Drive through your heels to stand back up."
+      ],
+      "regression": {
+        "name": "Box Squats",
+        "cues": [
+          "Place a box or chair behind you.",
+          "Squat down until you gently touch the box.",
+          "Pause for a second, then stand back up.",
+          "This helps control depth and build confidence."
+        ]
+      },
+      "progression": {
+        "name": "Jump Squats",
+        "cues": [
+          "Perform a regular squat, then explode upward into a jump.",
+          "Land softly on the balls of your feet.",
+          "Immediately absorb the impact and go into the next rep.",
+          "Use your arms for momentum."
+        ]
+      }
+    },
+    {
+      "id": "plank",
+      "name": "Plank",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["core", "abs", "shoulders"],
+      "cues": [
+        "Position on forearms, elbows directly under shoulders.",
+        "Maintain a straight line from head to heels.",
+        "Engage your core and glutes to prevent hip sag.",
+        "Breathe steadily throughout the hold."
+      ],
+      "regression": {
+        "name": "Knee Plank",
+        "cues": [
+          "Perform the plank on your knees instead of your toes.",
+          "Keep a straight line from your head to your knees.",
+          "Focus on feeling the contraction in your abs.",
+          "Gradually increase hold time."
+        ]
+      },
+      "progression": {
+        "name": "Plank with Arm/Leg Lift",
+        "cues": [
+          "From a stable plank, slowly lift one arm or leg off the ground.",
+          "Hold for 2-3 seconds without letting your hips rotate.",
+          "Alternate limbs.",
+          "This challenges your core stability."
+        ]
+      }
+    },
+    {
+      "id": "lunges",
+      "name": "Forward Lunges",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "cues": [
+        "Step forward with one leg.",
+        "Lower your hips until both knees are bent at a 90-degree angle.",
+        "Keep your front knee over your ankle, not past your toes.",
+        "Push off the front foot to return to the starting position."
+      ],
+      "regression": {
+        "name": "Static Split Squats",
+        "cues": [
+          "Start in a staggered stance without the stepping motion.",
+          "Lower and raise your body, focusing on balance.",
+          "Complete all reps on one side before switching.",
+          "Use a wall for support if needed."
+        ]
+      },
+      "progression": {
+        "name": "Walking Lunges",
+        "cues": [
+          "Instead of pushing back, step forward with the back leg into the next lunge.",
+          "This creates a continuous walking motion.",
+          "Maintain an upright torso and engaged core.",
+          "Cover a set distance or number of steps."
+        ]
+      }
+    },
+    {
+      "id": "glute-bridges",
+      "name": "Glute Bridges",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["glutes", "hamstrings", "core"],
+      "cues": [
+        "Lie on your back with knees bent, feet flat on the floor hip-width apart.",
+        "Drive through your heels and lift your hips toward the ceiling.",
+        "Squeeze your glutes hard at the top.",
+        "Lower your hips back down with control."
+      ],
+      "regression": {
+        "name": "Partial Glute Bridges",
+        "cues": [
+          "Lift your hips only halfway up.",
+          "Focus on initiating the movement by squeezing your glutes.",
+          "Hold the top position for a moment.",
+          "Gradually increase the range of motion."
+        ]
+      },
+      "progression": {
+        "name": "Single-Leg Glute Bridge",
+        "cues": [
+          "Extend one leg straight out.",
+          "Drive through the heel of the planted foot to lift your hips.",
+          "Keep your hips level throughout the movement.",
+          "Complete all reps on one side before switching."
+        ]
+      }
+    },
+    {
+      "id": "burpees",
+      "name": "Burpees",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["full-body", "cardio", "core"],
+      "cues": [
+        "Start standing, then drop into a squat with hands on the floor.",
+        "Kick your feet back to a plank position.",
+        "Perform a push-up.",
+        "Jump your feet back to the squat position and jump up explosively."
+      ],
+      "regression": {
+        "name": "No Push-Up Burpee",
+        "cues": [
+          "Perform the burpee motion without the push-up.",
+          "You can also step your feet back and forward instead of jumping.",
+          "Focus on a steady pace.",
+          "This reduces the intensity and strength requirement."
+        ]
+      },
+      "progression": {
+        "name": "Burpee with Tuck Jump",
+        "cues": [
+          "At the top of the burpee, instead of a standard jump, pull your knees to your chest.",
+          "This adds an explosive, athletic component.",
+          "Land softly and transition smoothly into the next rep.",
+          "Increases cardiovascular demand significantly."
+        ]
+      }
+    },
+    {
+      "id": "mountain-climbers",
+      "name": "Mountain Climbers",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["core", "cardio", "shoulders"],
+      "cues": [
+        "Start in a high plank position.",
+        "Keep your back flat and abs engaged.",
+        "Drive one knee towards your chest, then quickly switch legs.",
+        "Maintain a running or climbing motion."
+      ],
+      "regression": {
+        "name": "Slow Mountain Climbers",
+        "cues": [
+          "Perform the movement slowly and deliberately.",
+          "Pause for a second with each knee drive.",
+          "Focus on core stability and control.",
+          "This builds foundational strength."
+        ]
+      },
+      "progression": {
+        "name": "Cross-Body Mountain Climbers",
+        "cues": [
+          "Drive your knee towards the opposite elbow.",
+          "This twisting motion engages your obliques more.",
+          "Keep your hips low and stable.",
+          "Adds a rotational challenge to the core."
+        ]
+      }
+    },
+    {
+      "id": "pull-ups",
+      "name": "Pull-ups",
+      "equipment": ["pull-up-bar"],
+      "targetMuscles": ["back", "biceps", "shoulders"],
+      "cues": [
+        "Grip the bar with palms facing away, slightly wider than shoulders.",
+        "Start from a dead hang with arms fully extended.",
+        "Pull your chest towards the bar by driving your elbows down.",
+        "Lower yourself with control until arms are straight again."
+      ],
+      "regression": {
+        "name": "Band-Assisted Pull-ups",
+        "cues": [
+          "Loop a resistance band around the bar and place your feet or knees in it.",
+          "The band provides assistance at the bottom of the movement.",
+          "Use a thicker band for more help, a thinner one for less.",
+          "Focus on the same pulling mechanics."
+        ]
+      },
+      "progression": {
+        "name": "Weighted Pull-ups",
+        "cues": [
+          "Add weight using a dip belt or by holding a dumbbell between your feet.",
+          "This overloads the muscles for strength and size.",
+          "Maintain strict form; don't sacrifice quality for weight.",
+          "Start with a light weight and increase gradually."
+        ]
+      }
+    },
+    {
+      "id": "chin-ups",
+      "name": "Chin-ups",
+      "equipment": ["pull-up-bar"],
+      "targetMuscles": ["biceps", "back"],
+      "cues": [
+        "Grip the bar with palms facing you, shoulder-width apart.",
+        "Pull up until your chin is over the bar.",
+        "Focus on squeezing your biceps at the top.",
+        "Lower yourself fully with control."
+      ],
+      "regression": {
+        "name": "Negative Chin-ups",
+        "cues": [
+          "Jump or use a box to get your chin over the bar.",
+          "Lower yourself as slowly as possible (aim for 3-5 seconds).",
+          "This builds the eccentric (lowering) strength.",
+          "Reset and repeat."
+        ]
+      },
+      "progression": {
+        "name": "Close-Grip Chin-ups",
+        "cues": [
+          "Bring your hands closer together on the bar.",
+          "This increases the focus and demand on your biceps.",
+          "Pull your chest to the bar.",
+          "Keep the movement strict and controlled."
+        ]
+      }
+    },
+    {
+      "id": "hanging-leg-raises",
+      "name": "Hanging Leg Raises",
+      "equipment": ["pull-up-bar"],
+      "targetMuscles": ["core", "abs", "hip-flexors"],
+      "cues": [
+        "Hang from the bar with arms extended.",
+        "Keep your legs straight and together.",
+        "Raise your legs as high as you can without swinging.",
+        "Lower your legs slowly and with control."
+      ],
+      "regression": {
+        "name": "Hanging Knee Raises",
+        "cues": [
+          "Hang from the bar with arms extended.",
+          "Bend your knees and raise them towards your chest.",
+          "This shortens the lever, making it easier.",
+          "Focus on using your abs, not momentum."
+        ]
+      },
+      "progression": {
+        "name": "Toes-to-Bar",
+        "cues": [
+          "Initiate the movement by pulling down on the bar with your lats.",
+          "Use your abs to bring your toes up to touch the bar.",
+          "Requires a combination of strength and coordination.",
+          "Control the descent to avoid excessive swinging."
+        ]
+      }
+    },
+    {
+      "id": "dumbbell-bicep-curls",
+      "name": "Dumbbell Bicep Curls",
+      "equipment": ["dumbbells"],
+      "targetMuscles": ["biceps", "forearms"],
+      "cues": [
+        "Stand with dumbbells at your sides, palms forward.",
+        "Keep elbows pinned to your sides.",
+        "Curl weights up toward shoulders without swinging your body.",
+        "Squeeze biceps at the top and lower with control."
+      ],
+      "regression": {
+        "name": "Seated Bicep Curls",
+        "cues": [
+          "Sit on a bench or chair for stability.",
+          "This helps prevent using momentum from your lower body.",
+          "Focus on isolating the bicep muscle.",
+          "Use a lighter weight to perfect form."
+        ]
+      },
+      "progression": {
+        "name": "Incline Dumbbell Curls",
+        "cues": [
+          "Lie back on an incline bench (30-45 degrees).",
+          "This puts your biceps in a stretched position, increasing the difficulty.",
+          "Let your arms hang straight down before curling.",
+          "Keep your shoulders back and down."
+        ]
+      }
+    },
+    {
+      "id": "dumbbell-rows",
+      "name": "Bent-Over Dumbbell Rows",
+      "equipment": ["dumbbells"],
+      "targetMuscles": ["back", "biceps", "rear-delts"],
+      "cues": [
+        "Hinge at your hips with a slight bend in your knees, back straight.",
+        "Pull dumbbells to your lower ribs, keeping elbows close to your body.",
+        "Squeeze your shoulder blades together at the top.",
+        "Control the weight on the way down."
+      ],
+      "regression": {
+        "name": "Chest-Supported Row",
+        "cues": [
+          "Lie face down on an incline bench.",
+          "This supports your torso and isolates the back muscles.",
+          "Row the dumbbells up, squeezing your back.",
+          "Prevents cheating and protects the lower back."
+        ]
+      },
+      "progression": {
+        "name": "Renegade Rows",
+        "cues": [
+          "Start in a plank position holding dumbbells.",
+          "Row one dumbbell up while maintaining a stable plank.",
+          "Keep your hips level and core extremely tight.",
+          "Alternate arms with each rep."
+        ]
+      }
+    },
+    {
+      "id": "dumbbell-chest-press",
+      "name": "Dumbbell Bench Press",
+      "equipment": ["dumbbells", "bench"],
+      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "cues": [
+        "Lie on a flat bench with a dumbbell in each hand.",
+        "Keep your feet flat on the floor and back slightly arched.",
+        "Press the weights straight up over your chest.",
+        "Lower with control until the dumbbells are near your chest."
+      ],
+      "regression": {
+        "name": "Dumbbell Floor Press",
+        "cues": [
+          "Lie on the floor instead of a bench.",
+          "This limits the range of motion, which can be safer for shoulders.",
+          "Press up from the floor, stopping when your elbows touch down.",
+          "Focus on a powerful press."
+        ]
+      },
+      "progression": {
+        "name": "Incline Dumbbell Press",
+        "cues": [
+          "Set the bench to a 30-45 degree incline.",
+          "This targets the upper portion of your chest.",
+          "Press the dumbbells up and slightly back.",
+          "Keep your core engaged to maintain stability on the incline."
+        ]
+      }
+    },
+    {
+      "id": "dumbbell-overhead-press",
+      "name": "Dumbbell Overhead Press",
+      "equipment": ["dumbbells"],
+      "targetMuscles": ["shoulders", "triceps"],
+      "cues": [
+        "Sit or stand with dumbbells at shoulder height, palms forward.",
+        "Keep your core tight and back straight.",
+        "Press the dumbbells directly overhead until your arms are fully extended.",
+        "Lower the weights back to your shoulders with control."
+      ],
+      "regression": {
+        "name": "Seated Overhead Press",
+        "cues": [
+          "Sitting on a bench with back support provides more stability.",
+          "This allows you to focus purely on the pressing motion.",
+          "Prevents using leg drive to cheat the weight up.",
+          "Ideal for learning the movement pattern."
+        ]
+      },
+      "progression": {
+        "name": "Arnold Press",
+        "cues": [
+          "Start with palms facing you at shoulder height.",
+          "As you press up, rotate your palms to face forward at the top.",
+          "Reverse the motion on the way down.",
+          "This hits all three heads of the deltoid."
+        ]
+      }
+    },
+    {
+      "id": "bulgarian-split-squats",
+      "name": "Bulgarian Split Squats",
+      "equipment": ["dumbbells", "bench"],
+      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "cues": [
+        "Place the top of your back foot on a bench behind you.",
+        "Hold dumbbells in each hand.",
+        "Lower your back knee towards the floor, keeping your front knee aligned with your foot.",
+        "Drive through your front heel to return to the start."
+      ],
+      "regression": {
+        "name": "Bodyweight Bulgarian Split Squats",
+        "cues": [
+          "Perform the exercise without any dumbbells.",
+          "Focus on balance and achieving a full range of motion.",
+          "This is a challenging exercise even with just bodyweight.",
+          "Master the form before adding weight."
+        ]
+      },
+      "progression": {
+        "name": "Deficit Bulgarian Split Squats",
+        "cues": [
+          "Elevate your front foot on a small platform (like a weight plate).",
+          "This increases the range of motion and the stretch on the glutes.",
+          "Requires excellent mobility and control.",
+          "Use lighter weight when first attempting."
+        ]
+      }
+    },
+    {
+      "id": "kettlebell-swings",
+      "name": "Kettlebell Swings",
+      "equipment": ["kettlebells"],
+      "targetMuscles": ["glutes", "hamstrings", "core"],
+      "cues": [
+        "Stand with feet shoulder-width apart, kettlebell in front.",
+        "Hinge at your hips to grab the kettlebell.",
+        "Hike the bell back between your legs, then explosively drive your hips forward.",
+        "Swing the kettlebell to chest height, letting your arms guide it.",
+        "This is a hip hinge, not a squat."
+      ],
+      "regression": {
+        "name": "Kettlebell Deadlifts",
+        "cues": [
+          "Practice the hip hinge movement without the explosive swing.",
+          "Stand over the kettlebell, hinge at the hips, and lift.",
+          "Focus on keeping your back flat and driving with your glutes.",
+          "This builds the foundational pattern for the swing."
+        ]
+      },
+      "progression": {
+        "name": "Single-Arm Kettlebell Swings",
+        "cues": [
+          "Perform the swing with one arm.",
+          "This requires more core strength to prevent your body from rotating.",
+          "Keep your non-working arm out for balance.",
+          "Switch arms halfway through the set or each set."
+        ]
+      }
+    },
+    {
+      "id": "kettlebell-goblet-squats",
+      "name": "Kettlebell Goblet Squats",
+      "equipment": ["kettlebells"],
+      "targetMuscles": ["quadriceps", "glutes", "core"],
+      "cues": [
+        "Hold the kettlebell by the horns at chest level.",
+        "Keep your elbows tucked in.",
+        "Squat down, keeping your chest up and back straight.",
+        "The weight in front helps you maintain an upright posture.",
+        "Drive through your heels to stand up."
+      ],
+      "regression": {
+        "name": "Bodyweight Squats",
+        "cues": [
+          "Master the squat pattern without weight first.",
+          "Focus on depth, posture, and control.",
+          "Use a box or chair for assistance if needed.",
+          "Builds the foundation for all weighted squat variations."
+        ]
+      },
+      "progression": {
+        "name": "Double Kettlebell Front Squat",
+        "cues": [
+          "Clean two kettlebells into the rack position.",
+          "This significantly increases the load and core demand.",
+          "Requires strong wrists and core to maintain the rack position.",
+          "Keep your elbows high and torso upright."
+        ]
+      }
+    },
+    {
+      "id": "turkish-get-up",
+      "name": "Turkish Get-Up",
+      "equipment": ["kettlebells"],
+      "targetMuscles": ["full-body", "core", "shoulders"],
+      "cues": [
+        "A complex, multi-step movement from lying to standing.",
+        "Keep your eyes on the kettlebell at all times.",
+        "Move slowly and deliberately through each step.",
+        "Focus on stability and control, not speed."
+      ],
+      "regression": {
+        "name": "Half Turkish Get-Up",
+        "cues": [
+          "Perform only the first few steps, up to the seated position.",
+          "This builds core and shoulder stability for the full movement.",
+          "Practice without weight first to learn the sequence.",
+          "Master this before attempting the full get-up."
+        ]
+      },
+      "progression": {
+        "name": "Bottoms-Up Turkish Get-Up",
+        "cues": [
+          "Hold the kettlebell upside down (bottoms-up).",
+          "This requires immense grip strength and shoulder stability.",
+          "Use a very light weight.",
+          "Any deviation in form will cause you to lose control of the bell."
+        ]
+      }
+    },
+    {
+      "id": "resistance-band-rows",
+      "name": "Resistance Band Rows",
+      "equipment": ["resistance-bands"],
+      "targetMuscles": ["back", "biceps", "rear-delts"],
+      "cues": [
+        "Anchor the band securely in front of you at chest height.",
+        "Pull the band toward your ribs, keeping elbows close to your body.",
+        "Squeeze your shoulder blades together at the peak of the contraction.",
+        "Control the band as you return to the starting position."
+      ],
+      "regression": {
+        "name": "Lighter Resistance Band",
+        "cues": [
+          "Use a band with less tension.",
+          "This allows you to focus on form and the mind-muscle connection.",
+          "Complete the full range of motion with control.",
+          "Perfect the movement before increasing resistance."
+        ]
+      },
+      "progression": {
+        "name": "Single-Arm Band Rows",
+        "cues": [
+          "Perform the row with one arm at a time.",
+          "This challenges your core to resist rotation.",
+          "You can often achieve a greater range of motion.",
+          "Focus on squeezing the lat of the working side."
+        ]
+      }
+    },
+    {
+      "id": "band-pull-aparts",
+      "name": "Band Pull-Aparts",
+      "equipment": ["resistance-bands"],
+      "targetMuscles": ["rear-delts", "upper-back", "shoulders"],
+      "cues": [
+        "Hold a light band with an overhand grip, hands shoulder-width apart.",
+        "Raise your arms straight out in front of you.",
+        "Keeping your arms straight, pull the band apart by squeezing your shoulder blades.",
+        "Return to the start with control. Don't let the band snap back."
+      ],
+      "regression": {
+        "name": "Wider Grip",
+        "cues": [
+          "Place your hands further apart on the band.",
+          "This reduces the effective resistance.",
+          "Focus on initiating the movement from your back, not your arms.",
+          "Excellent for shoulder health and posture."
+        ]
+      },
+      "progression": {
+        "name": "Pause Reps",
+        "cues": [
+          "Hold the fully contracted position for 2-3 seconds.",
+          "This increases time under tension for the target muscles.",
+          "Fight the urge to rush the reps.",
+          "Focus on a powerful squeeze in your upper back."
+        ]
+      }
+    },
+    {
+      "id": "bench-dips",
+      "name": "Bench Dips",
+      "equipment": ["bench"],
+      "targetMuscles": ["triceps", "shoulders", "chest"],
+      "cues": [
+        "Sit on the edge of a bench, hands beside your hips.",
+        "Slide your hips forward off the bench, supporting your weight with your arms.",
+        "Lower your body by bending your elbows until they are at a 90-degree angle.",
+        "Press through your palms to return to the start."
+      ],
+      "regression": {
+        "name": "Bent-Knee Bench Dips",
+        "cues": [
+          "Keep your knees bent and feet flat on the floor.",
+          "This reduces the amount of bodyweight you have to lift.",
+          "Focus on feeling the contraction in your triceps.",
+          "Keep your back close to the bench."
+        ]
+      },
+      "progression": {
+        "name": "Feet-Elevated Bench Dips",
+        "cues": [
+          "Place your feet on another bench or elevated surface in front of you.",
+          "This increases the load on your triceps and shoulders.",
+          "You can add a weight plate to your lap for even more resistance.",
+          "Maintain control throughout the movement."
+        ]
+      }
+    },
+    {
+      "id": "barbell-back-squat",
+      "name": "Barbell Back Squat",
+      "equipment": ["barbell"],
+      "targetMuscles": ["quadriceps", "glutes", "hamstrings", "core"],
+      "cues": [
+        "Position the bar on your upper back (traps), not your neck.",
+        "Keep your chest up and back straight.",
+        "Squat down by pushing your hips back and bending your knees.",
+        "Drive through your heels to stand back up."
+      ],
+      "regression": {
+        "name": "Goblet Squat",
+        "cues": [
+          "Holding a dumbbell or kettlebell in front is easier to learn.",
+          "It helps you maintain an upright posture.",
+          "Builds core strength and the proper squat pattern.",
+          "A great stepping stone to the barbell squat."
+        ]
+      },
+      "progression": {
+        "name": "Pause Squat",
+        "cues": [
+          "Pause at the bottom of the squat for 2-3 seconds.",
+          "Maintain tension and a tight core throughout the pause.",
+          "Explode up from the bottom position.",
+          "Builds strength out of the most difficult part of the lift."
+        ]
+      }
+    },
+    {
+      "id": "barbell-bench-press",
+      "name": "Barbell Bench Press",
+      "equipment": ["barbell", "bench"],
+      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "cues": [
+        "Lie with your eyes under the bar, feet firmly on the floor.",
+        "Grip slightly wider than your shoulders.",
+        "Keep your shoulder blades retracted and down on the bench.",
+        "Lower the bar to your mid-chest, then press up powerfully."
+      ],
+      "regression": {
+        "name": "Dumbbell Bench Press",
+        "cues": [
+          "Using dumbbells allows for a more natural range of motion.",
+          "It also requires more stabilization, building smaller muscles.",
+          "Each arm works independently, preventing strength imbalances.",
+          "A great way to build a base for the barbell press."
+        ]
+      },
+      "progression": {
+        "name": "Close-Grip Bench Press",
+        "cues": [
+          "Take a shoulder-width grip on the bar.",
+          "Keep your elbows tucked in close to your body as you lower the bar.",
+          "This places more emphasis on the triceps.",
+          "Lower the bar to your lower chest."
+        ]
+      }
+    },
+    {
+      "id": "barbell-deadlift",
+      "name": "Barbell Deadlift",
+      "equipment": ["barbell"],
+      "targetMuscles": ["hamstrings", "glutes", "back", "core"],
+      "cues": [
+        "Start with the bar over your midfoot, feet hip-width apart.",
+        "Keep your back straight, chest up, and hips down.",
+        "Drive the floor away with your legs to lift the bar.",
+        "Squeeze your glutes to lock out at the top. Don't hyperextend."
+      ],
+      "regression": {
+        "name": "Kettlebell Deadlift",
+        "cues": [
+          "The kettlebell is positioned between your legs, making it easier to maintain a flat back.",
+          "A great way to learn the hip hinge pattern safely.",
+          "Focus on driving with your hips and glutes.",
+          "Builds the foundation for barbell deadlifts."
+        ]
+      },
+      "progression": {
+        "name": "Romanian Deadlift (RDL)",
+        "cues": [
+          "Start from the top position.",
+          "Hinge at your hips, keeping your legs almost straight (slight knee bend).",
+          "Lower the bar to just below your knees, feeling a deep stretch in your hamstrings.",
+          "This variation emphasizes the hamstrings and glutes."
+        ]
+      }
+    },
+    {
+      "id": "barbell-overhead-press",
+      "name": "Barbell Overhead Press",
+      "equipment": ["barbell"],
+      "targetMuscles": ["shoulders", "triceps", "core"],
+      "cues": [
+        "Start with the bar in the front rack position on your shoulders.",
+        "Grip just outside your shoulders.",
+        "Keep your core and glutes tight to create a stable base.",
+        "Press the bar straight overhead, moving your head back slightly to clear the path."
+      ],
+      "regression": {
+        "name": "Seated Dumbbell Overhead Press",
+        "cues": [
+          "Using dumbbells allows for a more natural movement path.",
+          "Sitting provides back support and removes leg drive.",
+          "Focus on strict pressing form.",
+          "Builds shoulder strength safely."
+        ]
+      },
+      "progression": {
+        "name": "Push Press",
+        "cues": [
+          "Initiate the movement with a slight dip and drive from your legs.",
+          "This momentum helps you press heavier weight.",
+          "It turns the lift into a more full-body, explosive movement.",
+          "Catch the bar back on your shoulders on the way down."
+        ]
+      }
+    },
+    {
+      "id": "barbell-row",
+      "name": "Barbell Bent-Over Row",
+      "equipment": ["barbell"],
+      "targetMuscles": ["back", "biceps", "lats"],
+      "cues": [
+        "Hinge at the hips until your torso is nearly parallel to the floor.",
+        "Grip the bar with an overhand grip, slightly wider than your shoulders.",
+        "Pull the bar to your lower chest / upper abdomen.",
+        "Squeeze your back muscles at the top and lower with control."
+      ],
+      "regression": {
+        "name": "Dumbbell Rows",
+        "cues": [
+          "Using dumbbells allows each arm to work independently.",
+          "You can support your non-working arm on a bench for stability.",
+          "This helps prevent strength imbalances and is easier on the lower back.",
+          "Focus on a full range of motion."
+        ]
+      },
+      "progression": {
+        "name": "Pendlay Row",
+        "cues": [
+          "Start with the barbell on the floor for every rep.",
+          "Explosively pull the bar from a dead stop to your chest.",
+          "Return the bar to the floor under control.",
+          "This builds explosive power in the back."
+        ]
+      }
+    },
+    {
+      "id": "landmine-press",
+      "name": "Landmine Press",
+      "equipment": ["barbell", "landmine"],
+      "targetMuscles": ["shoulders", "upper-chest", "core"],
+      "cues": [
+        "Stand facing the landmine, holding the end of the barbell with both hands.",
+        "Press the bar up and forward in an arc.",
+        "Keep your core tight to prevent your back from arching.",
+        "Control the weight on the way down."
+      ],
+      "regression": {
+        "name": "Half-Kneeling Landmine Press",
+        "cues": [
+          "Kneel on one knee for a more stable base.",
+          "This reduces the demand on your core and improves stability.",
+          "Allows you to focus on the pressing motion with one arm.",
+          "Press with the arm on the same side as the down knee."
+        ]
+      },
+      "progression": {
+        "name": "Landmine Push Press",
+        "cues": [
+          "Add a dip and drive with your legs to initiate the press.",
+          "Use momentum from your lower body to help press the weight.",
+          "This allows you to lift heavier and is more athletic.",
+          "A more explosive, full-body movement."
+        ]
+      }
+    },
+    {
+      "id": "landmine-row",
+      "name": "Landmine Row",
+      "equipment": ["barbell", "landmine"],
+      "targetMuscles": ["back", "biceps", "core"],
+      "cues": [
+        "Stand straddling the barbell and hinge at your hips.",
+        "Keep your back straight and nearly parallel to the floor.",
+        "Grip the bar with both hands (using a V-handle is common).",
+        "Pull the end of the bar to your chest, squeezing your back."
+      ],
+      "regression": {
+        "name": "Resistance Band Row",
+        "cues": [
+          "Use a resistance band to mimic the rowing motion.",
+          "Helps to learn the movement pattern safely.",
+          "Focus on squeezing your back muscles.",
+          "Good for warm-ups and beginners."
+        ]
+      },
+      "progression": {
+        "name": "Meadows Row",
+        "cues": [
+          "Stand perpendicular to the bar, using one arm.",
+          "This allows for a greater range of motion and a different angle of pull.",
+          "Use your non-working arm to brace against your knee.",
+          "Targets the upper back and lats effectively."
+        ]
+      }
+    },
+    {
+      "id": "landmine-twist",
+      "name": "Landmine Rotational Twist",
+      "equipment": ["barbell", "landmine"],
+      "targetMuscles": ["core", "obliques", "shoulders"],
+      "cues": [
+        "Stand facing the landmine, holding the end of the bar with both hands, arms extended.",
+        "Keeping your arms straight, rotate your torso to move the bar in an arc from one hip to the other.",
+        "Pivot on your feet as you twist.",
+        "Control the movement with your core."
+      ],
+      "regression": {
+        "name": "Bodyweight Torso Twists",
+        "cues": [
+          "Practice the rotational movement without weight.",
+          "Focus on feeling your obliques contract.",
+          "Keep your hips stable and rotate from your upper spine.",
+          "This builds the mind-muscle connection."
+        ]
+      },
+      "progression": {
+        "name": "Faster, More Explosive Reps",
+        "cues": [
+          "Increase the speed of the rotation while maintaining control.",
+          "This makes the exercise more powerful and athletic.",
+          "Focus on snapping the bar from side to side.",
+          "Ensure your core stays braced throughout."
+        ]
+      }
+    }
+  ]
+}
