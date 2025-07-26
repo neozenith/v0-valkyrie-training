@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo, useEffect } from "react"
+import { useState, useMemo, useEffect, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -11,7 +11,7 @@ import exerciseData from "@/data/exercises.json"
 import type { Exercise } from "@/types/exercise"
 import { parseEquipmentSelectionParams, buildWorkoutSetupUrl } from "@/lib/url-params"
 
-export default function EquipmentSelectionPage() {
+function EquipmentSelectionContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   
@@ -212,5 +212,19 @@ export default function EquipmentSelectionPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function EquipmentSelectionPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
+        <div className="text-white text-center">
+          <p>Loading...</p>
+        </div>
+      </div>
+    }>
+      <EquipmentSelectionContent />
+    </Suspense>
   )
 }

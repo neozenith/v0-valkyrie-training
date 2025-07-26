@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState, useEffect, useCallback, useRef } from "react"
+import { useMemo, useState, useEffect, useCallback, useRef, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -29,7 +29,7 @@ const colorPalette = [
   "bg-emerald-500",
 ]
 
-export default function WorkoutTimerPage() {
+function WorkoutTimerContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   
@@ -467,5 +467,19 @@ export default function WorkoutTimerPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function WorkoutTimerPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 flex items-center justify-center">
+        <div className="text-white text-center">
+          <p>Loading workout...</p>
+        </div>
+      </div>
+    }>
+      <WorkoutTimerContent />
+    </Suspense>
   )
 }

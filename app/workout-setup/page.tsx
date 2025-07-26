@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect, useMemo, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -42,7 +42,7 @@ const colorPalette = [
   "bg-emerald-500",
 ]
 
-export default function WorkoutSetupPage() {
+function WorkoutSetupContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -441,5 +441,19 @@ export default function WorkoutSetupPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function WorkoutSetupPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 md:p-6 flex items-center justify-center">
+        <div className="text-white text-center">
+          <p>Loading workout setup...</p>
+        </div>
+      </div>
+    }>
+      <WorkoutSetupContent />
+    </Suspense>
   )
 }
