@@ -60,7 +60,8 @@ export default function WorkoutTimerPage() {
   const [timeRemaining, setTimeRemaining] = useState(workTime)
   const [isActive, setIsActive] = useState(false)
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
-  const [volume, setVolume] = useState(0.5) // Volume from 0.0 to 1.0
+  // Set volume to 0 for testing environments, 0.5 for production
+  const [volume, setVolume] = useState(process.env.NODE_ENV === 'test' ? 0 : 0.5) // Volume from 0.0 to 1.0
   const [totalTimeElapsed, setTotalTimeElapsed] = useState(0)
 
   const tickSoundRef = useRef<HTMLAudioElement | null>(null)

@@ -21,6 +21,9 @@ export default function WorkoutCompletePage() {
     const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
     
     const createCompletionSound = () => {
+      // Set volume to 0 for testing environments, 0.15 for production
+      const soundVolume = process.env.NODE_ENV === 'test' ? 0 : 0.15
+      
       const frequencies = [523.25, 659.25, 783.99] // C, E, G major chord
       frequencies.forEach((freq, i) => {
         setTimeout(() => {
@@ -31,7 +34,7 @@ export default function WorkoutCompletePage() {
           oscillator.frequency.setValueAtTime(freq, audioContext.currentTime)
           oscillator.type = "sine"
           gainNode.gain.setValueAtTime(0, audioContext.currentTime)
-          gainNode.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.01)
+          gainNode.gain.linearRampToValueAtTime(soundVolume, audioContext.currentTime + 0.01)
           gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.8)
           oscillator.start(audioContext.currentTime)
           oscillator.stop(audioContext.currentTime + 0.8)

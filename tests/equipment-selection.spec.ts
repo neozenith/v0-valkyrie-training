@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Equipment Selection', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/equipment-selection');
   });
 
   test('should display equipment selection page on load', async ({ page }) => {
@@ -39,6 +39,7 @@ test.describe('Equipment Selection', () => {
     
     // Should now be on workout setup page
     await expect(page.getByRole('heading', { name: /Workout Setup/i })).toBeVisible();
+    await expect(page).toHaveURL(/\/workout-setup/);
   });
 
   test('should allow multiple equipment selection', async ({ page }) => {
@@ -50,5 +51,51 @@ test.describe('Equipment Selection', () => {
     // All should be selected (verify the selection count)
     // Instead of checking individual checkboxes, verify the selection count increased
     await expect(page.getByText(/3 items selected/)).toBeVisible();
+  });
+
+  test('should update URL parameters when equipment is selected', async ({ page }) => {
+    // Select dumbbells
+    await page.getByText('Dumbbells').click();
+    
+    // URL should include equipment parameter
+    await expect(page).toHaveURL(/equipment=.*dumbbells/);
+    
+    // Select resistance bands
+    await page.getByText('Resistance Bands').click();
+    
+    // URL should include both equipment items
+    await expect(page).toHaveURL(/equipment=.*dumbbells.*resistance-bands/);
+  });
+
+  test('should preselect equipment from URL parameters', async ({ page }) => {
+    // Navigate with preselected equipment
+    await page.goto('/equipment-selection?equipment=bodyweight,dumbbells,kettlebells');
+    
+    // Equipment should be preselected
+    await expect(page.getByText(/3 items selected/)).toBeVisible();
+    
+    // Verify specific equipment is selected (visual indicators)
+    const dumbbellCard = page.locator('[data-testid="equipment-dumbbells"], .group:has-text("Dumbbells")').first();
+    await expect(dumbbellCard).toHaveClass(/scale-105/);
+  });
+
+  test('should navigate to workout setup with equipment parameters', async ({ page }) => {
+    // Select equipment
+    await page.getByText('Dumbbells').click();
+    await page.getByText('Kettlebells').click();
+    
+    // Click continue
+    await page.getByRole('button', { name: /Build My Workout/i }).click();
+    
+    // Should navigate to workout setup with equipment parameters
+    await expect(page).toHaveURL(/\/workout-setup.*equipment=.*dumbbells.*kettlebells/);
+  });
+
+  test('should redirect from root to equipment selection', async ({ page }) => {
+    await page.goto('/');
+    
+    // Should redirect to equipment selection
+    await expect(page).toHaveURL(/\/equipment-selection/);
+    await expect(page.getByRole('heading', { name: /Valkyrie Training/i })).toBeVisible();
   });
 });

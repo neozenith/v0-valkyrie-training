@@ -8,10 +8,10 @@
     "lint": "next lint",
     "start": "next start",
     "check-ui-updates": "npx shadcn@latest diff",
-    "test": "playwright test",
+    "test": "NODE_ENV=test && playwright test",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
-    "test:report": "playwright show-report"
+    "test:report": "NODE_ENV=test && playwright show-report"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

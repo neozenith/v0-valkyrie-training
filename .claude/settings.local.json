@@ -7,7 +7,13 @@
       "mcp__playwright__browser_snapshot",
       "mcp__playwright__browser_evaluate",
       "Bash(pnpm exec playwright test:*)",
-      "mcp__sequential-thinking__sequentialthinking"
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(pgrep:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(npx tsc:*)",
+      "Bash(curl:*)",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_close"
     ],
     "deny": []
   }

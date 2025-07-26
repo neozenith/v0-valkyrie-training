@@ -19,7 +19,7 @@ export interface WorkoutSetupParams {
   workTime?: number // Work time in seconds
   restTime?: number // Rest time in seconds
   setRestTime?: number // Set rest time in seconds
-  exerciseIds?: string[] // Array of "exerciseId:variant" strings
+  exerciseIds?: Array<{ id: string; variant: ExerciseVariant }> // Array of exercise objects with variant
 }
 
 export interface WorkoutTimerParams {
@@ -29,7 +29,7 @@ export interface WorkoutTimerParams {
   workTime?: number
   restTime?: number
   setRestTime?: number
-  exerciseIds?: string[] // Array of "exerciseId:variant" strings
+  exerciseIds?: Array<{ id: string; variant: ExerciseVariant }> // Array of exercise objects with variant
 }
 
 export interface WorkoutCompleteParams {
@@ -99,7 +99,7 @@ export function parseExerciseNames(param: string | null): string[] {
  * Serialize exercise names to URL parameter
  */
 export function serializeExerciseNames(names: string[]): string {
-  return names.map(name => encodeURIComponent(name)).join(',')
+  return names.join(',')
 }
 
 /**
@@ -212,9 +212,7 @@ export function buildWorkoutSetupUrl(params: Partial<WorkoutSetupParams>): strin
     workTime: params.workTime,
     restTime: params.restTime,
     setRestTime: params.setRestTime,
-    exerciseIds: params.exerciseIds ? serializeExerciseIds(params.exerciseIds.map(id => 
-      typeof id === 'string' ? { id, variant: 'standard' as ExerciseVariant } : id
-    )) : undefined
+    exerciseIds: params.exerciseIds ? serializeExerciseIds(params.exerciseIds) : undefined
   })
 }
 
@@ -229,9 +227,7 @@ export function buildWorkoutTimerUrl(params: Partial<WorkoutTimerParams>): strin
     workTime: params.workTime,
     restTime: params.restTime,
     setRestTime: params.setRestTime,
-    exerciseIds: params.exerciseIds ? serializeExerciseIds(params.exerciseIds.map(id => 
-      typeof id === 'string' ? { id, variant: 'standard' as ExerciseVariant } : id
-    )) : undefined
+    exerciseIds: params.exerciseIds ? serializeExerciseIds(params.exerciseIds) : undefined
   })
 }
 
