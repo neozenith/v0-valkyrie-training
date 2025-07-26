@@ -136,13 +136,8 @@ function EquipmentSelectionContent() {
         <div className="text-center space-y-4">
           <h1 className="text-3xl md:text-4xl font-light text-white tracking-wide">Valkyrie Training</h1>
           <p className="text-md text-slate-300 font-light max-w-md mx-auto">
-            Welcome to Valkyrie Training. Empowering women for over 500 years.
+            Welcome to Valkyrie Training.
           </p>
-          <div>
-            <p className="text-sm text-slate-400">
-              <span className="font-semibold">Coaches:</span> Cassian from Illyria & Nesta Archeron
-            </p>
-          </div>
           <p className="text-md text-purple-300 font-light pt-4">Select your available equipment below to begin.</p>
         </div>
 
