@@ -10,6 +10,15 @@
 This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
 Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
 
+## Quickstart
+
+```sh
+pnpm dev # Start development server with hot reload
+pnpm build # Build for production
+pnpm start # Start production server
+pnpm lint # Run ESLint
+```
+
 ## Deployment
 
 Your project is live at:
