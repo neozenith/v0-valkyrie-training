@@ -260,7 +260,24 @@ export default function WorkoutSetup({ selectedEquipment, onWorkoutStart, onBack
 
         {/* Sequence Visualizer */}
         <WorkoutSequenceVisualizer
-          workoutExercises={workoutExercises.map((we) => we.exercise)}
+          workoutExercises={workoutExercises.map(({ exercise, selectedVariant }) => {
+            if (selectedVariant === "regression") {
+              return {
+                ...exercise,
+                id: `${exercise.id}-regression`,
+                name: exercise.regression.name,
+                cues: exercise.regression.cues,
+              }
+            } else if (selectedVariant === "progression") {
+              return {
+                ...exercise,
+                id: `${exercise.id}-progression`,
+                name: exercise.progression.name,
+                cues: exercise.progression.cues,
+              }
+            }
+            return exercise
+          })}
           sets={selectedSets}
           style={workoutStyle}
           colors={colorPalette}

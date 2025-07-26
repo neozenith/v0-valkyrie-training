@@ -329,6 +329,10 @@ export default function WorkoutTimer({
             workTime={workTime}
             restTime={restTime}
             setRestTime={setRestTime}
+            enableAutoScroll={true}
+            currentPhase={phase}
+            currentExerciseIndex={currentExerciseIndex}
+            currentSet={currentSet}
           />
         </div>
 
