@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -13,6 +14,41 @@ interface WorkoutCompleteProps {
 }
 
 export default function WorkoutComplete({ exercises, sets, totalTime, onStartNew }: WorkoutCompleteProps) {
+  const completeSoundRef = useRef<{ play: () => void } | null>(null)
+
+  useEffect(() => {
+    // Create completion sound and play it when component mounts
+    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
+    
+    const createCompletionSound = () => {
+      const frequencies = [523.25, 659.25, 783.99] // C, E, G major chord
+      frequencies.forEach((freq, i) => {
+        setTimeout(() => {
+          const oscillator = audioContext.createOscillator()
+          const gainNode = audioContext.createGain()
+          oscillator.connect(gainNode)
+          gainNode.connect(audioContext.destination)
+          oscillator.frequency.setValueAtTime(freq, audioContext.currentTime)
+          oscillator.type = "sine"
+          gainNode.gain.setValueAtTime(0, audioContext.currentTime)
+          gainNode.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.01)
+          gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.8)
+          oscillator.start(audioContext.currentTime)
+          oscillator.stop(audioContext.currentTime + 0.8)
+        }, i * 100)
+      })
+    }
+
+    // Play the completion sound immediately when the component loads
+    createCompletionSound()
+
+    return () => {
+      if (audioContext.state !== "closed") {
+        audioContext.close()
+      }
+    }
+  }, [])
+
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60)
     const secs = seconds % 60

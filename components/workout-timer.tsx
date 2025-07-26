@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
+import { Slider } from "@/components/ui/slider"
 import type { Exercise } from "@/types/exercise"
 import { Play, Pause, SkipForward, Home, Volume2, VolumeX } from "lucide-react"
 import WorkoutSequenceVisualizer from "./workout-sequence-visualizer"
@@ -54,11 +55,11 @@ export default function WorkoutTimer({
   const [timeRemaining, setTimeRemaining] = useState(workTime)
   const [isActive, setIsActive] = useState(false)
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
+  const [volume, setVolume] = useState(0.5) // Volume from 0.0 to 1.0
   const [totalTimeElapsed, setTotalTimeElapsed] = useState(0)
 
   const tickSoundRef = useRef<HTMLAudioElement | null>(null)
   const dingSoundRef = useRef<HTMLAudioElement | null>(null)
-  const completeSoundRef = useRef<HTMLAudioElement | null>(null)
   const halfwaySoundRef = useRef<HTMLAudioElement | null>(null)
 
   const currentExerciseData = exercises[currentExerciseIndex]
@@ -66,7 +67,7 @@ export default function WorkoutTimer({
   useEffect(() => {
     const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
 
-    const createSound = (freq: number | number[], duration: number, vol: number) => {
+    const createSound = (freq: number | number[], duration: number, baseVol: number) => {
       return () => {
         const frequencies = Array.isArray(freq) ? freq : [freq]
         frequencies.forEach((f, i) => {
@@ -77,8 +78,9 @@ export default function WorkoutTimer({
             gainNode.connect(audioContext.destination)
             oscillator.frequency.setValueAtTime(f, audioContext.currentTime)
             oscillator.type = "sine"
+            const adjustedVolume = baseVol * volume
             gainNode.gain.setValueAtTime(0, audioContext.currentTime)
-            gainNode.gain.linearRampToValueAtTime(vol, audioContext.currentTime + 0.01)
+            gainNode.gain.linearRampToValueAtTime(adjustedVolume, audioContext.currentTime + 0.01)
             gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + duration)
             oscillator.start(audioContext.currentTime)
             oscillator.stop(audioContext.currentTime + duration)
@@ -90,14 +92,13 @@ export default function WorkoutTimer({
     tickSoundRef.current = { play: createSound(800, 0.1, 0.1) } as any
     halfwaySoundRef.current = { play: createSound(440, 0.1, 0.1) } as any
     dingSoundRef.current = { play: createSound([800, 1000], 0.3, 0.2) } as any
-    completeSoundRef.current = { play: createSound([523.25, 659.25, 783.99], 0.8, 0.15) } as any
 
     return () => {
       if (audioContext.state !== "closed") {
         audioContext.close()
       }
     }
-  }, [])
+  }, [volume])
 
   const nextPhase = useCallback(() => {
     if (isSoundEnabled && dingSoundRef.current) {
@@ -113,7 +114,6 @@ export default function WorkoutTimer({
       ((workoutStyle === "hiit" && isLastSet) || (workoutStyle === "tabata" && isLastExercise))
     ) {
       setIsActive(false)
-      if (isSoundEnabled && completeSoundRef.current) completeSoundRef.current.play()
       // Calculate final time based on elapsed time, as it's the most accurate
       onWorkoutComplete(totalTimeElapsed)
       return
@@ -305,14 +305,28 @@ export default function WorkoutTimer({
               Ex {currentExerciseIndex + 1}/{exercises.length}
             </div>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsSoundEnabled(!isSoundEnabled)}
-            className="text-slate-300 hover:text-white hover:bg-slate-800/50"
-          >
-            {isSoundEnabled ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsSoundEnabled(!isSoundEnabled)}
+              className="text-slate-300 hover:text-white hover:bg-slate-800/50"
+            >
+              {isSoundEnabled ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
+            </Button>
+            {isSoundEnabled && (
+              <div className="w-16">
+                <Slider
+                  value={[volume * 100]}
+                  onValueChange={(value) => setVolume(value[0] / 100)}
+                  max={100}
+                  min={0}
+                  step={10}
+                  className="w-full"
+                />
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Progress Bar */}
