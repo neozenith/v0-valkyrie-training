@@ -212,6 +212,96 @@
       }
     },
     {
+      "id": "hollow-body-hold",
+      "name": "Hollow Body Hold",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["core", "abs"],
+      "cues": [
+        "Lie on your back, press your lower back into the floor.",
+        "Lift your legs and shoulders slightly off the ground.",
+        "Keep arms and legs extended, creating a 'banana' shape.",
+        "Hold the position, keeping your core tight."
+      ],
+      "regression": {
+        "name": "Tuck Hollow Hold",
+        "cues": [
+          "Bend your knees and bring them towards your chest.",
+          "This shortens the lever, making it easier to hold.",
+          "Keep your lower back pressed into the floor.",
+          "Gradually extend your legs as you get stronger."
+        ]
+      },
+      "progression": {
+        "name": "Hollow Body Rocks",
+        "cues": [
+          "From the hollow hold, gently rock back and forth.",
+          "Maintain the hollow shape throughout the rock.",
+          "The movement should be small and controlled.",
+          "This adds a dynamic challenge to core stability."
+        ]
+      }
+    },
+    {
+      "id": "superman",
+      "name": "Superman",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["lower-back", "glutes", "shoulders"],
+      "cues": [
+        "Lie face down with arms and legs extended.",
+        "Simultaneously lift your arms, chest, and legs off the floor.",
+        "Squeeze your glutes and lower back.",
+        "Hold for a moment at the top, then lower with control."
+      ],
+      "regression": {
+        "name": "Alternating Superman",
+        "cues": [
+          "Lift your right arm and left leg simultaneously.",
+          "Lower and then lift your left arm and right leg.",
+          "This reduces the load and helps with coordination.",
+          "Focus on slow, controlled movements."
+        ]
+      },
+      "progression": {
+        "name": "Superman Hold with Flutter Kicks",
+        "cues": [
+          "Hold the top position of the superman.",
+          "Perform small, quick flutter kicks with your legs.",
+          "Keep your chest and arms lifted.",
+          "This increases time under tension and difficulty."
+        ]
+      }
+    },
+    {
+      "id": "pistol-squat",
+      "name": "Pistol Squat",
+      "equipment": ["bodyweight"],
+      "targetMuscles": ["quadriceps", "glutes", "balance", "core"],
+      "cues": [
+        "Balance on one leg, extending the other leg forward.",
+        "Lower yourself into a full squat on the standing leg.",
+        "Keep your heel on the ground and chest up.",
+        "Drive through your heel to return to the standing position."
+      ],
+      "regression": {
+        "name": "Box Pistol Squat",
+        "cues": [
+          "Perform the movement while squatting down to a bench or box.",
+          "This limits the range of motion and provides a target.",
+          "Use a higher box to make it easier, lower for harder.",
+          "Focus on control and balance."
+        ]
+      },
+      "progression": {
+        "name": "Elevated Pistol Squat",
+        "cues": [
+          "Stand on a box or bench.",
+          "This allows your non-working leg to drop lower.",
+          "It requires more strength as there's no 'bottoming out'.",
+          "Focus on a deep, controlled squat."
+        ]
+      }
+    },
+    {
       "id": "pull-ups",
       "name": "Pull-ups",
       "equipment": ["pull-up-bar"],
@@ -634,6 +724,66 @@
       }
     },
     {
+      "id": "box-jumps",
+      "name": "Box Jumps",
+      "equipment": ["bench"],
+      "targetMuscles": ["glutes", "quadriceps", "hamstrings", "calves", "cardio"],
+      "cues": [
+        "Stand in front of the bench or box.",
+        "Dip into a quarter squat and explode up, swinging your arms for momentum.",
+        "Land softly on the center of the box with your knees bent.",
+        "Step down, do not jump down."
+      ],
+      "regression": {
+        "name": "Step-Ups",
+        "cues": [
+          "Step onto the bench one foot at a time.",
+          "Focus on driving through the heel of the lead foot.",
+          "This removes the explosive component, focusing on strength.",
+          "Alternate lead legs."
+        ]
+      },
+      "progression": {
+        "name": "Tuck Jump onto Box",
+        "cues": [
+          "As you jump, pull your knees high towards your chest.",
+          "This requires more power and coordination.",
+          "Use a slightly lower box than your max height for safety.",
+          "Land in a deep squat position."
+        ]
+      }
+    },
+    {
+      "id": "step-ups",
+      "name": "Step-Ups",
+      "equipment": ["bench"],
+      "targetMuscles": ["quadriceps", "glutes"],
+      "cues": [
+        "Place one foot fully on the bench.",
+        "Drive through the heel of the front foot to lift your body up.",
+        "Bring the other foot to meet it on the bench.",
+        "Step back down with the same trailing foot."
+      ],
+      "regression": {
+        "name": "Lower Step",
+        "cues": [
+          "Use a lower surface if a standard bench is too high.",
+          "This reduces the range of motion and strength required.",
+          "Focus on control and balance.",
+          "Gradually increase the height as you get stronger."
+        ]
+      },
+      "progression": {
+        "name": "Weighted Step-Ups",
+        "cues": [
+          "Hold dumbbells in each hand to increase the load.",
+          "You can also add a high knee drive at the top for an extra challenge.",
+          "Keep your torso upright and core engaged.",
+          "This builds serious single-leg strength."
+        ]
+      }
+    },
+    {
       "id": "barbell-back-squat",
       "name": "Barbell Back Squat",
       "equipment": ["barbell"],
@@ -870,6 +1020,126 @@
           "This makes the exercise more powerful and athletic.",
           "Focus on snapping the bar from side to side.",
           "Ensure your core stays braced throughout."
+        ]
+      }
+    },
+    {
+      "id": "parallette-dips",
+      "name": "Parallette Dips",
+      "equipment": ["parallettes"],
+      "targetMuscles": ["triceps", "chest", "shoulders"],
+      "cues": [
+        "Start in a support hold on the parallettes, arms straight.",
+        "Keep your chest up and shoulders down.",
+        "Lower your body by bending your elbows, keeping them tucked in.",
+        "Go as deep as you comfortably can, then press back up."
+      ],
+      "regression": {
+        "name": "Foot-Assisted Dips",
+        "cues": [
+          "Keep your feet on the floor in front of you.",
+          "Use your legs to assist with the movement.",
+          "This reduces the amount of bodyweight you need to lift.",
+          "Focus on the upper body doing most of the work."
+        ]
+      },
+      "progression": {
+        "name": "Weighted Dips",
+        "cues": [
+          "Use a dip belt to add weight or hold a dumbbell between your feet.",
+          "This overloads the muscles for greater strength gains.",
+          "Ensure you can do at least 10-12 bodyweight dips with good form first.",
+          "Maintain control and full range of motion."
+        ]
+      }
+    },
+    {
+      "id": "parallette-l-sit",
+      "name": "Parallette L-Sit",
+      "equipment": ["parallettes"],
+      "targetMuscles": ["core", "abs", "hip-flexors", "triceps"],
+      "cues": [
+        "Start in a support hold, arms locked out.",
+        "Lift your legs straight out in front of you, parallel to the floor.",
+        "Keep your toes pointed and legs together.",
+        "Depress your shoulders (push them down) and hold."
+      ],
+      "regression": {
+        "name": "Tuck L-Sit",
+        "cues": [
+          "Instead of keeping legs straight, bend your knees and tuck them in.",
+          "This is a much easier position to hold.",
+          "Focus on keeping your hips high.",
+          "Gradually extend your legs as you get stronger."
+        ]
+      },
+      "progression": {
+        "name": "V-Sit",
+        "cues": [
+          "From the L-Sit, continue to raise your legs higher.",
+          "Aim to get your torso and legs into a 'V' shape.",
+          "This requires significantly more core compression and strength.",
+          "Keep your arms locked and shoulders depressed."
+        ]
+      }
+    },
+    {
+      "id": "parallette-push-ups",
+      "name": "Parallette Push-Ups",
+      "equipment": ["parallettes"],
+      "targetMuscles": ["chest", "triceps", "shoulders"],
+      "cues": [
+        "Grip the parallettes with a neutral grip, hands under your shoulders.",
+        "The parallettes allow for a deeper range of motion.",
+        "Lower your chest below the level of your hands.",
+        "Press back up to the starting position."
+      ],
+      "regression": {
+        "name": "Incline Parallette Push-Ups",
+        "cues": [
+          "Place the parallettes on an elevated surface like a bench.",
+          "This reduces the amount of bodyweight you are pushing.",
+          "Focus on getting a full range of motion.",
+          "A great way to build up to flat push-ups."
+        ]
+      },
+      "progression": {
+        "name": "Feet-Elevated Parallette Push-Ups",
+        "cues": [
+          "Place your feet on a bench or box.",
+          "This increases the load on your upper chest and shoulders.",
+          "The deficit from the parallettes makes this very challenging.",
+          "Keep your core tight to maintain a straight body line."
+        ]
+      }
+    },
+    {
+      "id": "parallette-tuck-planche",
+      "name": "Parallette Tuck Planche",
+      "equipment": ["parallettes"],
+      "targetMuscles": ["shoulders", "core", "triceps", "biceps"],
+      "cues": [
+        "From a support hold, lean your shoulders forward past your hands.",
+        "Tuck your knees to your chest and lift your feet off the ground.",
+        "Keep your arms locked straight and protract your shoulder blades.",
+        "Aim to have your back parallel to the floor."
+      ],
+      "regression": {
+        "name": "Planche Leans",
+        "cues": [
+          "Start in a push-up position on the parallettes.",
+          "Lean your shoulders as far forward as you can, keeping arms straight.",
+          "Hold the lean for time to build shoulder strength.",
+          "This is the foundational strength builder for the planche."
+        ]
+      },
+      "progression": {
+        "name": "Advanced Tuck Planche",
+        "cues": [
+          "From the tuck planche, open your hips to flatten your back.",
+          "Your back should be perfectly parallel to the ground.",
+          "This is a significant step up in difficulty.",
+          "Requires more forward lean and shoulder strength."
         ]
       }
     }

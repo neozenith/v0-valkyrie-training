@@ -1,5 +1,7 @@
 "use client"
 
+import { useMemo } from "react"
+
 import { useState, useEffect, useCallback, useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -10,12 +12,16 @@ import { Play, Pause, SkipForward, Home, Volume2, VolumeX } from "lucide-react"
 import WorkoutSequenceVisualizer from "./workout-sequence-visualizer"
 
 type WorkoutStyle = "hiit" | "tabata"
+type WorkoutPhase = "work" | "rest" | "setRest"
 
 interface WorkoutTimerProps {
   exercises: Exercise[]
   sets: number
   workoutStyle: WorkoutStyle
-  onWorkoutComplete: () => void
+  workTime: number
+  restTime: number
+  setRestTime: number
+  onWorkoutComplete: (totalTime: number) => void
   onBackToHome: () => void
 }
 
@@ -36,25 +42,26 @@ export default function WorkoutTimer({
   exercises,
   sets,
   workoutStyle,
+  workTime,
+  restTime,
+  setRestTime,
   onWorkoutComplete,
   onBackToHome,
 }: WorkoutTimerProps) {
-  const workTime = 40
-  const restTime = 20
-
-  const [currentExercise, setCurrentExercise] = useState(0)
+  const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0)
   const [currentSet, setCurrentSet] = useState(1)
-  const [isResting, setIsResting] = useState(false)
+  const [phase, setPhase] = useState<WorkoutPhase>("work")
   const [timeRemaining, setTimeRemaining] = useState(workTime)
   const [isActive, setIsActive] = useState(false)
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
+  const [totalTimeElapsed, setTotalTimeElapsed] = useState(0)
 
   const tickSoundRef = useRef<HTMLAudioElement | null>(null)
   const dingSoundRef = useRef<HTMLAudioElement | null>(null)
   const completeSoundRef = useRef<HTMLAudioElement | null>(null)
   const halfwaySoundRef = useRef<HTMLAudioElement | null>(null)
 
-  const currentExerciseData = exercises[currentExercise]
+  const currentExerciseData = exercises[currentExerciseIndex]
 
   useEffect(() => {
     const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
@@ -97,70 +104,118 @@ export default function WorkoutTimer({
       dingSoundRef.current.play()
     }
 
-    if (isResting) {
-      if (workoutStyle === "tabata") {
-        if (currentSet < sets) {
-          setCurrentSet((prev) => prev + 1)
-        } else if (currentExercise < exercises.length - 1) {
-          setCurrentExercise((prev) => prev + 1)
-          setCurrentSet(1)
-        } else {
-          setIsActive(false)
-          if (isSoundEnabled && completeSoundRef.current) completeSoundRef.current.play()
-          onWorkoutComplete()
-          return
-        }
-      } else {
-        if (currentExercise < exercises.length - 1) {
-          setCurrentExercise((prev) => prev + 1)
-        } else if (currentSet < sets) {
-          setCurrentSet((prev) => prev + 1)
-          setCurrentExercise(0)
-        } else {
-          setIsActive(false)
-          if (isSoundEnabled && completeSoundRef.current) completeSoundRef.current.play()
-          onWorkoutComplete()
-          return
-        }
-      }
-      setIsResting(false)
-      setTimeRemaining(workTime)
-    } else {
-      setIsResting(true)
-      setTimeRemaining(restTime)
+    const isLastSet = currentSet === sets
+    const isLastExercise = currentExerciseIndex === exercises.length - 1
+
+    // End of workout check
+    if (
+      phase === "setRest" &&
+      ((workoutStyle === "hiit" && isLastSet) || (workoutStyle === "tabata" && isLastExercise))
+    ) {
+      setIsActive(false)
+      if (isSoundEnabled && completeSoundRef.current) completeSoundRef.current.play()
+      // Calculate final time based on elapsed time, as it's the most accurate
+      onWorkoutComplete(totalTimeElapsed)
+      return
     }
-  }, [isResting, currentExercise, currentSet, exercises.length, sets, workoutStyle, isSoundEnabled, onWorkoutComplete])
+
+    if (phase === "work") {
+      setPhase("rest")
+      setTimeRemaining(restTime)
+      return
+    }
+
+    if (phase === "rest") {
+      const endOfHiitBlock = workoutStyle === "hiit" && isLastExercise
+      const endOfTabataBlock = workoutStyle === "tabata" && isLastSet
+
+      if ((endOfHiitBlock || endOfTabataBlock) && setRestTime > 0) {
+        setPhase("setRest")
+        setTimeRemaining(setRestTime)
+      } else {
+        // Not the end of a major block, so advance the secondary counter and start work
+        if (workoutStyle === "hiit") {
+          setCurrentExerciseIndex((prev) => prev + 1)
+        } else {
+          setCurrentSet((prev) => prev + 1)
+        }
+        setPhase("work")
+        setTimeRemaining(workTime)
+      }
+      return
+    }
+
+    if (phase === "setRest") {
+      // After a set rest, advance the primary counter and reset the secondary one
+      if (workoutStyle === "hiit") {
+        setCurrentSet((prev) => prev + 1)
+        setCurrentExerciseIndex(0)
+      } else {
+        setCurrentExerciseIndex((prev) => prev + 1)
+        setCurrentSet(1)
+      }
+      setPhase("work")
+      setTimeRemaining(workTime)
+      return
+    }
+  }, [
+    phase,
+    currentExerciseIndex,
+    currentSet,
+    exercises.length,
+    sets,
+    workoutStyle,
+    isSoundEnabled,
+    onWorkoutComplete,
+    restTime,
+    setRestTime,
+    workTime,
+    totalTimeElapsed,
+  ])
 
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null
 
-    if (isActive && timeRemaining > 0) {
-      const currentPhaseDuration = isResting ? restTime : workTime
-      const halfwayPoint = Math.floor(currentPhaseDuration / 2)
-
+    if (isActive) {
       interval = setInterval(() => {
         setTimeRemaining((prev) => {
-          const newTime = prev - 1
-          if (newTime === halfwayPoint && isSoundEnabled && halfwaySoundRef.current) {
-            halfwaySoundRef.current.play()
+          if (prev > 1) {
+            const newTime = prev - 1
+            let currentPhaseDuration = workTime
+            if (phase === "rest") currentPhaseDuration = restTime
+            if (phase === "setRest") currentPhaseDuration = setRestTime
+            const halfwayPoint = Math.floor(currentPhaseDuration / 2)
+
+            if (newTime === halfwayPoint && isSoundEnabled && halfwaySoundRef.current) {
+              halfwaySoundRef.current.play()
+            }
+            if (newTime <= 10 && isSoundEnabled && tickSoundRef.current) {
+              tickSoundRef.current.play()
+            }
+            return newTime
+          } else {
+            // Time is up, trigger the next phase
+            // Use a function to ensure we are using the latest state in nextPhase
+            // This avoids stale state issues.
+            setTimeout(nextPhase, 0)
+            return 0 // Reset timer for now, nextPhase will set the correct new time
           }
-          if (newTime <= 10 && newTime > 0 && isSoundEnabled && tickSoundRef.current) {
-            tickSoundRef.current.play()
-          }
-          return newTime
         })
+        setTotalTimeElapsed((prev) => prev + 1)
       }, 1000)
-    } else if (isActive && timeRemaining === 0) {
-      nextPhase()
     }
 
     return () => {
       if (interval) clearInterval(interval)
     }
-  }, [isActive, timeRemaining, nextPhase, isSoundEnabled, isResting])
+  }, [isActive, phase, nextPhase])
 
   const toggleTimer = () => setIsActive(!isActive)
-  const skipPhase = () => nextPhase()
+  const skipPhase = () => {
+    const timeSkipped = timeRemaining
+    setTotalTimeElapsed((prev) => prev + timeSkipped)
+    nextPhase()
+  }
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60)
     const secs = seconds % 60
@@ -168,6 +223,8 @@ export default function WorkoutTimer({
   }
 
   const getUpcomingExercises = () => {
+    // This function would need to be updated to be aware of the new detailed sequence,
+    // but for now we'll keep its simpler logic.
     const fullWorkoutPlan: { exercise: Exercise; set: number }[] = []
     if (workoutStyle === "tabata") {
       for (let i = 0; i < exercises.length; i++) {
@@ -185,37 +242,47 @@ export default function WorkoutTimer({
 
     let currentIndex = -1
     if (workoutStyle === "tabata") {
-      currentIndex = currentExercise * sets + (currentSet - 1)
+      currentIndex = currentExerciseIndex * sets + (currentSet - 1)
     } else {
-      currentIndex = (currentSet - 1) * exercises.length + currentExercise
+      currentIndex = (currentSet - 1) * exercises.length + currentExerciseIndex
     }
 
     const startIndex = currentIndex + 1
     return fullWorkoutPlan.slice(startIndex, startIndex + 3)
   }
 
-  const totalWorkoutTime = exercises.length * sets * (workTime + restTime) - restTime
-  const getTotalTimeElapsed = () => {
-    let intervalsDone
-    if (workoutStyle === "tabata") {
-      intervalsDone = currentExercise * sets + (currentSet - 1)
+  const totalWorkoutTimeValue = useMemo(() => {
+    const numExercises = exercises.length
+    if (numExercises === 0 || sets === 0) return 0
+    if (workoutStyle === "hiit") {
+      const timePerSet = numExercises * (workTime + restTime) + setRestTime
+      return sets * timePerSet
     } else {
-      intervalsDone = (currentSet - 1) * exercises.length + currentExercise
+      const timePerExercise = sets * (workTime + restTime) + setRestTime
+      return numExercises * timePerExercise
     }
+  }, [exercises.length, sets, workTime, restTime, setRestTime, workoutStyle])
 
-    const timeElapsedInDoneIntervals = intervalsDone * (workTime + restTime)
-    const timeElapsedInCurrentInterval = isResting ? restTime - timeRemaining : workTime - timeRemaining
-    return timeElapsedInDoneIntervals + timeElapsedInCurrentInterval
-  }
-
-  const progressPercentage = (getTotalTimeElapsed() / totalWorkoutTime) * 100
+  const progressPercentage = totalWorkoutTimeValue > 0 ? (totalTimeElapsed / totalWorkoutTimeValue) * 100 : 0
 
   let completedIntervals = 0
   if (workoutStyle === "tabata") {
-    completedIntervals = currentExercise * sets + (currentSet - 1)
+    completedIntervals = currentExerciseIndex * sets + (currentSet - 1)
   } else {
-    completedIntervals = (currentSet - 1) * exercises.length + currentExercise
+    completedIntervals = (currentSet - 1) * exercises.length + currentExerciseIndex
   }
+
+  const getPhaseInfo = () => {
+    switch (phase) {
+      case "work":
+        return { text: "WORK", color: "bg-green-600" }
+      case "rest":
+        return { text: "REST", color: "bg-blue-600" }
+      case "setRest":
+        return { text: "SET REST", color: "bg-purple-600" }
+    }
+  }
+  const phaseInfo = getPhaseInfo()
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4">
@@ -235,7 +302,7 @@ export default function WorkoutTimer({
               Set {currentSet}/{sets}
             </div>
             <div className="text-sm font-mono text-white">
-              Ex {currentExercise + 1}/{exercises.length}
+              Ex {currentExerciseIndex + 1}/{exercises.length}
             </div>
           </div>
           <Button
@@ -254,23 +321,22 @@ export default function WorkoutTimer({
         {/* Sequence Visualizer */}
         <div className="pt-2">
           <WorkoutSequenceVisualizer
-            numExercises={exercises.length}
+            workoutExercises={exercises}
             sets={sets}
             style={workoutStyle}
             colors={colorPalette}
             completedIntervals={completedIntervals}
+            workTime={workTime}
+            restTime={restTime}
+            setRestTime={setRestTime}
           />
         </div>
 
         {/* Main Timer Card */}
         <Card className="bg-slate-800/30 border-slate-700/50 text-white">
           <CardContent className="p-6 text-center space-y-4">
-            <Badge
-              className={`text-base px-4 py-1 rounded-full ${
-                isResting ? "bg-blue-600 hover:bg-blue-600" : "bg-green-600 hover:bg-green-600"
-              }`}
-            >
-              {isResting ? "REST" : "WORK"}
+            <Badge className={`text-base px-4 py-1 rounded-full ${phaseInfo.color} hover:${phaseInfo.color}`}>
+              {phaseInfo.text}
             </Badge>
             <div
               className={`text-7xl md:text-8xl font-light font-mono transition-colors duration-300 ${

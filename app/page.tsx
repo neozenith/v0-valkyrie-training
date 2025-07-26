@@ -21,24 +21,34 @@ export default function ValkyrieTraining() {
     exercises: [] as string[],
   })
 
+  const [workTime, setWorkTime] = useState(40)
+  const [restTime, setRestTime] = useState(20)
+  const [setRestDuration, setSetRestDuration] = useState(60)
+  const [compressedRests, setCompressedRests] = useState(false)
+
   const handleEquipmentSelected = (equipment: string[]) => {
     setSelectedEquipment(equipment)
     setAppState("setup")
   }
 
-  const handleWorkoutStart = (exercises: Exercise[], sets: number, style: WorkoutStyle) => {
+  const handleWorkoutStart = (
+    exercises: Exercise[],
+    sets: number,
+    style: WorkoutStyle,
+    newWorkTime: number,
+    newRestTime: number,
+    newSetRestTime: number,
+  ) => {
     setWorkoutExercises(exercises)
     setWorkoutSets(sets)
     setWorkoutStyle(style)
+    setWorkTime(newWorkTime)
+    setRestTime(newRestTime)
+    setSetRestDuration(newSetRestTime)
     setAppState("workout")
   }
 
-  const handleWorkoutComplete = () => {
-    const workTime = 40
-    const restTime = 20
-    // The total time is the sum of all work and rest intervals, minus the final rest period.
-    const totalTime = workoutExercises.length * workoutSets * (workTime + restTime) - restTime
-
+  const handleWorkoutComplete = (totalTime: number) => {
     setWorkoutStats({
       totalTime: totalTime,
       exercises: workoutExercises.map((ex) => ex.name),
@@ -80,6 +90,10 @@ export default function ValkyrieTraining() {
           exercises={workoutExercises}
           sets={workoutSets}
           workoutStyle={workoutStyle}
+          workTime={workTime}
+          restTime={restTime}
+          setRestTime={setRestDuration}
+          compressedRests={compressedRests}
           onWorkoutComplete={handleWorkoutComplete}
           onBackToHome={handleBackToSetup}
         />

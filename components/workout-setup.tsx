@@ -14,7 +14,14 @@ type WorkoutStyle = "hiit" | "tabata"
 
 interface WorkoutSetupProps {
   selectedEquipment: string[]
-  onWorkoutStart: (exercises: Exercise[], sets: number, style: WorkoutStyle) => void
+  onWorkoutStart: (
+    exercises: Exercise[],
+    sets: number,
+    style: WorkoutStyle,
+    workTime: number,
+    restTime: number,
+    setRestTime: number,
+  ) => void
   onBack: () => void
 }
 
@@ -40,9 +47,12 @@ export default function WorkoutSetup({ selectedEquipment, onWorkoutStart, onBack
   const [availableExercises, setAvailableExercises] = useState<Exercise[]>([])
   const [workoutExercises, setWorkoutExercises] = useState<ExerciseVariant[]>([])
   const [selectedSets, setSelectedSets] = useState(2)
-  const [selectedExercises, setSelectedExercises] = useState(4)
+  const [selectedExercises, setSelectedExercises] = useState(5)
   const [workoutStyle, setWorkoutStyle] = useState<WorkoutStyle>("hiit")
   const [expandedExercise, setExpandedExercise] = useState<number | null>(null)
+  const [workTime, setWorkTime] = useState(40)
+  const [restTime, setRestTime] = useState(20)
+  const [setRestTimeValue, setSetRestTimeValue] = useState(60)
 
   const effectiveEquipment = useMemo(() => {
     const list = [...selectedEquipment]
@@ -69,6 +79,28 @@ export default function WorkoutSetup({ selectedEquipment, onWorkoutStart, onBack
   useEffect(() => {
     regenerateWorkout()
   }, [availableExercises, selectedExercises])
+
+  const totalWorkoutTime = useMemo(() => {
+    const numExercises = workoutExercises.length
+    if (numExercises === 0 || selectedSets === 0) return 0
+
+    if (workoutStyle === "hiit") {
+      // Total time for one full set (circuit) including its final set rest
+      const timePerSet = numExercises * (workTime + restTime) + setRestTimeValue
+      return selectedSets * timePerSet
+    } else {
+      // Tabata
+      // Total time for one full exercise (all sets) including its final set rest
+      const timePerExercise = selectedSets * (workTime + restTime) + setRestTimeValue
+      return numExercises * timePerExercise
+    }
+  }, [workoutExercises.length, selectedSets, workTime, restTime, setRestTimeValue, workoutStyle])
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60)
+    const secs = seconds % 60
+    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`
+  }
 
   const regenerateWorkout = () => {
     if (availableExercises.length === 0) {
@@ -117,7 +149,7 @@ export default function WorkoutSetup({ selectedEquipment, onWorkoutStart, onBack
       return exercise
     })
 
-    onWorkoutStart(finalExercises, selectedSets, workoutStyle)
+    onWorkoutStart(finalExercises, selectedSets, workoutStyle, workTime, restTime, setRestTimeValue)
   }
 
   const getVariantName = (exerciseVariant: ExerciseVariant) => {
@@ -197,13 +229,45 @@ export default function WorkoutSetup({ selectedEquipment, onWorkoutStart, onBack
           </CardContent>
         </Card>
 
+        {/* Timing Setup Card */}
+        <Card className="bg-slate-800/30 border-slate-700/50">
+          <CardContent className="p-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+              <NumberControl
+                label="Work Time (s)"
+                value={workTime}
+                min={10}
+                max={120}
+                onChange={setWorkTime}
+                step={5}
+              />
+              <NumberControl label="Rest Time (s)" value={restTime} min={5} max={90} onChange={setRestTime} step={5} />
+              <NumberControl
+                label="Set Rest (s)"
+                value={setRestTimeValue}
+                min={0}
+                max={180}
+                onChange={setSetRestTimeValue}
+                step={5}
+              />
+            </div>
+            <div className="mt-6 text-center border-t border-slate-700/50 pt-4">
+              <h3 className="text-lg font-light text-white">Total Workout Time</h3>
+              <p className="text-3xl font-mono text-purple-300 mt-1">{formatTime(totalWorkoutTime)}</p>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Sequence Visualizer */}
         <WorkoutSequenceVisualizer
-          numExercises={workoutExercises.length}
+          workoutExercises={workoutExercises.map((we) => we.exercise)}
           sets={selectedSets}
           style={workoutStyle}
           colors={colorPalette}
           completedIntervals={0}
+          workTime={workTime}
+          restTime={restTime}
+          setRestTime={setRestTimeValue}
         />
 
         {/* Exercise List */}

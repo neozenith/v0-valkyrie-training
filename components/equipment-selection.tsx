@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Badge } from "@/components/ui/badge"
-import { Dumbbell, Zap, Armchair, Circle, Minus, TrendingUp, Grip } from "lucide-react"
+import { Dumbbell, Zap, Armchair, Circle, Minus, TrendingUp, Grip, AlignHorizontalDistributeStart } from "lucide-react"
 import exerciseData from "@/data/exercises.json"
 import type { Exercise } from "@/types/exercise"
 
@@ -53,6 +53,13 @@ export default function EquipmentSelection({ onEquipmentSelected }: EquipmentSel
         name: "Pull-up Bar",
         description: "Hanging exercises",
         icon: <Grip className="h-5 w-5" />,
+        disabled: false,
+      },
+      {
+        id: "parallettes",
+        name: "Parallettes",
+        description: "Calisthenics bars",
+        icon: <AlignHorizontalDistributeStart className="h-5 w-5" />,
         disabled: false,
       },
       {

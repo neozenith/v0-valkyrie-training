@@ -8,20 +8,21 @@ interface NumberControlProps {
   value: number
   min: number
   max: number
+  step?: number
   onChange: (newValue: number) => void
 }
 
-export default function NumberControl({ label, value, min, max, onChange }: NumberControlProps) {
+export default function NumberControl({ label, value, min, max, step = 1, onChange }: NumberControlProps) {
   const handleDecrement = () => {
-    if (value > min) {
-      onChange(value - 1)
-    }
+    // Ensure the new value doesn't go below the minimum
+    const newValue = Math.max(min, value - step)
+    onChange(newValue)
   }
 
   const handleIncrement = () => {
-    if (value < max) {
-      onChange(value + 1)
-    }
+    // Ensure the new value doesn't exceed the maximum
+    const newValue = Math.min(max, value + step)
+    onChange(newValue)
   }
 
   return (
