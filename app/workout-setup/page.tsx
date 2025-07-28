@@ -81,18 +81,18 @@ function WorkoutSetupContent() {
   useEffect(() => {
     if (availableExercises.length === 0) return
 
-    if (params.exerciseIds && params.exerciseIds.length > 0) {
-      // Use exercises from URL parameters
+    // If we have valid exercise IDs from URL AND the count matches current selectedExercises
+    if (params.exerciseIds && params.exerciseIds.length > 0 && params.exerciseIds.length === selectedExercises) {
       const validExerciseIds = validateExerciseIds(params.exerciseIds, selectedEquipment)
       const exercisesFromUrl = exerciseIdsToExercises(validExerciseIds)
       
-      if (exercisesFromUrl.length > 0) {
+      if (exercisesFromUrl.length === selectedExercises) {
         setWorkoutExercises(exercisesFromUrl)
         return
       }
     }
 
-    // Generate random exercises if none specified or invalid ones
+    // Generate random exercises if none specified, invalid ones, or count mismatch
     regenerateWorkout()
   }, [availableExercises, selectedExercises]) // Don't include params in dependency to avoid loops
 
@@ -285,7 +285,7 @@ function WorkoutSetupContent() {
             </div>
             <div className="mt-6 text-center border-t border-slate-700/50 pt-4">
               <h3 className="text-lg font-light text-white">Total Workout Time</h3>
-              <p className="text-3xl font-mono text-purple-300 mt-1">{formatTime(totalWorkoutTime)}</p>
+              <p className="text-3xl font-mono text-purple-300 mt-1" data-testid="total-workout-time">{formatTime(totalWorkoutTime)}</p>
             </div>
           </CardContent>
         </Card>
@@ -304,7 +304,7 @@ function WorkoutSetupContent() {
         />
 
         {/* Exercise List */}
-        <div className="space-y-4">
+        <div className="space-y-4" data-testid="exercise-list-section">
           <div className="flex justify-between items-center">
             <h3 className="text-xl font-light text-white">Your Workout ({availableExercises.length} available)</h3>
             <Button
@@ -312,6 +312,7 @@ function WorkoutSetupContent() {
               onClick={regenerateWorkout}
               disabled={availableExercises.length === 0}
               className="border-slate-500 text-slate-300 hover:bg-slate-800/50 hover:text-white bg-transparent"
+              data-testid="shuffle-exercises-button"
             >
               <RotateCcw className="h-4 w-4 mr-2" />
               Shuffle
@@ -321,7 +322,11 @@ function WorkoutSetupContent() {
           {workoutExercises.length > 0 ? (
             <div className="space-y-3">
               {workoutExercises.map((exerciseVariant, index) => (
-                <Card key={`${exerciseVariant.exercise.id}-${index}`} className="bg-slate-800/30 border-slate-700/50">
+                <Card 
+                  key={`${exerciseVariant.exercise.id}-${index}`} 
+                  className="bg-slate-800/30 border-slate-700/50"
+                  data-testid={`exercise-card-${index}`}
+                >
                   <CardContent className="p-4">
                     <div className="flex justify-between items-start">
                       <div className="flex-1 space-y-2">
@@ -330,11 +335,12 @@ function WorkoutSetupContent() {
                             className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold shadow-inner shadow-black/20 ${
                               colorPalette[index % colorPalette.length]
                             }`}
+                            data-testid={`exercise-badge-${index}`}
                           >
                             {index + 1}
                           </Badge>
                           <div>
-                            <h4 className="font-medium text-white">{getVariantName(exerciseVariant)}</h4>
+                            <h4 className="font-medium text-white" data-testid={`exercise-name-${index}`}>{getVariantName(exerciseVariant)}</h4>
                             <div className="flex flex-wrap gap-1 mt-1">
                               {exerciseVariant.exercise.equipment
                                 .filter((eq) => eq !== "bodyweight")
@@ -400,6 +406,7 @@ function WorkoutSetupContent() {
                         size="sm"
                         onClick={() => toggleExerciseExpansion(index)}
                         className="text-slate-400 hover:text-white hover:bg-slate-700/50 flex items-center gap-1"
+                        data-testid={`exercise-difficulty-toggle-${index}`}
                       >
                         {expandedExercise === index ? (
                           <>
@@ -435,6 +442,7 @@ function WorkoutSetupContent() {
             size="lg"
             disabled={workoutExercises.length === 0}
             className="px-12 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 disabled:bg-slate-600 disabled:shadow-none"
+            data-testid="start-workout-button"
           >
             Start Workout
           </Button>

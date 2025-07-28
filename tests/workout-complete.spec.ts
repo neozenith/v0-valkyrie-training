@@ -18,7 +18,7 @@ test.describe('Workout Complete', () => {
     await expect(page).toHaveURL(/\/workout-timer/);
     
     // Skip through entire workout to reach complete screen
-    const skipButton = page.locator('button[class*="bg-transparent"][class*="border-slate-500"]');
+    const skipButton = page.getByTestId('skip-button');
     let attempts = 0;
     const maxAttempts = 30;
     
@@ -167,24 +167,34 @@ test.describe('Workout Complete', () => {
     // Should be on workout setup page
     await expect(page).toHaveURL(/\/workout-setup/);
     
-    // Just test with default settings but different equipment
-    await page.getByRole('button', { name: /Start Workout/i }).click();
+    // Wait for exercises to load before starting workout
+    await expect(page.getByTestId('exercise-card-0')).toBeVisible({ timeout: 10000 });
+    
+    // Start workout using data-testid
+    await page.getByTestId('start-workout-button').click();
     
     // Should be on workout timer page
     await expect(page).toHaveURL(/\/workout-timer/);
     
-    // Complete this workout quickly
-    const skipButton = page.locator('button[class*="bg-transparent"][class*="border-slate-500"]');
+    // Complete this workout quickly using improved skip button selector
+    const skipButton = page.getByTestId('skip-button');
     let attempts = 0;
     const maxAttempts = 30;
     
     while (attempts < maxAttempts) {
       await skipButton.click();
-      await page.waitForTimeout(100); // Reduced wait time
+      await page.waitForTimeout(200); // Slightly longer wait for more reliable clicking
       attempts++;
       
+      // Check if we've reached the workout complete screen
       const workoutCompleteExists = await page.getByText('Workout Complete!').isVisible().catch(() => false);
       if (workoutCompleteExists) {
+        break;
+      }
+      
+      // Also check URL in case redirect happened
+      const currentUrl = page.url();
+      if (currentUrl.includes('/workout-complete')) {
         break;
       }
     }

@@ -30,12 +30,12 @@ test.describe('Workout Timer', () => {
     // Wait for timer to start
     await page.waitForTimeout(500);
     
-    // Verify play button is present (purple background button)
-    const playButton = page.locator('button[class*="bg-purple-600"]');
+    // Verify play button is present using data-testid
+    const playButton = page.getByTestId('play-pause-button');
     await expect(playButton).toBeVisible();
     
     // Verify skip button is present (border button)
-    const skipButton = page.locator('button[class*="bg-transparent"][class*="border-slate-500"]');
+    const skipButton = page.getByTestId('skip-button');
     await expect(skipButton).toBeVisible();
     
     // Verify timer is working
@@ -50,7 +50,7 @@ test.describe('Workout Timer', () => {
     const initialExercise = await page.locator('h2').first().textContent();
     
     // Click the skip button
-    const skipButton = page.locator('button[class*="bg-transparent"][class*="border-slate-500"]');
+    const skipButton = page.getByTestId('skip-button');
     await skipButton.click();
     
     // Wait for transition
@@ -101,15 +101,15 @@ test.describe('Workout Timer', () => {
     const progressBar = page.locator('[role="progressbar"]');
     await expect(progressBar).toBeVisible();
     
-    // Use skip button to complete workout - needs more attempts for full 2-set workout
-    const skipButton = page.locator('button[class*="bg-transparent"][class*="border-slate-500"]');
+    // Use skip button to complete workout using improved selector
+    const skipButton = page.getByTestId('skip-button');
     
     let attempts = 0;
     const maxAttempts = 50; // Increased from 30 to handle full workout completion
     
     while (attempts < maxAttempts) {
       await skipButton.click();
-      await page.waitForTimeout(100); // Reduced wait time for faster execution
+      await page.waitForTimeout(200); // Slightly longer wait for more reliable clicking
       attempts++;
       
       // Check if we've reached the workout complete screen
@@ -184,8 +184,11 @@ test.describe('Workout Timer', () => {
     // Start with specific parameters
     await page.goto('/workout-setup?equipment=bodyweight&sets=3&exercises=4&style=tabata&workTime=30&restTime=10&setRestTime=90');
     
-    // Start workout
-    await page.getByRole('button', { name: /Start Workout/i }).click();
+    // Wait for exercises to load
+    await expect(page.getByTestId('exercise-card-0')).toBeVisible({ timeout: 10000 });
+    
+    // Start workout using data-testid
+    await page.getByTestId('start-workout-button').click();
     
     // Should be on timer with correct parameters
     await expect(page).toHaveURL(/\/workout-timer.*sets=3.*exercises=4.*style=tabata.*workTime=30.*restTime=10.*setRestTime=90/);
@@ -194,7 +197,7 @@ test.describe('Workout Timer', () => {
     await expect(page.getByText(/Set 1\/3/)).toBeVisible();
     
     // Skip a few intervals
-    const skipButton = page.locator('button[class*="bg-transparent"][class*="border-slate-500"]');
+    const skipButton = page.getByTestId('skip-button');
     await skipButton.click();
     await page.waitForTimeout(300);
     

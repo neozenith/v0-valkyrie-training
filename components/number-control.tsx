@@ -25,8 +25,11 @@ export default function NumberControl({ label, value, min, max, step = 1, onChan
     onChange(newValue)
   }
 
+  // Create a test ID based on the label
+  const testIdBase = label.toLowerCase().replace(/\s+/g, '-')
+
   return (
-    <div className="space-y-3">
+    <div className="space-y-3" data-testid={`${testIdBase}-control`}>
       <h3 className="text-lg font-light text-white text-center">{label}</h3>
       <div className="flex items-center justify-center gap-4">
         <Button
@@ -35,16 +38,23 @@ export default function NumberControl({ label, value, min, max, step = 1, onChan
           onClick={handleDecrement}
           disabled={value <= min}
           className="rounded-full border-slate-500 text-slate-300 hover:bg-slate-800/50 hover:text-white disabled:opacity-30 bg-transparent"
+          data-testid={`${testIdBase}-decrease`}
         >
           <Minus className="h-4 w-4" />
         </Button>
-        <span className="text-2xl font-mono text-white w-12 text-center">{value}</span>
+        <span 
+          className="text-2xl font-mono text-white w-12 text-center"
+          data-testid={`${testIdBase}-value`}
+        >
+          {value}
+        </span>
         <Button
           variant="outline"
           size="icon"
           onClick={handleIncrement}
           disabled={value >= max}
           className="rounded-full border-slate-500 text-slate-300 hover:bg-slate-800/50 hover:text-white disabled:opacity-30"
+          data-testid={`${testIdBase}-increase`}
         >
           <Plus className="h-4 w-4" />
         </Button>

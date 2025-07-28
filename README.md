@@ -17,7 +17,15 @@ pnpm dev # Start development server with hot reload
 pnpm build # Build for production
 pnpm start # Start production server
 pnpm lint # Run ESLint
+pnpm test # Run Playwright tests
 ```
+
+## Browser Support
+
+This application supports the following browsers:
+- ✅ Chrome/Chromium (Desktop & Mobile)
+- ✅ Firefox (Desktop)
+- ❌ Safari (Not supported - see [`docs/BROWSER_SUPPORT.md`](docs/BROWSER_SUPPORT.md))
 
 ## Deployment
 

@@ -139,12 +139,15 @@ See `playwright.config.ts` for:
 Stuck Playwright processes can be found (and stopped) with the following:
 
 ```sh
-  # Check for any running Playwright, Node, or npm processes
-  ps aux | grep -E "(playwright|node|npm)" | grep -v grep
+# Check for any running Playwright, Node, or npm processes
+ps aux | grep -E "(playwright|node|npm)" | grep -v grep
 
-  # List Playwright processes specifically
-  pgrep -fl "playwright" | head -10
+# List Playwright processes specifically
+pgrep -fl "playwright" | head -10
 
-  # Check what process is using port 3000
-  lsof -ti:3000
+# Check what process is using port 3000
+lsof -ti:3000
+
+# One-liner to kill running process
+lsof -ti:3000 | xargs kill -9
 ```
