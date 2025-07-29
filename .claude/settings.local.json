@@ -14,7 +14,14 @@
       "Bash(curl:*)",
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_close",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_wait_for",
+      "Bash(npm test)",
+      "Bash(ls:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)"
     ],
     "deny": []
   }

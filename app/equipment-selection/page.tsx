@@ -141,6 +141,20 @@ function EquipmentSelectionContent() {
           <p className="text-md text-purple-300 font-light pt-4">Select your available equipment below to begin.</p>
         </div>
 
+        {/* Continue Button - Moved up for better visibility on mobile */}
+        <div className="text-center space-y-3">
+          <Button
+            onClick={handleContinue}
+            size="lg"
+            className="px-12 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
+          >
+            Build My Workout
+          </Button>
+          <p className="text-sm text-slate-400">
+            {selectedEquipment.length} item{selectedEquipment.length !== 1 ? "s" : ""} selected
+          </p>
+        </div>
+
         {/* Equipment Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {equipmentOptions.map((equipment) => (
@@ -192,19 +206,6 @@ function EquipmentSelectionContent() {
           ))}
         </div>
 
-        {/* Continue Button */}
-        <div className="text-center space-y-3">
-          <p className="text-sm text-slate-400">
-            {selectedEquipment.length} item{selectedEquipment.length !== 1 ? "s" : ""} selected
-          </p>
-          <Button
-            onClick={handleContinue}
-            size="lg"
-            className="px-12 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
-          >
-            Build My Workout
-          </Button>
-        </div>
       </div>
     </div>
   )

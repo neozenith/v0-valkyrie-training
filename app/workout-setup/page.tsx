@@ -210,7 +210,15 @@ function WorkoutSetupContent() {
             Back
           </Button>
           <h1 className="text-2xl md:text-3xl font-light text-white">Workout Setup</h1>
-          <div className="w-20" /> {/* Spacer */}
+          <Button
+            onClick={handleStartWorkout}
+            size="sm"
+            disabled={workoutExercises.length === 0}
+            className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 disabled:bg-slate-600 disabled:shadow-none"
+            data-testid="start-workout-button-header"
+          >
+            Start
+          </Button>
         </div>
 
         {/* Configuration Card */}

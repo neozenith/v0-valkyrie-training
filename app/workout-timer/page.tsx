@@ -379,6 +379,27 @@ function WorkoutTimerContent() {
           </div>
         </div>
 
+        {/* Controls - Moved up for better visibility on mobile */}
+        <div className="flex justify-center gap-4">
+          <Button 
+            onClick={toggleTimer} 
+            size="lg" 
+            className="w-32 bg-purple-600 hover:bg-purple-700 rounded-full"
+            data-testid="play-pause-button"
+          >
+            {isActive ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+          </Button>
+          <Button
+            onClick={skipPhase}
+            variant="outline"
+            size="lg"
+            className="w-32 border-slate-500 text-slate-300 hover:bg-slate-800/50 hover:text-white rounded-full bg-transparent"
+            data-testid="skip-button"
+          >
+            <SkipForward className="h-5 w-5" />
+          </Button>
+        </div>
+
         {/* Progress Bar */}
         <Progress value={progressPercentage} className="h-1 bg-slate-800" />
 
@@ -417,26 +438,6 @@ function WorkoutTimerContent() {
           </CardContent>
         </Card>
 
-        {/* Controls */}
-        <div className="flex justify-center gap-4">
-          <Button 
-            onClick={toggleTimer} 
-            size="lg" 
-            className="w-32 bg-purple-600 hover:bg-purple-700 rounded-full"
-            data-testid="play-pause-button"
-          >
-            {isActive ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
-          </Button>
-          <Button
-            onClick={skipPhase}
-            variant="outline"
-            size="lg"
-            className="w-32 border-slate-500 text-slate-300 hover:bg-slate-800/50 hover:text-white rounded-full bg-transparent"
-            data-testid="skip-button"
-          >
-            <SkipForward className="h-5 w-5" />
-          </Button>
-        </div>
 
         {/* Cues and Upcoming */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">

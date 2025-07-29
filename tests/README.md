@@ -150,4 +150,5 @@ lsof -ti:3000
 
 # One-liner to kill running process
 lsof -ti:3000 | xargs kill -9
+lsof -ti:3001 | xargs kill -9
 ```
