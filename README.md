@@ -10,7 +10,17 @@
 This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
 Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
 
-## Architecture
+## Diagrams
+
+### PNG
+
+![](./docs/valkyrie_app_architecture.png)
+
+### SVG
+
+![](./docs/valkyrie_app_architecture.svg)
+
+### MermaidJS
 
 ```mermaid
 ---
@@ -114,7 +124,7 @@ flowchart TB
     class P,Q,R deployment
     class S,T,U testing
     class V,W,X,Y,Z pages
-    
+
 ```
 
 ## Quickstart
