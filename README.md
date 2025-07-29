@@ -12,15 +12,12 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 ## Diagrams
 
-### PNG
 
-![](./docs/valkyrie_app_architecture.png)
-
-### SVG
+### Architecture SVG
 
 ![](./docs/valkyrie_app_architecture.svg)
 
-### MermaidJS
+### Architecture MermaidJS
 
 ```mermaid
 ---
