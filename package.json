@@ -12,7 +12,9 @@
     "test": "NODE_ENV=test && playwright test",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
-    "test:report": "NODE_ENV=test && playwright show-report"
+    "test:report": "NODE_ENV=test && playwright show-report",
+    "dev:graph": "next dev --port 3004",
+    "graph-visualizer": "echo 'Starting Exercise Graph Visualizer...' && open http://localhost:3001/dev/graph-visualizer && npm run dev:graph"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -47,6 +49,9 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
+    "cytoscape": "^3.30.4",
+    "cytoscape-dagre": "^2.5.0",
+    "cytoscape-fcose": "^2.2.0",
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
     "geist": "^1.4.2",
@@ -68,6 +73,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.54.1",
+    "@types/cytoscape": "^3.21.8",
     "@types/node": "^22.16.5",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
