@@ -188,7 +188,7 @@ export function migrateToGraph(
     const subgraphId = getSubgraphId(pattern, exercise.equipment)
     const subgraph = subgraphs[subgraphId]
     
-    // Process regressions (these become incoming edges to the current exercise)
+    // Process regressions (these become outgoing edges from the current exercise to easier exercises)
     if (relations.regressions) {
       for (const regression of relations.regressions) {
         const regressionExercise = oldExercises.find(e => e.id === regression.exerciseId)
@@ -199,10 +199,10 @@ export function migrateToGraph(
         
         const edge: ExerciseEdge = {
           id: `edge-${++edgeIdCounter.count}`,
-          from: regression.exerciseId,
-          to: exerciseId,
-          relationship: 'progression',
-          difficultyChange: regression.difficulty - 1, // Convert to relative scale
+          from: exerciseId,
+          to: regression.exerciseId,
+          relationship: 'regression',
+          difficultyChange: regression.difficulty - 1, // Convert to relative scale (should be negative)
           reason: regression.reason
         }
         
@@ -314,19 +314,31 @@ export function migrateToGraph(
 
 /**
  * Load and migrate the full exercise catalog
+ * Now only loads the consolidated catalog and relationships files
  */
 export async function loadAndMigrateFullCatalog(): Promise<ExerciseGraph> {
-  // Import the data files
-  const exercises = await import('@/data/exercises.json')
+  // Import the consolidated data files
   const relationships = await import('@/data/exercise-relationships.json')
   const catalog = await import('@/data/exercises-catalog.json')
   const modifiers = await import('@/data/exercise-modifiers.json')
   
+  // Convert catalog exercises to old format for compatibility with migrateToGraph
+  const exercisesArray = Object.entries(catalog.exercises).map(([id, exercise]) => ({
+    id,
+    name: exercise.name,
+    equipment: exercise.equipment,
+    targetMuscles: exercise.targetMuscles,
+    cues: exercise.cues,
+    // Add empty regression/progression for compatibility
+    regression: { name: "", cues: [] },
+    progression: { name: "", cues: [] }
+  }))
+  
   // Migrate to graph format
   return migrateToGraph(
-    exercises.exercises,
+    exercisesArray,
     relationships,
     catalog,
-    modifiers.modifierRules
+    modifiers.modifiers
   )
 }

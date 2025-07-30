@@ -59,44 +59,7 @@ export default function GraphVisualizerDemoPage() {
         </div>
 
         {/* Description */}
-        <Card className="bg-slate-800/30 border-slate-700/50">
-          <CardContent className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-600 rounded-lg mb-3">
-                  <Network className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-medium text-white mb-2">Graph-Based Relationships</h3>
-                <p className="text-sm text-slate-400">
-                  Exercises are connected through progression, regression, and variation relationships, 
-                  forming a comprehensive training graph.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-600 rounded-lg mb-3">
-                  <Layers className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-medium text-white mb-2">Subgraph Organization</h3>
-                <p className="text-sm text-slate-400">
-                  Related exercises are grouped into subgraphs by movement pattern, 
-                  making the system scalable and easy to navigate.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-600 rounded-lg mb-3">
-                  <Database className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-medium text-white mb-2">Unified Edge System</h3>
-                <p className="text-sm text-slate-400">
-                  Progressions and regressions are stored as single edges that can be traversed 
-                  in both directions, eliminating data duplication.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+  
 
         {/* Tab Navigation */}
         <div className="flex gap-2 mb-6">
@@ -120,16 +83,7 @@ export default function GraphVisualizerDemoPage() {
           >
             Statistics
           </Button>
-          <Button
-            variant={selectedTab === 'data' ? 'default' : 'outline'}
-            onClick={() => setSelectedTab('data')}
-            className={selectedTab === 'data' 
-              ? 'bg-purple-600 hover:bg-purple-700 text-white' 
-              : 'border-slate-500 text-slate-300 hover:bg-slate-800/50'
-            }
-          >
-            Data Structure
-          </Button>
+
         </div>
 
         {/* Content */}
@@ -155,8 +109,8 @@ export default function GraphVisualizerDemoPage() {
                 graphData={graphData}
                 height={700}
                 defaultConfig={{
-                  layout: 'hierarchical',
-                  colorScheme: 'difficulty',
+                  layout: 'fcose',
+                  colorScheme: 'equipment',
                   maxDepth: 3,
                   showDifficulty: true
                 }}
@@ -266,52 +220,7 @@ export default function GraphVisualizerDemoPage() {
           </div>
         )}
 
-        {selectedTab === 'data' && graphData && (
-          <Card className="bg-slate-800/30 border-slate-700/50">
-            <CardHeader>
-              <CardTitle className="text-lg text-white">Graph Data Structure</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-medium text-white mb-2">Key Features:</h4>
-                  <ul className="space-y-1 text-sm text-slate-400">
-                    <li>• <strong className="text-slate-300">Unified Edges:</strong> Single edge represents both progression and regression</li>
-                    <li>• <strong className="text-slate-300">Subgraph Organization:</strong> Exercises grouped by movement pattern</li>
-                    <li>• <strong className="text-slate-300">Difficulty Scoring:</strong> Numeric difficulty changes for algorithmic processing</li>
-                    <li>• <strong className="text-slate-300">Equipment Integration:</strong> Automatic equipment requirement handling</li>
-                    <li>• <strong className="text-slate-300">Modifier Support:</strong> Rules for applying exercise modifiers</li>
-                  </ul>
-                </div>
 
-                <div>
-                  <h4 className="font-medium text-white mb-2">Sample Edge Structure:</h4>
-                  <pre className="bg-slate-900 p-4 rounded text-xs text-slate-300 overflow-x-auto">
-{JSON.stringify(
-  graphData.subgraphs[Object.keys(graphData.subgraphs)[0]]?.edges[0] || {
-    "id": "edge-1",
-    "from": "exercise-1",
-    "to": "exercise-2", 
-    "relationship": "progression",
-    "difficultyChange": 0.5,
-    "reason": "Progression reason"
-  }, null, 2)}
-                  </pre>
-                </div>
-
-                <div>
-                  <h4 className="font-medium text-white mb-2">Benefits:</h4>
-                  <ul className="space-y-1 text-sm text-slate-400">
-                    <li>• <strong className="text-slate-300">Scalable:</strong> Easy to add new exercises and relationships</li>
-                    <li>• <strong className="text-slate-300">Algorithmic:</strong> Supports path finding and difficulty calculation</li>
-                    <li>• <strong className="text-slate-300">Maintainable:</strong> Clear separation of concerns with subgraphs</li>
-                    <li>• <strong className="text-slate-300">Extensible:</strong> Supports modifiers, requirements, and custom metadata</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        )}
       </div>
     </div>
   )

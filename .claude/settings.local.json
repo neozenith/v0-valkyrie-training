@@ -36,8 +36,11 @@
       "mcp__playwright__browser_type",
       "mcp__playwright__browser_install",
       "mcp__iconify__iconify_search",
-      "mcp__iconify__iconify_get_icon"
-      "mcp__sequential-thinking__sequentialthinking"
+      "mcp__iconify__iconify_get_icon",
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(jq:*)",
+      "Bash(grep:*)",
+      "Bash(python:*)"
     ],
     "deny": []
   }

@@ -2,8 +2,14 @@
   "exercises": {
     "push-ups": {
       "name": "Push-Ups",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "chest",
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Hands shoulder-width apart, fingers pointing forward.",
         "Body in a straight line from head to heels.",
@@ -13,8 +19,15 @@
     },
     "incline-push-ups": {
       "name": "Incline Push-Ups",
-      "equipment": ["bodyweight", "bench"],
-      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "equipment": [
+        "bodyweight",
+        "bench"
+      ],
+      "targetMuscles": [
+        "chest",
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Place hands on a bench or elevated surface.",
         "The higher the surface, the easier the exercise.",
@@ -24,8 +37,15 @@
     },
     "decline-push-ups": {
       "name": "Decline Push-Ups",
-      "equipment": ["bodyweight", "bench"],
-      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "equipment": [
+        "bodyweight",
+        "bench"
+      ],
+      "targetMuscles": [
+        "chest",
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Place feet on a bench or elevated surface.",
         "This increases the load on your upper chest and shoulders.",
@@ -35,8 +55,14 @@
     },
     "bodyweight-squats": {
       "name": "Bodyweight Squats",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
       "cues": [
         "Stand with feet shoulder-width apart, toes slightly out.",
         "Keep your chest up and core engaged.",
@@ -47,8 +73,15 @@
     },
     "box-squats": {
       "name": "Box Squats",
-      "equipment": ["bodyweight", "bench"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "equipment": [
+        "bodyweight",
+        "bench"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
       "cues": [
         "Place a box or chair behind you.",
         "Squat down until you gently touch the box.",
@@ -58,8 +91,15 @@
     },
     "jump-squats": {
       "name": "Jump Squats",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings", "calves"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings",
+        "calves"
+      ],
       "cues": [
         "Perform a regular squat, then explode upward into a jump.",
         "Land softly on the balls of your feet.",
@@ -69,8 +109,14 @@
     },
     "plank": {
       "name": "Plank",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "abs", "shoulders"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs",
+        "shoulders"
+      ],
       "cues": [
         "Position on forearms, elbows directly under shoulders.",
         "Maintain a straight line from head to heels.",
@@ -80,8 +126,14 @@
     },
     "knee-plank": {
       "name": "Knee Plank",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "abs", "shoulders"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs",
+        "shoulders"
+      ],
       "cues": [
         "Perform the plank on your knees instead of your toes.",
         "Keep a straight line from your head to your knees.",
@@ -91,8 +143,15 @@
     },
     "plank-arm-leg-lift": {
       "name": "Plank with Arm/Leg Lift",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "abs", "shoulders", "glutes"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs",
+        "shoulders",
+        "glutes"
+      ],
       "cues": [
         "From a stable plank, slowly lift one arm or leg off the ground.",
         "Hold for 2-3 seconds without letting your hips rotate.",
@@ -102,8 +161,14 @@
     },
     "forward-lunges": {
       "name": "Forward Lunges",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
       "cues": [
         "Step forward with one leg.",
         "Lower your hips until both knees are bent at a 90-degree angle.",
@@ -113,8 +178,14 @@
     },
     "static-split-squats": {
       "name": "Static Split Squats",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
       "cues": [
         "Start in a staggered stance without the stepping motion.",
         "Lower and raise your body, focusing on balance.",
@@ -124,8 +195,14 @@
     },
     "walking-lunges": {
       "name": "Walking Lunges",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
       "cues": [
         "Instead of pushing back, step forward with the back leg into the next lunge.",
         "This creates a continuous walking motion.",
@@ -135,8 +212,14 @@
     },
     "glute-bridges": {
       "name": "Glute Bridges",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["glutes", "hamstrings", "core"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "glutes",
+        "hamstrings",
+        "core"
+      ],
       "cues": [
         "Lie on your back with knees bent, feet flat on the floor hip-width apart.",
         "Drive through your heels and lift your hips toward the ceiling.",
@@ -146,8 +229,14 @@
     },
     "partial-glute-bridges": {
       "name": "Partial Glute Bridges",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["glutes", "hamstrings", "core"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "glutes",
+        "hamstrings",
+        "core"
+      ],
       "cues": [
         "Lift your hips only halfway up.",
         "Focus on initiating the movement by squeezing your glutes.",
@@ -157,8 +246,14 @@
     },
     "single-leg-glute-bridge": {
       "name": "Single-Leg Glute Bridge",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["glutes", "hamstrings", "core"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "glutes",
+        "hamstrings",
+        "core"
+      ],
       "cues": [
         "Extend one leg straight out.",
         "Drive through the heel of the planted foot to lift your hips.",
@@ -168,8 +263,14 @@
     },
     "burpees": {
       "name": "Burpees",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["full-body", "cardio", "core"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body",
+        "cardio",
+        "core"
+      ],
       "cues": [
         "Start standing, then drop into a squat with hands on the floor.",
         "Kick your feet back to a plank position.",
@@ -179,8 +280,14 @@
     },
     "no-push-up-burpee": {
       "name": "No Push-Up Burpee",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["full-body", "cardio", "core"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body",
+        "cardio",
+        "core"
+      ],
       "cues": [
         "Perform the burpee motion without the push-up.",
         "You can also step your feet back and forward instead of jumping.",
@@ -190,8 +297,14 @@
     },
     "burpee-tuck-jump": {
       "name": "Burpee with Tuck Jump",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["full-body", "cardio", "core"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body",
+        "cardio",
+        "core"
+      ],
       "cues": [
         "At the top of the burpee, instead of a standard jump, pull your knees to your chest.",
         "This adds an explosive, athletic component.",
@@ -201,8 +314,14 @@
     },
     "mountain-climbers": {
       "name": "Mountain Climbers",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "cardio", "shoulders"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "cardio",
+        "shoulders"
+      ],
       "cues": [
         "Start in a high plank position.",
         "Keep your back flat and abs engaged.",
@@ -212,8 +331,13 @@
     },
     "slow-mountain-climbers": {
       "name": "Slow Mountain Climbers",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "shoulders"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "shoulders"
+      ],
       "cues": [
         "Perform the movement slowly and deliberately.",
         "Pause for a second with each knee drive.",
@@ -223,8 +347,15 @@
     },
     "cross-body-mountain-climbers": {
       "name": "Cross-Body Mountain Climbers",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "obliques", "cardio", "shoulders"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "obliques",
+        "cardio",
+        "shoulders"
+      ],
       "cues": [
         "Drive your knee towards the opposite elbow.",
         "This twisting motion engages your obliques more.",
@@ -234,8 +365,13 @@
     },
     "hollow-body-hold": {
       "name": "Hollow Body Hold",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "abs"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
       "cues": [
         "Lie on your back, press your lower back into the floor.",
         "Lift your legs and shoulders slightly off the ground.",
@@ -245,8 +381,13 @@
     },
     "tuck-hollow-hold": {
       "name": "Tuck Hollow Hold",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "abs"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
       "cues": [
         "Bend your knees and bring them towards your chest.",
         "This shortens the lever, making it easier to hold.",
@@ -256,8 +397,13 @@
     },
     "hollow-body-rocks": {
       "name": "Hollow Body Rocks",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "abs"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
       "cues": [
         "From the hollow hold, gently rock back and forth.",
         "Maintain the hollow shape throughout the rock.",
@@ -267,8 +413,14 @@
     },
     "superman": {
       "name": "Superman",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["lower-back", "glutes", "shoulders"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "lower-back",
+        "glutes",
+        "shoulders"
+      ],
       "cues": [
         "Lie face down with arms and legs extended.",
         "Simultaneously lift your arms, chest, and legs off the floor.",
@@ -278,8 +430,14 @@
     },
     "alternating-superman": {
       "name": "Alternating Superman",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["lower-back", "glutes", "shoulders"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "lower-back",
+        "glutes",
+        "shoulders"
+      ],
       "cues": [
         "Lift your right arm and left leg simultaneously.",
         "Lower and then lift your left arm and right leg.",
@@ -289,8 +447,14 @@
     },
     "superman-flutter-kicks": {
       "name": "Superman Hold with Flutter Kicks",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["lower-back", "glutes", "shoulders"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "lower-back",
+        "glutes",
+        "shoulders"
+      ],
       "cues": [
         "Hold the top position of the superman.",
         "Perform small, quick flutter kicks with your legs.",
@@ -300,8 +464,15 @@
     },
     "pistol-squat": {
       "name": "Pistol Squat",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["quadriceps", "glutes", "balance", "core"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "balance",
+        "core"
+      ],
       "cues": [
         "Balance on one leg, extending the other leg forward.",
         "Lower yourself into a full squat on the standing leg.",
@@ -311,8 +482,16 @@
     },
     "box-pistol-squat": {
       "name": "Box Pistol Squat",
-      "equipment": ["bodyweight", "bench"],
-      "targetMuscles": ["quadriceps", "glutes", "balance", "core"],
+      "equipment": [
+        "bodyweight",
+        "bench"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "balance",
+        "core"
+      ],
       "cues": [
         "Perform the movement while squatting down to a bench or box.",
         "This limits the range of motion and provides a target.",
@@ -322,8 +501,16 @@
     },
     "elevated-pistol-squat": {
       "name": "Elevated Pistol Squat",
-      "equipment": ["bodyweight", "bench"],
-      "targetMuscles": ["quadriceps", "glutes", "balance", "core"],
+      "equipment": [
+        "bodyweight",
+        "bench"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "balance",
+        "core"
+      ],
       "cues": [
         "Stand on a box or bench.",
         "This allows your non-working leg to drop lower.",
@@ -333,8 +520,14 @@
     },
     "pull-ups": {
       "name": "Pull-ups",
-      "equipment": ["pull-up-bar"],
-      "targetMuscles": ["back", "biceps", "shoulders"],
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "shoulders"
+      ],
       "cues": [
         "Grip the bar with palms facing away, slightly wider than shoulders.",
         "Start from a dead hang with arms fully extended.",
@@ -344,8 +537,15 @@
     },
     "band-assisted-pull-ups": {
       "name": "Band-Assisted Pull-ups",
-      "equipment": ["pull-up-bar", "resistance-bands"],
-      "targetMuscles": ["back", "biceps", "shoulders"],
+      "equipment": [
+        "pull-up-bar",
+        "resistance-bands"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "shoulders"
+      ],
       "cues": [
         "Loop a resistance band around the bar and place your feet or knees in it.",
         "The band provides assistance at the bottom of the movement.",
@@ -355,8 +555,15 @@
     },
     "weighted-pull-ups": {
       "name": "Weighted Pull-ups",
-      "equipment": ["pull-up-bar", "weight-belt"],
-      "targetMuscles": ["back", "biceps", "shoulders"],
+      "equipment": [
+        "pull-up-bar",
+        "weight-belt"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "shoulders"
+      ],
       "cues": [
         "Add weight using a dip belt or by holding a dumbbell between your feet.",
         "This overloads the muscles for strength and size.",
@@ -366,8 +573,13 @@
     },
     "chin-ups": {
       "name": "Chin-ups",
-      "equipment": ["pull-up-bar"],
-      "targetMuscles": ["biceps", "back"],
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "biceps",
+        "back"
+      ],
       "cues": [
         "Grip the bar with palms facing you, shoulder-width apart.",
         "Pull up until your chin is over the bar.",
@@ -377,8 +589,14 @@
     },
     "negative-chin-ups": {
       "name": "Negative Chin-ups",
-      "equipment": ["pull-up-bar", "bench"],
-      "targetMuscles": ["biceps", "back"],
+      "equipment": [
+        "pull-up-bar",
+        "bench"
+      ],
+      "targetMuscles": [
+        "biceps",
+        "back"
+      ],
       "cues": [
         "Jump or use a box to get your chin over the bar.",
         "Lower yourself as slowly as possible (aim for 3-5 seconds).",
@@ -388,8 +606,13 @@
     },
     "close-grip-chin-ups": {
       "name": "Close-Grip Chin-ups",
-      "equipment": ["pull-up-bar"],
-      "targetMuscles": ["biceps", "back"],
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "biceps",
+        "back"
+      ],
       "cues": [
         "Bring your hands closer together on the bar.",
         "This increases the focus and demand on your biceps.",
@@ -399,8 +622,14 @@
     },
     "hanging-leg-raises": {
       "name": "Hanging Leg Raises",
-      "equipment": ["pull-up-bar"],
-      "targetMuscles": ["core", "abs", "hip-flexors"],
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs",
+        "hip-flexors"
+      ],
       "cues": [
         "Hang from the bar with arms extended.",
         "Keep your legs straight and together.",
@@ -410,8 +639,14 @@
     },
     "hanging-knee-raises": {
       "name": "Hanging Knee Raises",
-      "equipment": ["pull-up-bar"],
-      "targetMuscles": ["core", "abs", "hip-flexors"],
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs",
+        "hip-flexors"
+      ],
       "cues": [
         "Hang from the bar with arms extended.",
         "Bend your knees and raise them towards your chest.",
@@ -421,8 +656,15 @@
     },
     "toes-to-bar": {
       "name": "Toes-to-Bar",
-      "equipment": ["pull-up-bar"],
-      "targetMuscles": ["core", "abs", "hip-flexors", "lats"],
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs",
+        "hip-flexors",
+        "lats"
+      ],
       "cues": [
         "Initiate the movement by pulling down on the bar with your lats.",
         "Use your abs to bring your toes up to touch the bar.",
@@ -432,8 +674,13 @@
     },
     "dumbbell-bicep-curls": {
       "name": "Dumbbell Bicep Curls",
-      "equipment": ["dumbbells"],
-      "targetMuscles": ["biceps", "forearms"],
+      "equipment": [
+        "dumbbells"
+      ],
+      "targetMuscles": [
+        "biceps",
+        "forearms"
+      ],
       "cues": [
         "Stand with dumbbells at your sides, palms forward.",
         "Keep elbows pinned to your sides.",
@@ -443,8 +690,14 @@
     },
     "seated-bicep-curls": {
       "name": "Seated Bicep Curls",
-      "equipment": ["dumbbells", "bench"],
-      "targetMuscles": ["biceps", "forearms"],
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "targetMuscles": [
+        "biceps",
+        "forearms"
+      ],
       "cues": [
         "Sit on a bench or chair for stability.",
         "This helps prevent using momentum from your lower body.",
@@ -454,8 +707,14 @@
     },
     "incline-dumbbell-curls": {
       "name": "Incline Dumbbell Curls",
-      "equipment": ["dumbbells", "bench"],
-      "targetMuscles": ["biceps", "forearms"],
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "targetMuscles": [
+        "biceps",
+        "forearms"
+      ],
       "cues": [
         "Lie back on an incline bench (30-45 degrees).",
         "This puts your biceps in a stretched position, increasing the difficulty.",
@@ -465,8 +724,14 @@
     },
     "bent-over-dumbbell-rows": {
       "name": "Bent-Over Dumbbell Rows",
-      "equipment": ["dumbbells"],
-      "targetMuscles": ["back", "biceps", "rear-delts"],
+      "equipment": [
+        "dumbbells"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "rear-delts"
+      ],
       "cues": [
         "Hinge at your hips with a slight bend in your knees, back straight.",
         "Pull dumbbells to your lower ribs, keeping elbows close to your body.",
@@ -476,8 +741,15 @@
     },
     "chest-supported-row": {
       "name": "Chest-Supported Row",
-      "equipment": ["dumbbells", "bench"],
-      "targetMuscles": ["back", "biceps", "rear-delts"],
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "rear-delts"
+      ],
       "cues": [
         "Lie face down on an incline bench.",
         "This supports your torso and isolates the back muscles.",
@@ -487,8 +759,14 @@
     },
     "renegade-rows": {
       "name": "Renegade Rows",
-      "equipment": ["dumbbells"],
-      "targetMuscles": ["back", "core", "shoulders"],
+      "equipment": [
+        "dumbbells"
+      ],
+      "targetMuscles": [
+        "back",
+        "core",
+        "shoulders"
+      ],
       "cues": [
         "Start in a plank position holding dumbbells.",
         "Row one dumbbell up while maintaining a stable plank.",
@@ -498,8 +776,15 @@
     },
     "dumbbell-bench-press": {
       "name": "Dumbbell Bench Press",
-      "equipment": ["dumbbells", "bench"],
-      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "targetMuscles": [
+        "chest",
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Lie on a flat bench with a dumbbell in each hand.",
         "Keep your feet flat on the floor and back slightly arched.",
@@ -509,8 +794,14 @@
     },
     "dumbbell-floor-press": {
       "name": "Dumbbell Floor Press",
-      "equipment": ["dumbbells"],
-      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "equipment": [
+        "dumbbells"
+      ],
+      "targetMuscles": [
+        "chest",
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Lie on the floor instead of a bench.",
         "This limits the range of motion, which can be safer for shoulders.",
@@ -520,8 +811,15 @@
     },
     "incline-dumbbell-press": {
       "name": "Incline Dumbbell Press",
-      "equipment": ["dumbbells", "bench"],
-      "targetMuscles": ["upper-chest", "shoulders", "triceps"],
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "targetMuscles": [
+        "upper-chest",
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Set the bench to a 30-45 degree incline.",
         "This targets the upper portion of your chest.",
@@ -531,8 +829,13 @@
     },
     "dumbbell-overhead-press": {
       "name": "Dumbbell Overhead Press",
-      "equipment": ["dumbbells"],
-      "targetMuscles": ["shoulders", "triceps"],
+      "equipment": [
+        "dumbbells"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Sit or stand with dumbbells at shoulder height, palms forward.",
         "Keep your core tight and back straight.",
@@ -542,8 +845,14 @@
     },
     "seated-overhead-press": {
       "name": "Seated Overhead Press",
-      "equipment": ["dumbbells", "bench"],
-      "targetMuscles": ["shoulders", "triceps"],
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Sitting on a bench with back support provides more stability.",
         "This allows you to focus purely on the pressing motion.",
@@ -553,8 +862,13 @@
     },
     "arnold-press": {
       "name": "Arnold Press",
-      "equipment": ["dumbbells"],
-      "targetMuscles": ["shoulders", "triceps"],
+      "equipment": [
+        "dumbbells"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Start with palms facing you at shoulder height.",
         "As you press up, rotate your palms to face forward at the top.",
@@ -564,8 +878,15 @@
     },
     "bulgarian-split-squats": {
       "name": "Bulgarian Split Squats",
-      "equipment": ["dumbbells", "bench"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
       "cues": [
         "Place the top of your back foot on a bench behind you.",
         "Hold dumbbells in each hand.",
@@ -575,8 +896,15 @@
     },
     "bodyweight-bulgarian-split-squats": {
       "name": "Bodyweight Bulgarian Split Squats",
-      "equipment": ["bodyweight", "bench"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "equipment": [
+        "bodyweight",
+        "bench"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
       "cues": [
         "Perform the exercise without any dumbbells.",
         "Focus on balance and achieving a full range of motion.",
@@ -586,8 +914,16 @@
     },
     "deficit-bulgarian-split-squats": {
       "name": "Deficit Bulgarian Split Squats",
-      "equipment": ["dumbbells", "bench", "platform"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+      "equipment": [
+        "dumbbells",
+        "bench",
+        "platform"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
       "cues": [
         "Elevate your front foot on a small platform (like a weight plate).",
         "This increases the range of motion and the stretch on the glutes.",
@@ -597,8 +933,14 @@
     },
     "kettlebell-swings": {
       "name": "Kettlebell Swings",
-      "equipment": ["kettlebells"],
-      "targetMuscles": ["glutes", "hamstrings", "core"],
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "glutes",
+        "hamstrings",
+        "core"
+      ],
       "cues": [
         "Stand with feet shoulder-width apart, kettlebell in front.",
         "Hinge at your hips to grab the kettlebell.",
@@ -609,8 +951,14 @@
     },
     "kettlebell-deadlifts": {
       "name": "Kettlebell Deadlifts",
-      "equipment": ["kettlebells"],
-      "targetMuscles": ["glutes", "hamstrings", "back"],
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "glutes",
+        "hamstrings",
+        "back"
+      ],
       "cues": [
         "Practice the hip hinge movement without the explosive swing.",
         "Stand over the kettlebell, hinge at the hips, and lift.",
@@ -620,8 +968,14 @@
     },
     "single-arm-kettlebell-swings": {
       "name": "Single-Arm Kettlebell Swings",
-      "equipment": ["kettlebells"],
-      "targetMuscles": ["glutes", "hamstrings", "core"],
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "glutes",
+        "hamstrings",
+        "core"
+      ],
       "cues": [
         "Perform the swing with one arm.",
         "This requires more core strength to prevent your body from rotating.",
@@ -631,8 +985,14 @@
     },
     "kettlebell-goblet-squats": {
       "name": "Kettlebell Goblet Squats",
-      "equipment": ["kettlebells"],
-      "targetMuscles": ["quadriceps", "glutes", "core"],
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "core"
+      ],
       "cues": [
         "Hold the kettlebell by the horns at chest level.",
         "Keep your elbows tucked in.",
@@ -643,8 +1003,14 @@
     },
     "double-kettlebell-front-squat": {
       "name": "Double Kettlebell Front Squat",
-      "equipment": ["kettlebells"],
-      "targetMuscles": ["quadriceps", "glutes", "core"],
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "core"
+      ],
       "cues": [
         "Clean two kettlebells into the rack position.",
         "This significantly increases the load and core demand.",
@@ -654,8 +1020,14 @@
     },
     "turkish-get-up": {
       "name": "Turkish Get-Up",
-      "equipment": ["kettlebells"],
-      "targetMuscles": ["full-body", "core", "shoulders"],
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "full-body",
+        "core",
+        "shoulders"
+      ],
       "cues": [
         "A complex, multi-step movement from lying to standing.",
         "Keep your eyes on the kettlebell at all times.",
@@ -665,8 +1037,13 @@
     },
     "half-turkish-get-up": {
       "name": "Half Turkish Get-Up",
-      "equipment": ["kettlebells"],
-      "targetMuscles": ["core", "shoulders"],
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "core",
+        "shoulders"
+      ],
       "cues": [
         "Perform only the first few steps, up to the seated position.",
         "This builds core and shoulder stability for the full movement.",
@@ -676,8 +1053,15 @@
     },
     "bottoms-up-turkish-get-up": {
       "name": "Bottoms-Up Turkish Get-Up",
-      "equipment": ["kettlebells"],
-      "targetMuscles": ["full-body", "core", "shoulders", "grip"],
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "full-body",
+        "core",
+        "shoulders",
+        "grip"
+      ],
       "cues": [
         "Hold the kettlebell upside down (bottoms-up).",
         "This requires immense grip strength and shoulder stability.",
@@ -687,8 +1071,14 @@
     },
     "resistance-band-rows": {
       "name": "Resistance Band Rows",
-      "equipment": ["resistance-bands"],
-      "targetMuscles": ["back", "biceps", "rear-delts"],
+      "equipment": [
+        "resistance-bands"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "rear-delts"
+      ],
       "cues": [
         "Anchor the band securely in front of you at chest height.",
         "Pull the band toward your ribs, keeping elbows close to your body.",
@@ -698,8 +1088,14 @@
     },
     "lighter-resistance-band-rows": {
       "name": "Lighter Resistance Band Rows",
-      "equipment": ["resistance-bands"],
-      "targetMuscles": ["back", "biceps", "rear-delts"],
+      "equipment": [
+        "resistance-bands"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "rear-delts"
+      ],
       "cues": [
         "Use a band with less tension.",
         "This allows you to focus on form and the mind-muscle connection.",
@@ -709,8 +1105,15 @@
     },
     "single-arm-band-rows": {
       "name": "Single-Arm Band Rows",
-      "equipment": ["resistance-bands"],
-      "targetMuscles": ["back", "biceps", "rear-delts", "core"],
+      "equipment": [
+        "resistance-bands"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "rear-delts",
+        "core"
+      ],
       "cues": [
         "Perform the row with one arm at a time.",
         "This challenges your core to resist rotation.",
@@ -720,8 +1123,14 @@
     },
     "band-pull-aparts": {
       "name": "Band Pull-Aparts",
-      "equipment": ["resistance-bands"],
-      "targetMuscles": ["rear-delts", "upper-back", "shoulders"],
+      "equipment": [
+        "resistance-bands"
+      ],
+      "targetMuscles": [
+        "rear-delts",
+        "upper-back",
+        "shoulders"
+      ],
       "cues": [
         "Hold a light band with an overhand grip, hands shoulder-width apart.",
         "Raise your arms straight out in front of you.",
@@ -731,8 +1140,14 @@
     },
     "wider-grip-band-pull-aparts": {
       "name": "Wider Grip Band Pull-Aparts",
-      "equipment": ["resistance-bands"],
-      "targetMuscles": ["rear-delts", "upper-back", "shoulders"],
+      "equipment": [
+        "resistance-bands"
+      ],
+      "targetMuscles": [
+        "rear-delts",
+        "upper-back",
+        "shoulders"
+      ],
       "cues": [
         "Place your hands further apart on the band.",
         "This reduces the effective resistance.",
@@ -742,8 +1157,14 @@
     },
     "pause-band-pull-aparts": {
       "name": "Pause Band Pull-Aparts",
-      "equipment": ["resistance-bands"],
-      "targetMuscles": ["rear-delts", "upper-back", "shoulders"],
+      "equipment": [
+        "resistance-bands"
+      ],
+      "targetMuscles": [
+        "rear-delts",
+        "upper-back",
+        "shoulders"
+      ],
       "cues": [
         "Hold the fully contracted position for 2-3 seconds.",
         "This increases time under tension for the target muscles.",
@@ -753,8 +1174,14 @@
     },
     "bench-dips": {
       "name": "Bench Dips",
-      "equipment": ["bench"],
-      "targetMuscles": ["triceps", "shoulders", "chest"],
+      "equipment": [
+        "bench"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "shoulders",
+        "chest"
+      ],
       "cues": [
         "Sit on the edge of a bench, hands beside your hips.",
         "Slide your hips forward off the bench, supporting your weight with your arms.",
@@ -764,8 +1191,14 @@
     },
     "bent-knee-bench-dips": {
       "name": "Bent-Knee Bench Dips",
-      "equipment": ["bench"],
-      "targetMuscles": ["triceps", "shoulders", "chest"],
+      "equipment": [
+        "bench"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "shoulders",
+        "chest"
+      ],
       "cues": [
         "Keep your knees bent and feet flat on the floor.",
         "This reduces the amount of bodyweight you have to lift.",
@@ -775,8 +1208,14 @@
     },
     "feet-elevated-bench-dips": {
       "name": "Feet-Elevated Bench Dips",
-      "equipment": ["bench"],
-      "targetMuscles": ["triceps", "shoulders", "chest"],
+      "equipment": [
+        "bench"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "shoulders",
+        "chest"
+      ],
       "cues": [
         "Place your feet on another bench or elevated surface in front of you.",
         "This increases the load on your triceps and shoulders.",
@@ -786,8 +1225,16 @@
     },
     "box-jumps": {
       "name": "Box Jumps",
-      "equipment": ["bench"],
-      "targetMuscles": ["glutes", "quadriceps", "hamstrings", "calves", "cardio"],
+      "equipment": [
+        "bench"
+      ],
+      "targetMuscles": [
+        "glutes",
+        "quadriceps",
+        "hamstrings",
+        "calves",
+        "cardio"
+      ],
       "cues": [
         "Stand in front of the bench or box.",
         "Dip into a quarter squat and explode up, swinging your arms for momentum.",
@@ -797,8 +1244,13 @@
     },
     "step-ups": {
       "name": "Step-Ups",
-      "equipment": ["bench"],
-      "targetMuscles": ["quadriceps", "glutes"],
+      "equipment": [
+        "bench"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes"
+      ],
       "cues": [
         "Place one foot fully on the bench.",
         "Drive through the heel of the front foot to lift your body up.",
@@ -808,8 +1260,16 @@
     },
     "tuck-jump-box": {
       "name": "Tuck Jump onto Box",
-      "equipment": ["bench"],
-      "targetMuscles": ["glutes", "quadriceps", "hamstrings", "calves", "cardio"],
+      "equipment": [
+        "bench"
+      ],
+      "targetMuscles": [
+        "glutes",
+        "quadriceps",
+        "hamstrings",
+        "calves",
+        "cardio"
+      ],
       "cues": [
         "As you jump, pull your knees high towards your chest.",
         "This requires more power and coordination.",
@@ -819,8 +1279,13 @@
     },
     "lower-step-ups": {
       "name": "Lower Step-Ups",
-      "equipment": ["platform"],
-      "targetMuscles": ["quadriceps", "glutes"],
+      "equipment": [
+        "platform"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes"
+      ],
       "cues": [
         "Use a lower surface if a standard bench is too high.",
         "This reduces the range of motion and strength required.",
@@ -830,8 +1295,14 @@
     },
     "weighted-step-ups": {
       "name": "Weighted Step-Ups",
-      "equipment": ["bench", "dumbbells"],
-      "targetMuscles": ["quadriceps", "glutes"],
+      "equipment": [
+        "bench",
+        "dumbbells"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes"
+      ],
       "cues": [
         "Hold dumbbells in each hand to increase the load.",
         "You can also add a high knee drive at the top for an extra challenge.",
@@ -841,8 +1312,15 @@
     },
     "barbell-back-squat": {
       "name": "Barbell Back Squat",
-      "equipment": ["barbell"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings", "core"],
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings",
+        "core"
+      ],
       "cues": [
         "Position the bar on your upper back (traps), not your neck.",
         "Keep your chest up and back straight.",
@@ -852,8 +1330,15 @@
     },
     "pause-squat": {
       "name": "Pause Squat",
-      "equipment": ["barbell"],
-      "targetMuscles": ["quadriceps", "glutes", "hamstrings", "core"],
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings",
+        "core"
+      ],
       "cues": [
         "Pause at the bottom of the squat for 2-3 seconds.",
         "Maintain tension and a tight core throughout the pause.",
@@ -863,8 +1348,15 @@
     },
     "barbell-bench-press": {
       "name": "Barbell Bench Press",
-      "equipment": ["barbell", "bench"],
-      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "targetMuscles": [
+        "chest",
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Lie with your eyes under the bar, feet firmly on the floor.",
         "Grip slightly wider than your shoulders.",
@@ -874,8 +1366,15 @@
     },
     "close-grip-bench-press": {
       "name": "Close-Grip Bench Press",
-      "equipment": ["barbell", "bench"],
-      "targetMuscles": ["triceps", "chest", "shoulders"],
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "chest",
+        "shoulders"
+      ],
       "cues": [
         "Take a shoulder-width grip on the bar.",
         "Keep your elbows tucked in close to your body as you lower the bar.",
@@ -885,8 +1384,15 @@
     },
     "barbell-deadlift": {
       "name": "Barbell Deadlift",
-      "equipment": ["barbell"],
-      "targetMuscles": ["hamstrings", "glutes", "back", "core"],
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "hamstrings",
+        "glutes",
+        "back",
+        "core"
+      ],
       "cues": [
         "Start with the bar over your midfoot, feet hip-width apart.",
         "Keep your back straight, chest up, and hips down.",
@@ -896,8 +1402,14 @@
     },
     "romanian-deadlift": {
       "name": "Romanian Deadlift (RDL)",
-      "equipment": ["barbell"],
-      "targetMuscles": ["hamstrings", "glutes", "back"],
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "hamstrings",
+        "glutes",
+        "back"
+      ],
       "cues": [
         "Start from the top position.",
         "Hinge at your hips, keeping your legs almost straight (slight knee bend).",
@@ -907,8 +1419,14 @@
     },
     "barbell-overhead-press": {
       "name": "Barbell Overhead Press",
-      "equipment": ["barbell"],
-      "targetMuscles": ["shoulders", "triceps", "core"],
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "core"
+      ],
       "cues": [
         "Start with the bar in the front rack position on your shoulders.",
         "Grip just outside your shoulders.",
@@ -918,8 +1436,15 @@
     },
     "push-press": {
       "name": "Push Press",
-      "equipment": ["barbell"],
-      "targetMuscles": ["shoulders", "triceps", "core", "legs"],
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "core",
+        "legs"
+      ],
       "cues": [
         "Initiate the movement with a slight dip and drive from your legs.",
         "This momentum helps you press heavier weight.",
@@ -929,8 +1454,14 @@
     },
     "barbell-bent-over-row": {
       "name": "Barbell Bent-Over Row",
-      "equipment": ["barbell"],
-      "targetMuscles": ["back", "biceps", "lats"],
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "lats"
+      ],
       "cues": [
         "Hinge at the hips until your torso is nearly parallel to the floor.",
         "Grip the bar with an overhand grip, slightly wider than your shoulders.",
@@ -940,8 +1471,14 @@
     },
     "pendlay-row": {
       "name": "Pendlay Row",
-      "equipment": ["barbell"],
-      "targetMuscles": ["back", "biceps", "lats"],
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "lats"
+      ],
       "cues": [
         "Start with the barbell on the floor for every rep.",
         "Explosively pull the bar from a dead stop to your chest.",
@@ -951,8 +1488,15 @@
     },
     "landmine-press": {
       "name": "Landmine Press",
-      "equipment": ["barbell", "landmine"],
-      "targetMuscles": ["shoulders", "upper-chest", "core"],
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "upper-chest",
+        "core"
+      ],
       "cues": [
         "Stand facing the landmine, holding the end of the barbell with both hands.",
         "Press the bar up and forward in an arc.",
@@ -962,8 +1506,15 @@
     },
     "half-kneeling-landmine-press": {
       "name": "Half-Kneeling Landmine Press",
-      "equipment": ["barbell", "landmine"],
-      "targetMuscles": ["shoulders", "upper-chest", "core"],
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "upper-chest",
+        "core"
+      ],
       "cues": [
         "Kneel on one knee for a more stable base.",
         "This reduces the demand on your core and improves stability.",
@@ -973,8 +1524,16 @@
     },
     "landmine-push-press": {
       "name": "Landmine Push Press",
-      "equipment": ["barbell", "landmine"],
-      "targetMuscles": ["shoulders", "upper-chest", "core", "legs"],
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "upper-chest",
+        "core",
+        "legs"
+      ],
       "cues": [
         "Add a dip and drive with your legs to initiate the press.",
         "Use momentum from your lower body to help press the weight.",
@@ -984,8 +1543,15 @@
     },
     "landmine-row": {
       "name": "Landmine Row",
-      "equipment": ["barbell", "landmine"],
-      "targetMuscles": ["back", "biceps", "core"],
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "core"
+      ],
       "cues": [
         "Stand straddling the barbell and hinge at your hips.",
         "Keep your back straight and nearly parallel to the floor.",
@@ -995,8 +1561,15 @@
     },
     "meadows-row": {
       "name": "Meadows Row",
-      "equipment": ["barbell", "landmine"],
-      "targetMuscles": ["back", "biceps", "lats"],
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "lats"
+      ],
       "cues": [
         "Stand perpendicular to the bar, using one arm.",
         "This allows for a greater range of motion and a different angle of pull.",
@@ -1006,8 +1579,15 @@
     },
     "landmine-rotational-twist": {
       "name": "Landmine Rotational Twist",
-      "equipment": ["barbell", "landmine"],
-      "targetMuscles": ["core", "obliques", "shoulders"],
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "core",
+        "obliques",
+        "shoulders"
+      ],
       "cues": [
         "Stand facing the landmine, holding the end of the bar with both hands, arms extended.",
         "Keeping your arms straight, rotate your torso to move the bar in an arc from one hip to the other.",
@@ -1017,8 +1597,13 @@
     },
     "bodyweight-torso-twists": {
       "name": "Bodyweight Torso Twists",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["core", "obliques"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "obliques"
+      ],
       "cues": [
         "Practice the rotational movement without weight.",
         "Focus on feeling your obliques contract.",
@@ -1028,8 +1613,15 @@
     },
     "explosive-landmine-twists": {
       "name": "Explosive Landmine Twists",
-      "equipment": ["barbell", "landmine"],
-      "targetMuscles": ["core", "obliques", "shoulders"],
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "core",
+        "obliques",
+        "shoulders"
+      ],
       "cues": [
         "Increase the speed of the rotation while maintaining control.",
         "This makes the exercise more powerful and athletic.",
@@ -1039,8 +1631,14 @@
     },
     "parallette-dips": {
       "name": "Parallette Dips",
-      "equipment": ["parallettes"],
-      "targetMuscles": ["triceps", "chest", "shoulders"],
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "chest",
+        "shoulders"
+      ],
       "cues": [
         "Start in a support hold on the parallettes, arms straight.",
         "Keep your chest up and shoulders down.",
@@ -1050,8 +1648,14 @@
     },
     "foot-assisted-dips": {
       "name": "Foot-Assisted Dips",
-      "equipment": ["parallettes"],
-      "targetMuscles": ["triceps", "chest", "shoulders"],
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "chest",
+        "shoulders"
+      ],
       "cues": [
         "Keep your feet on the floor in front of you.",
         "Use your legs to assist with the movement.",
@@ -1061,8 +1665,15 @@
     },
     "weighted-dips": {
       "name": "Weighted Dips",
-      "equipment": ["parallettes", "weight-belt"],
-      "targetMuscles": ["triceps", "chest", "shoulders"],
+      "equipment": [
+        "parallettes",
+        "weight-belt"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "chest",
+        "shoulders"
+      ],
       "cues": [
         "Use a dip belt to add weight or hold a dumbbell between your feet.",
         "This overloads the muscles for greater strength gains.",
@@ -1072,8 +1683,15 @@
     },
     "parallette-l-sit": {
       "name": "Parallette L-Sit",
-      "equipment": ["parallettes"],
-      "targetMuscles": ["core", "abs", "hip-flexors", "triceps"],
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs",
+        "hip-flexors",
+        "triceps"
+      ],
       "cues": [
         "Start in a support hold, arms locked out.",
         "Lift your legs straight out in front of you, parallel to the floor.",
@@ -1083,8 +1701,15 @@
     },
     "tuck-l-sit": {
       "name": "Tuck L-Sit",
-      "equipment": ["parallettes"],
-      "targetMuscles": ["core", "abs", "hip-flexors", "triceps"],
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs",
+        "hip-flexors",
+        "triceps"
+      ],
       "cues": [
         "Instead of keeping legs straight, bend your knees and tuck them in.",
         "This is a much easier position to hold.",
@@ -1094,8 +1719,15 @@
     },
     "v-sit": {
       "name": "V-Sit",
-      "equipment": ["parallettes"],
-      "targetMuscles": ["core", "abs", "hip-flexors", "triceps"],
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs",
+        "hip-flexors",
+        "triceps"
+      ],
       "cues": [
         "From the L-Sit, continue to raise your legs higher.",
         "Aim to get your torso and legs into a 'V' shape.",
@@ -1105,8 +1737,14 @@
     },
     "parallette-push-ups": {
       "name": "Parallette Push-Ups",
-      "equipment": ["parallettes"],
-      "targetMuscles": ["chest", "triceps", "shoulders"],
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "chest",
+        "triceps",
+        "shoulders"
+      ],
       "cues": [
         "Grip the parallettes with a neutral grip, hands under your shoulders.",
         "The parallettes allow for a deeper range of motion.",
@@ -1116,8 +1754,15 @@
     },
     "incline-parallette-push-ups": {
       "name": "Incline Parallette Push-Ups",
-      "equipment": ["parallettes", "bench"],
-      "targetMuscles": ["chest", "triceps", "shoulders"],
+      "equipment": [
+        "parallettes",
+        "bench"
+      ],
+      "targetMuscles": [
+        "chest",
+        "triceps",
+        "shoulders"
+      ],
       "cues": [
         "Place the parallettes on an elevated surface like a bench.",
         "This reduces the amount of bodyweight you are pushing.",
@@ -1127,8 +1772,15 @@
     },
     "feet-elevated-parallette-push-ups": {
       "name": "Feet-Elevated Parallette Push-Ups",
-      "equipment": ["parallettes", "bench"],
-      "targetMuscles": ["upper-chest", "triceps", "shoulders"],
+      "equipment": [
+        "parallettes",
+        "bench"
+      ],
+      "targetMuscles": [
+        "upper-chest",
+        "triceps",
+        "shoulders"
+      ],
       "cues": [
         "Place your feet on a bench or box.",
         "This increases the load on your upper chest and shoulders.",
@@ -1138,8 +1790,15 @@
     },
     "parallette-tuck-planche": {
       "name": "Parallette Tuck Planche",
-      "equipment": ["parallettes"],
-      "targetMuscles": ["shoulders", "core", "triceps", "biceps"],
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "core",
+        "triceps",
+        "biceps"
+      ],
       "cues": [
         "From a support hold, lean your shoulders forward past your hands.",
         "Tuck your knees to your chest and lift your feet off the ground.",
@@ -1149,8 +1808,14 @@
     },
     "planche-leans": {
       "name": "Planche Leans",
-      "equipment": ["parallettes"],
-      "targetMuscles": ["shoulders", "core", "triceps"],
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "core",
+        "triceps"
+      ],
       "cues": [
         "Start in a push-up position on the parallettes.",
         "Lean your shoulders as far forward as you can, keeping arms straight.",
@@ -1160,8 +1825,15 @@
     },
     "advanced-tuck-planche": {
       "name": "Advanced Tuck Planche",
-      "equipment": ["parallettes"],
-      "targetMuscles": ["shoulders", "core", "triceps", "biceps"],
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "core",
+        "triceps",
+        "biceps"
+      ],
       "cues": [
         "From the tuck planche, open your hips to flatten your back.",
         "Your back should be perfectly parallel to the ground.",
@@ -1171,8 +1843,14 @@
     },
     "knee-push-ups": {
       "name": "Knee Push-Ups",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["chest", "shoulders", "triceps"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "chest",
+        "shoulders",
+        "triceps"
+      ],
       "cues": [
         "Perform push-ups from your knees instead of your toes.",
         "Keep a straight line from your head to your knees.",
@@ -1182,13 +1860,1819 @@
     },
     "diamond-push-ups": {
       "name": "Diamond Push-Ups",
-      "equipment": ["bodyweight"],
-      "targetMuscles": ["triceps", "chest", "shoulders"],
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "chest",
+        "shoulders"
+      ],
       "cues": [
         "Place your hands close together, forming a diamond shape with thumbs and index fingers.",
         "Keep your elbows close to your body as you lower down.",
         "This significantly increases tricep activation.",
         "Maintain a straight body line throughout."
+      ]
+    },
+    "lunges": {
+      "name": "Forward Lunges",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Step forward with one leg.",
+        "Lower your hips until both knees are bent at a 90-degree angle.",
+        "Keep your front knee over your ankle, not past your toes.",
+        "Push off the front foot to return to the starting position."
+      ]
+    },
+    "dumbbell-rows": {
+      "name": "Bent-Over Dumbbell Rows",
+      "equipment": [
+        "dumbbells"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "rear-delts"
+      ],
+      "cues": [
+        "Hinge at your hips with a slight bend in your knees, back straight.",
+        "Pull dumbbells to your lower ribs, keeping elbows close to your body.",
+        "Squeeze your shoulder blades together at the top.",
+        "Control the weight on the way down."
+      ]
+    },
+    "dumbbell-chest-press": {
+      "name": "Dumbbell Bench Press",
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "targetMuscles": [
+        "chest",
+        "shoulders",
+        "triceps"
+      ],
+      "cues": [
+        "Lie on a flat bench with a dumbbell in each hand.",
+        "Keep your feet flat on the floor and back slightly arched.",
+        "Press the weights straight up over your chest.",
+        "Lower with control until the dumbbells are near your chest."
+      ]
+    },
+    "barbell-row": {
+      "name": "Barbell Bent-Over Row",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "lats"
+      ],
+      "cues": [
+        "Hinge at the hips until your torso is nearly parallel to the floor.",
+        "Grip the bar with an overhand grip, slightly wider than your shoulders.",
+        "Pull the bar to your lower chest / upper abdomen.",
+        "Squeeze your back muscles at the top and lower with control."
+      ]
+    },
+    "landmine-twist": {
+      "name": "Landmine Rotational Twist",
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "core",
+        "obliques",
+        "shoulders"
+      ],
+      "cues": [
+        "Stand facing the landmine, holding the end of the bar with both hands, arms extended.",
+        "Keeping your arms straight, rotate your torso to move the bar in an arc from one hip to the other.",
+        "Pivot on your feet as you twist.",
+        "Control the movement with your core."
+      ]
+    },
+    "21s-bicep-curls": {
+      "name": "21S Bicep Curls",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "biceps",
+        "forearms"
+      ],
+      "cues": [
+        "Set up in the proper starting position for 21S Bicep Curls.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "90-degree-push-ups": {
+      "name": "90 Degree Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "archer-pull-ups": {
+      "name": "Archer Pull Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Hang from the bar with arms fully extended.",
+        "Use an overhand grip slightly wider than shoulders.",
+        "Pull your body up until your chin is over the bar.",
+        "Lower yourself with control to full arm extension."
+      ]
+    },
+    "archer-push-ups": {
+      "name": "Archer Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Shift weight to one arm while extending the other.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "arm-bar": {
+      "name": "Arm Bar",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Arm Bar.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "assisted-pistol-squat": {
+      "name": "Assisted Pistol Squat",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Balance on one leg with the other leg extended forward.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "back-lever": {
+      "name": "Back Lever",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Back Lever.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "back-lever-pulls": {
+      "name": "Back Lever Pulls",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Back Lever Pulls.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "barbell-front-squat": {
+      "name": "Barbell Front Squat",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "behind-the-neck-press": {
+      "name": "Behind The Neck Press",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Behind The Neck Press.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "bent-knee-dragon-flag": {
+      "name": "Bent Knee Dragon Flag",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Bent Knee Dragon Flag.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "bird-dog-crunch": {
+      "name": "Bird Dog Crunch",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Start on hands and knees in a tabletop position.",
+        "Keep your spine neutral and core engaged.",
+        "Extend opposite arm and leg simultaneously.",
+        "Hold briefly, then return to start and switch sides."
+      ]
+    },
+    "bird-dogs": {
+      "name": "Bird Dogs",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Start on hands and knees in a tabletop position.",
+        "Keep your spine neutral and core engaged.",
+        "Extend opposite arm and leg simultaneously.",
+        "Hold briefly, then return to start and switch sides."
+      ]
+    },
+    "bulgarian-split-squat-jumps": {
+      "name": "Bulgarian Split Squat Jumps",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "burpee-box-jump": {
+      "name": "Burpee Box Jump",
+      "equipment": [
+        "bench"
+      ],
+      "targetMuscles": [
+        "full-body",
+        "core"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Burpee Box Jump.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "commando-pull-ups": {
+      "name": "Commando Pull Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Hang from the bar with arms fully extended.",
+        "Use an overhand grip slightly wider than shoulders.",
+        "Pull your body up until your chin is over the bar.",
+        "Lower yourself with control to full arm extension."
+      ]
+    },
+    "cossack-squats": {
+      "name": "Cossack Squats",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Shift weight to one leg while extending the other leg straight.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "dead-bugs": {
+      "name": "Dead Bugs",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Lie on your back with arms extended toward the ceiling.",
+        "Lift your legs to 90 degrees at hips and knees.",
+        "Slowly extend opposite arm and leg while keeping your back flat.",
+        "Return to starting position and repeat on the other side."
+      ]
+    },
+    "decline-diamond-push-ups": {
+      "name": "Decline Diamond Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Place hands close together in a diamond shape.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "deficit-deadlift": {
+      "name": "Deficit Deadlift",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "back",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Deficit Deadlift.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "deficit-handstand-push-ups": {
+      "name": "Deficit Handstand Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "depth-jump-to-box": {
+      "name": "Depth Jump To Box",
+      "equipment": [
+        "bench"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Depth Jump To Box.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "depth-jumps": {
+      "name": "Depth Jumps",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Depth Jumps.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "double-kettlebell-turkish-get-up": {
+      "name": "Double Kettlebell Turkish Get Up",
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "full-body",
+        "core"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Double Kettlebell Turkish Get Up.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "dragon-flag": {
+      "name": "Dragon Flag",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Dragon Flag.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "dragon-flag-scissors": {
+      "name": "Dragon Flag Scissors",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Dragon Flag Scissors.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "face-pulls": {
+      "name": "Face Pulls",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Face Pulls.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "front-lever": {
+      "name": "Front Lever",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Front Lever.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "front-lever-pulls": {
+      "name": "Front Lever Pulls",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Front Lever Pulls.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "front-lever-raises": {
+      "name": "Front Lever Raises",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Front Lever Raises.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "front-lever-touch": {
+      "name": "Front Lever Touch",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Front Lever Touch.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "front-squat": {
+      "name": "Front Squat",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "handstand-push-ups": {
+      "name": "Handstand Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "hanging-windshield-wipers": {
+      "name": "Hanging Windshield Wipers",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Hanging Windshield Wipers.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "high-pull-ups": {
+      "name": "High Pull Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Hang from the bar with arms fully extended.",
+        "Use an overhand grip slightly wider than shoulders.",
+        "Pull your body up until your chin is over the bar.",
+        "Lower yourself with control to full arm extension."
+      ]
+    },
+    "hip-thrusts": {
+      "name": "Hip Thrusts",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Hip Thrusts.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "human-flag": {
+      "name": "Human Flag",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Human Flag.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "human-flag-pull-ups": {
+      "name": "Human Flag Pull Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps",
+        "abs",
+        "core"
+      ],
+      "cues": [
+        "Hang from the bar with arms fully extended.",
+        "Use an overhand grip slightly wider than shoulders.",
+        "Pull your body up until your chin is over the bar.",
+        "Lower yourself with control to full arm extension."
+      ]
+    },
+    "incline-barbell-press": {
+      "name": "Incline Barbell Press",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Incline Barbell Press.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "incline-diamond-push-ups": {
+      "name": "Incline Diamond Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Place hands close together in a diamond shape.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "jerk": {
+      "name": "Jerk",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Jerk.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "jumping-muscle-ups": {
+      "name": "Jumping Muscle Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "back",
+        "biceps",
+        "chest"
+      ],
+      "cues": [
+        "Start from a dead hang on the bar or rings.",
+        "Pull explosively to get your chest above the bar.",
+        "Transition by pressing your body up and over.",
+        "Lower yourself with control back to the starting position."
+      ]
+    },
+    "kettlebell-snatches": {
+      "name": "Kettlebell Snatches",
+      "equipment": [
+        "kettlebells"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Kettlebell Snatches.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "knee-side-plank": {
+      "name": "Knee Side Plank",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Lie on your side, supporting yourself on your forearm.",
+        "Keep your body in a straight line from head to feet.",
+        "Engage your core and breathe steadily.",
+        "Hold the position without letting your hips sag or pike."
+      ]
+    },
+    "kroc-rows": {
+      "name": "Kroc Rows",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Kroc Rows.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "landmine-180s": {
+      "name": "Landmine 180S",
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Landmine 180S.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "landmine-thruster": {
+      "name": "Landmine Thruster",
+      "equipment": [
+        "barbell",
+        "landmine"
+      ],
+      "targetMuscles": [
+        "full-body",
+        "core"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Landmine Thruster.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "lat-pulldowns": {
+      "name": "Lat Pulldowns",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "lats",
+        "back"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Lat Pulldowns.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "lateral-lunges": {
+      "name": "Lateral Lunges",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "back",
+        "hamstrings",
+        "lats",
+        "glutes"
+      ],
+      "cues": [
+        "Step forward or backward into a lunge position.",
+        "Keep your front knee over your ankle.",
+        "Lower until both knees are at 90 degrees.",
+        "Push through your front heel to return to start."
+      ]
+    },
+    "manna": {
+      "name": "Manna",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Manna.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "muscle-ups": {
+      "name": "Muscle Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "back",
+        "biceps",
+        "chest"
+      ],
+      "cues": [
+        "Start from a dead hang on the bar or rings.",
+        "Pull explosively to get your chest above the bar.",
+        "Transition by pressing your body up and over.",
+        "Lower yourself with control back to the starting position."
+      ]
+    },
+    "negative-dips": {
+      "name": "Negative Dips",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Negative Dips.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "negative-dragon-flags": {
+      "name": "Negative Dragon Flags",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Negative Dragon Flags.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "negative-human-flags": {
+      "name": "Negative Human Flags",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Negative Human Flags.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "neutral-grip-pull-ups": {
+      "name": "Neutral Grip Pull Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Hang from the bar with arms fully extended.",
+        "Use a neutral grip with palms facing each other.",
+        "Pull your body up until your chin is over the bar.",
+        "Lower yourself with control to full arm extension."
+      ]
+    },
+    "one-arm-barbell-row": {
+      "name": "One Arm Barbell Row",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for One Arm Barbell Row.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "one-arm-pull-up": {
+      "name": "One Arm Pull Up",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Hang from the bar with arms fully extended.",
+        "Use an overhand grip slightly wider than shoulders.",
+        "Pull your body up until your chin is over the bar.",
+        "Lower yourself with control to full arm extension."
+      ]
+    },
+    "one-arm-push-ups": {
+      "name": "One Arm Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "overhead-squat": {
+      "name": "Overhead Squat",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "quadriceps",
+        "triceps",
+        "hamstrings",
+        "glutes"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "parallette-archer-push-ups": {
+      "name": "Parallette Archer Push Ups",
+      "equipment": [
+        "parallettes"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Shift weight to one arm while extending the other.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "partial-dead-bugs": {
+      "name": "Partial Dead Bugs",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Lie on your back with arms extended toward the ceiling.",
+        "Lift your legs to 90 degrees at hips and knees.",
+        "Slowly extend opposite arm and leg while keeping your back flat.",
+        "Return to starting position and repeat on the other side."
+      ]
+    },
+    "pike-push-ups": {
+      "name": "Pike Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "plank-jacks": {
+      "name": "Plank Jacks",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Position yourself on forearms and toes.",
+        "Maintain a straight line from head to heels.",
+        "Engage your core and breathe steadily.",
+        "Hold the position without letting your hips sag or pike."
+      ]
+    },
+    "plank-to-downward-dog": {
+      "name": "Plank To Downward Dog",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Position yourself on forearms and toes.",
+        "Maintain a straight line from head to heels.",
+        "Engage your core and breathe steadily.",
+        "Hold the position without letting your hips sag or pike."
+      ]
+    },
+    "preacher-curls": {
+      "name": "Preacher Curls",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "biceps",
+        "forearms"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Preacher Curls.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "pseudo-planche-push-ups": {
+      "name": "Pseudo Planche Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "quadruped-arm-raise": {
+      "name": "Quadruped Arm Raise",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Quadruped Arm Raise.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "ring-dips": {
+      "name": "Ring Dips",
+      "equipment": [
+        "rings"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Ring Dips.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "russian-twists": {
+      "name": "Russian Twists",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "obliques"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Russian Twists.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "seal-rows": {
+      "name": "Seal Rows",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Seal Rows.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "side-lever-raises": {
+      "name": "Side Lever Raises",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Side Lever Raises.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "side-plank": {
+      "name": "Side Plank",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Lie on your side, supporting yourself on your forearm.",
+        "Keep your body in a straight line from head to feet.",
+        "Engage your core and breathe steadily.",
+        "Hold the position without letting your hips sag or pike."
+      ]
+    },
+    "side-plank-leg-lift": {
+      "name": "Side Plank Leg Lift",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Lie on your side, supporting yourself on your forearm.",
+        "Keep your body in a straight line from head to feet.",
+        "Engage your core and breathe steadily.",
+        "Hold the position without letting your hips sag or pike."
+      ]
+    },
+    "side-plank-rotation": {
+      "name": "Side Plank Rotation",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Lie on your side, supporting yourself on your forearm.",
+        "Keep your body in a straight line from head to feet.",
+        "Engage your core and breathe steadily.",
+        "Hold the position without letting your hips sag or pike."
+      ]
+    },
+    "single-arm-dumbbell-rows": {
+      "name": "Single Arm Dumbbell Rows",
+      "equipment": [
+        "dumbbells"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Single Arm Dumbbell Rows.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "single-leg-hip-thrust": {
+      "name": "Single Leg Hip Thrust",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Single Leg Hip Thrust.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "single-leg-romanian-deadlift": {
+      "name": "Single Leg Romanian Deadlift",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "back",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Single Leg Romanian Deadlift.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "skin-the-cat": {
+      "name": "Skin The Cat",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Skin The Cat.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "spiderman-mountain-climbers": {
+      "name": "Spiderman Mountain Climbers",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "core",
+        "cardio"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Spiderman Mountain Climbers.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "split-squats": {
+      "name": "Split Squats",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "step-up-to-reverse-lunge": {
+      "name": "Step Up To Reverse Lunge",
+      "equipment": [
+        "bench"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Step forward or backward into a lunge position.",
+        "Keep your front knee over your ankle.",
+        "Lower until both knees are at 90 degrees.",
+        "Push through your front heel to return to start."
+      ]
+    },
+    "straddle-planche": {
+      "name": "Straddle Planche",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Straddle Planche.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "strict-muscle-ups": {
+      "name": "Strict Muscle Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "back",
+        "biceps",
+        "chest"
+      ],
+      "cues": [
+        "Start from a dead hang on the bar or rings.",
+        "Pull explosively to get your chest above the bar.",
+        "Transition by pressing your body up and over.",
+        "Lower yourself with control back to the starting position."
+      ]
+    },
+    "superman-swimmers": {
+      "name": "Superman Swimmers",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Superman Swimmers.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "support-hold": {
+      "name": "Support Hold",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Support Hold.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "tall-kneeling-landmine-press": {
+      "name": "Tall Kneeling Landmine Press",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Tall Kneeling Landmine Press.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "toes-to-bar-strict": {
+      "name": "Toes To Bar Strict",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "full-body"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Toes To Bar Strict.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "tuck-back-lever": {
+      "name": "Tuck Back Lever",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Tuck Back Lever.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "tuck-front-lever": {
+      "name": "Tuck Front Lever",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Tuck Front Lever.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "typewriter-push-ups": {
+      "name": "Typewriter Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "walking-lunge-with-rotation": {
+      "name": "Walking Lunge With Rotation",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Step forward or backward into a lunge position.",
+        "Keep your front knee over your ankle.",
+        "Lower until both knees are at 90 degrees.",
+        "Push through your front heel to return to start."
+      ]
+    },
+    "wall-handstand-push-ups": {
+      "name": "Wall Handstand Push Ups",
+      "equipment": [
+        "wall"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "wall-push-ups": {
+      "name": "Wall Push Ups",
+      "equipment": [
+        "wall"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "weighted-cossack-squats": {
+      "name": "Weighted Cossack Squats",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Shift weight to one leg while extending the other leg straight.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "weighted-dead-bugs": {
+      "name": "Weighted Dead Bugs",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "abs"
+      ],
+      "cues": [
+        "Lie on your back with arms extended toward the ceiling.",
+        "Lift your legs to 90 degrees at hips and knees.",
+        "Slowly extend opposite arm and leg while keeping your back flat.",
+        "Return to starting position and repeat on the other side."
+      ]
+    },
+    "weighted-jump-squats": {
+      "name": "Weighted Jump Squats",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "weighted-muscle-ups": {
+      "name": "Weighted Muscle Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "triceps",
+        "back",
+        "biceps",
+        "chest"
+      ],
+      "cues": [
+        "Start from a dead hang on the bar or rings.",
+        "Pull explosively to get your chest above the bar.",
+        "Transition by pressing your body up and over.",
+        "Lower yourself with control back to the starting position."
+      ]
+    },
+    "weighted-pistol-squat": {
+      "name": "Weighted Pistol Squat",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Stand with feet shoulder-width apart.",
+        "Balance on one leg with the other leg extended forward.",
+        "Keep your chest up and core engaged.",
+        "Lower yourself by bending at the hips and knees.",
+        "Drive through your heels to return to standing."
+      ]
+    },
+    "weighted-russian-twists": {
+      "name": "Weighted Russian Twists",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "core",
+        "obliques"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Weighted Russian Twists.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
+      ]
+    },
+    "weighted-walking-lunges": {
+      "name": "Weighted Walking Lunges",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ],
+      "cues": [
+        "Step forward or backward into a lunge position.",
+        "Keep your front knee over your ankle.",
+        "Lower until both knees are at 90 degrees.",
+        "Push through your front heel to return to start."
+      ]
+    },
+    "weighted-wide-grip-pull-ups": {
+      "name": "Weighted Wide Grip Pull Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Hang from the bar with arms fully extended.",
+        "Use a wide overhand grip, wider than shoulders.",
+        "Pull your body up until your chin is over the bar.",
+        "Lower yourself with control to full arm extension."
+      ]
+    },
+    "wide-grip-pull-ups": {
+      "name": "Wide Grip Pull Ups",
+      "equipment": [
+        "pull-up-bar"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Hang from the bar with arms fully extended.",
+        "Use a wide overhand grip, wider than shoulders.",
+        "Pull your body up until your chin is over the bar.",
+        "Lower yourself with control to full arm extension."
+      ]
+    },
+    "wide-grip-push-ups": {
+      "name": "Wide Grip Push Ups",
+      "equipment": [
+        "bodyweight"
+      ],
+      "targetMuscles": [
+        "shoulders",
+        "triceps",
+        "chest"
+      ],
+      "cues": [
+        "Start in a plank position with hands placed appropriately.",
+        "Keep your body in a straight line from head to heels.",
+        "Place hands wider than shoulder-width apart.",
+        "Lower your chest toward the floor with control.",
+        "Press back up to the starting position."
+      ]
+    },
+    "yates-row": {
+      "name": "Yates Row",
+      "equipment": [
+        "barbell"
+      ],
+      "targetMuscles": [
+        "back",
+        "biceps"
+      ],
+      "cues": [
+        "Set up in the proper starting position for Yates Row.",
+        "Maintain good form throughout the movement.",
+        "Control the movement in both directions.",
+        "Focus on the target muscles throughout the exercise."
       ]
     }
   }

@@ -73,9 +73,9 @@ export class ExerciseGraphManager {
   }
 
   getRegressions(exerciseId: string): ExerciseEdge[] {
-    return this.getIncomingEdges(exerciseId)
-      .filter(edge => edge.difficultyChange > 0) // incoming edges with positive difficulty = regressions for current exercise
-      .sort((a, b) => b.difficultyChange - a.difficultyChange)
+    return this.getOutgoingEdges(exerciseId)
+      .filter(edge => edge.difficultyChange < 0 || edge.relationship === 'regression') // outgoing edges to easier exercises
+      .sort((a, b) => a.difficultyChange - b.difficultyChange) // most negative (easiest) first
   }
 
   // Difficulty & Progression Analysis
@@ -220,6 +220,31 @@ export class ExerciseGraphManager {
       )
   }
 
+
+  // Path analysis for progression depth calculation
+  private calculatePathDepthForExercise(exerciseId: string, allExerciseIds: string[]): number {
+    const visited = new Set<string>()
+    
+    const findMaxDepthFrom = (currentId: string, depth: number): number => {
+      if (visited.has(currentId)) return depth
+      visited.add(currentId)
+      
+      const outgoing = this.getOutgoingEdges(currentId)
+      let maxFromHere = depth
+      
+      for (const edge of outgoing) {
+        if (allExerciseIds.includes(edge.to)) {
+          maxFromHere = Math.max(maxFromHere, findMaxDepthFrom(edge.to, depth + 1))
+        }
+      }
+      
+      visited.delete(currentId)
+      return maxFromHere
+    }
+    
+    return findMaxDepthFrom(exerciseId, 0)
+  }
+
   // Cytoscape Visualization
   generateCytoscapeData(config: GraphVisualizationConfig): CytoscapeData {
     const nodes: CytoscapeNode[] = []
@@ -235,13 +260,62 @@ export class ExerciseGraphManager {
       exercisesToInclude = Object.keys(this.graph.exercises)
     }
 
-    // Generate nodes
+    // Create equipment groups as compound nodes if groupByEquipment is enabled
+    const equipmentGroups = new Map<string, string[]>()
+    
+    if (config.groupByEquipment) {
+      // Group exercises by their primary equipment
+      for (const exerciseId of exercisesToInclude) {
+        const exercise = this.getExercise(exerciseId)
+        if (!exercise) continue
+
+        const primaryEquipment = this.getPrimaryEquipment(exercise.equipment)
+        if (!equipmentGroups.has(primaryEquipment)) {
+          equipmentGroups.set(primaryEquipment, [])
+        }
+        equipmentGroups.get(primaryEquipment)!.push(exerciseId)
+      }
+
+      // Create compound nodes for each equipment group
+      for (const [equipment, exerciseIds] of equipmentGroups) {
+        if (exerciseIds.length > 1) { // Only create compound for multiple exercises
+          nodes.push({
+            data: {
+              id: `equipment-${equipment}`,
+              label: this.formatEquipmentName(equipment),
+              type: 'equipment-group'
+            },
+            classes: ['equipment-group']
+          })
+        }
+      }
+    }
+
+    // Calculate path depths for all exercises
+    const pathDepths = new Map<string, number>()
+    let maxPathDepth = 0
+    
+    for (const exerciseId of exercisesToInclude) {
+      const pathDepth = this.calculatePathDepthForExercise(exerciseId, exercisesToInclude)
+      pathDepths.set(exerciseId, pathDepth)
+      maxPathDepth = Math.max(maxPathDepth, pathDepth)
+    }
+
+    // Generate exercise nodes
     for (const exerciseId of exercisesToInclude) {
       const exercise = this.getExercise(exerciseId)
       if (!exercise) continue
 
       const subgraph = this.findExerciseSubgraph(exerciseId)
       const difficulty = this.calculateDifficultyScore(exerciseId)
+      const primaryEquipment = this.getPrimaryEquipment(exercise.equipment)
+      const pathDepth = pathDepths.get(exerciseId) || 0
+      
+      // Determine parent node for compound grouping
+      let parent: string | undefined
+      if (config.groupByEquipment && equipmentGroups.get(primaryEquipment)!.length > 1) {
+        parent = `equipment-${primaryEquipment}`
+      }
 
       nodes.push({
         data: {
@@ -252,9 +326,12 @@ export class ExerciseGraphManager {
           subgraph: subgraph?.id || 'unknown',
           movementPattern: subgraph?.primaryMovementPattern || 'unknown',
           isEntryPoint: subgraph?.entryPoints.includes(exerciseId),
-          isLandmark: subgraph?.landmarks.includes(exerciseId)
+          isLandmark: subgraph?.landmarks.includes(exerciseId),
+          parent: parent,
+          pathDepth: pathDepth,
+          maxPathDepth: maxPathDepth
         },
-        classes: this.generateNodeClasses(exercise, subgraph, config)
+        classes: this.generateNodeClasses(exercise, subgraph, config, exerciseId)
       })
     }
 
@@ -308,22 +385,23 @@ export class ExerciseGraphManager {
     return Array.from(visited)
   }
 
-  private generateNodeClasses(exercise: CatalogExercise, subgraph: ExerciseSubgraph | null, config: GraphVisualizationConfig): string[] {
+  private generateNodeClasses(exercise: CatalogExercise, subgraph: ExerciseSubgraph | null, config: GraphVisualizationConfig, exerciseId: string): string[] {
     const classes: string[] = []
     
     if (config.colorScheme === 'difficulty') {
-      const difficulty = this.calculateDifficultyScore(exercise.name)
+      const difficulty = this.calculateDifficultyScore(exerciseId)
       classes.push(`difficulty-${Math.floor(difficulty / 2)}`) // 0-5 scale
     } else if (config.colorScheme === 'equipment') {
-      classes.push(`equipment-${exercise.equipment[0]}`)
+      const primaryEquipment = this.getPrimaryEquipment(exercise.equipment)
+      classes.push(`equipment-${primaryEquipment}`)
     } else if (config.colorScheme === 'movement') {
       classes.push(`movement-${subgraph?.primaryMovementPattern}`)
     } else if (config.colorScheme === 'subgraph') {
       classes.push(`subgraph-${subgraph?.id}`)
     }
     
-    if (subgraph?.entryPoints.includes(exercise.name)) classes.push('entry-point')
-    if (subgraph?.landmarks.includes(exercise.name)) classes.push('landmark')
+    if (subgraph?.entryPoints.includes(exerciseId)) classes.push('entry-point')
+    if (subgraph?.landmarks.includes(exerciseId)) classes.push('landmark')
     
     return classes
   }
@@ -331,11 +409,14 @@ export class ExerciseGraphManager {
   private generateEdgeClasses(edge: ExerciseEdge, config: GraphVisualizationConfig): string[] {
     const classes: string[] = []
     
-    classes.push(`relationship-${edge.relationship}`)
-    
-    if (edge.difficultyChange > 0) classes.push('progression')
-    else if (edge.difficultyChange < 0) classes.push('regression')
-    else classes.push('lateral')
+    // Use the explicit relationship if available, otherwise infer from difficulty change
+    if (edge.relationship === 'progression' || (edge.relationship !== 'regression' && edge.difficultyChange > 0)) {
+      classes.push('progression')
+    } else if (edge.relationship === 'regression' || edge.difficultyChange < 0) {
+      classes.push('regression')
+    } else {
+      classes.push('lateral')
+    }
     
     const magnitude = Math.abs(edge.difficultyChange)
     if (magnitude < 0.3) classes.push('small-change')
@@ -405,6 +486,49 @@ export class ExerciseGraphManager {
     return this.getAllExercises().filter(exercise => 
       exercise.equipment.every(eq => equipment.includes(eq))
     )
+  }
+
+
+  // Equipment grouping helpers
+  private getPrimaryEquipment(equipment: string[]): string {
+    // Priority order for primary equipment classification
+    const priorityOrder = [
+      'barbell',
+      'dumbbells', 
+      'kettlebells',
+      'pull-up-bar',
+      'rings',
+      'parallettes',
+      'resistance-bands',
+      'landmine',
+      'bench',
+      'bodyweight'
+    ]
+    
+    for (const priority of priorityOrder) {
+      if (equipment.includes(priority)) {
+        return priority
+      }
+    }
+    
+    return equipment[0] || 'bodyweight'
+  }
+
+  private formatEquipmentName(equipment: string): string {
+    const nameMap: { [key: string]: string } = {
+      'bodyweight': 'Bodyweight',
+      'dumbbells': 'Dumbbells',
+      'barbell': 'Barbell',
+      'kettlebells': 'Kettlebells',
+      'pull-up-bar': 'Pull-up Bar',
+      'rings': 'Rings',
+      'parallettes': 'Parallettes',
+      'resistance-bands': 'Resistance Bands',
+      'landmine': 'Landmine',
+      'bench': 'Bench'
+    }
+    
+    return nameMap[equipment] || equipment.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())
   }
 
   findSubstitutions(exerciseId: string, availableEquipment: string[]): CatalogExercise[] {

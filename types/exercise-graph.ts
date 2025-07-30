@@ -107,6 +107,9 @@ export interface CytoscapeNode {
     movementPattern: string
     isEntryPoint?: boolean
     isLandmark?: boolean
+    pathDepth?: number
+    maxPathDepth?: number
+    parent?: string
   }
   position?: { x: number; y: number }
   classes?: string[]
@@ -134,7 +137,7 @@ export interface CytoscapeData {
  * Visualization configuration options
  */
 export interface GraphVisualizationConfig {
-  layout: 'hierarchical' | 'circular' | 'force-directed' | 'grid'
+  layout: 'hierarchical' | 'circular' | 'force-directed' | 'fcose' | 'grid'
   showDifficulty: boolean
   showEquipment: boolean
   showModifiers: boolean
@@ -142,6 +145,11 @@ export interface GraphVisualizationConfig {
   focusExercise?: string
   highlightPath?: string[]
   colorScheme: 'difficulty' | 'equipment' | 'movement' | 'subgraph'
+  groupByEquipment?: boolean
+  // Layout tuning parameters
+  nodeSpacing?: number
+  gravity?: number
+  animationDuration?: number
 }
 
 /**

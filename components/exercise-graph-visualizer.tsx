@@ -45,13 +45,23 @@ export default function ExerciseGraphVisualizer({
   
   const [selectedNode, setSelectedNode] = useState<string | null>(null)
   const [selectedSubgraph, setSelectedSubgraph] = useState<string>('all')
+  const [tooltip, setTooltip] = useState<{
+    visible: boolean
+    x: number
+    y: number
+    content: React.ReactNode
+  }>({ visible: false, x: 0, y: 0, content: null })
   const [config, setConfig] = useState<GraphVisualizationConfig>({
-    layout: 'hierarchical',
+    layout: 'fcose',
     showDifficulty: true,
     showEquipment: false,
     showModifiers: false,
     maxDepth: 3,
-    colorScheme: 'difficulty',
+    colorScheme: 'equipment',
+    groupByEquipment: true,
+    nodeSpacing: 80,
+    gravity: 0.1,
+    animationDuration: 600,
     ...defaultConfig
   })
 
@@ -63,12 +73,48 @@ export default function ExerciseGraphVisualizer({
       container: cyRef.current,
       style: getCytoscapeStyle(),
       layout: getLayoutConfig(config.layout),
-      minZoom: 0.3,
+      minZoom: 0.003,
       maxZoom: 2.5,
       wheelSensitivity: 0.2
     })
 
     cyInstance.current = cy
+
+    // Helper function to find all connected elements in the subgraph
+    const findConnectedSubgraph = (startElement: NodeSingular | EdgeSingular) => {
+      const visited = new Set<string>()
+      const connectedNodes = cy.collection()
+      const connectedEdges = cy.collection()
+      const queue: (NodeSingular | EdgeSingular)[] = [startElement]
+      
+      while (queue.length > 0) {
+        const current = queue.shift()!
+        const currentId = current.id()
+        
+        if (visited.has(currentId)) continue
+        visited.add(currentId)
+        
+        if (current.isNode()) {
+          connectedNodes.merge(current)
+          // Add all connected edges to the queue
+          current.connectedEdges().forEach((edge: EdgeSingular) => {
+            if (!visited.has(edge.id())) {
+              queue.push(edge)
+            }
+          })
+        } else if (current.isEdge()) {
+          connectedEdges.merge(current)
+          // Add all connected nodes to the queue
+          current.connectedNodes().forEach((node: NodeSingular) => {
+            if (!visited.has(node.id())) {
+              queue.push(node)
+            }
+          })
+        }
+      }
+      
+      return { nodes: connectedNodes, edges: connectedEdges }
+    }
 
     // Event handlers
     cy.on('tap', 'node', (evt) => {
@@ -76,19 +122,146 @@ export default function ExerciseGraphVisualizer({
       const nodeId = node.id()
       setSelectedNode(nodeId)
       
-      // Highlight connected nodes
-      cy.elements().removeClass('highlighted connected')
+      // Clear all previous states
+      cy.elements().removeClass('highlighted connected dimmed')
+      
+      // Find the entire connected subgraph
+      const subgraph = findConnectedSubgraph(node)
+      
+      // Highlight the selected node
       node.addClass('highlighted')
-      node.connectedEdges().addClass('connected')
-      node.connectedEdges().connectedNodes().addClass('connected')
+      
+      // Mark all connected elements
+      subgraph.nodes.not(node).addClass('connected')
+      subgraph.edges.addClass('connected')
+      
+      // Dim all other elements
+      const allConnected = subgraph.nodes.union(subgraph.edges)
+      cy.elements().not(allConnected).addClass('dimmed')
+    })
+
+    cy.on('tap', 'edge', (evt) => {
+      const edge = evt.target as EdgeSingular
+      
+      // Clear all previous states
+      cy.elements().removeClass('highlighted connected dimmed')
+      
+      // Find the entire connected subgraph
+      const subgraph = findConnectedSubgraph(edge)
+      
+      // Highlight the selected edge
+      edge.addClass('highlighted')
+      
+      // Mark all connected elements
+      subgraph.nodes.addClass('connected')
+      subgraph.edges.not(edge).addClass('connected')
+      
+      // Dim all other elements
+      const allConnected = subgraph.nodes.union(subgraph.edges)
+      cy.elements().not(allConnected).addClass('dimmed')
     })
 
     cy.on('tap', (evt) => {
       if (evt.target === cy) {
-        // Clicked on background, clear selection
+        // Clicked on background, clear all highlighting
         setSelectedNode(null)
-        cy.elements().removeClass('highlighted connected')
+        cy.elements().removeClass('highlighted connected dimmed')
+        setTooltip({ visible: false, x: 0, y: 0, content: null })
       }
+    })
+
+    // Tooltip event handlers
+    cy.on('mouseover', 'node', (evt) => {
+      const node = evt.target as NodeSingular
+      const nodeId = node.id()
+      const exercise = graphData.exercises[nodeId]
+      
+      if (exercise) {
+        const position = evt.renderedPosition || evt.position
+        const container = cyRef.current?.getBoundingClientRect()
+        
+        if (container) {
+          setTooltip({
+            visible: true,
+            x: container.left + position.x + 10,
+            y: container.top + position.y - 10,
+            content: (
+              <div className="bg-slate-800 border border-slate-600 rounded-lg p-3 shadow-lg max-w-xs">
+                <h4 className="font-semibold text-white mb-2">{exercise.name}</h4>
+                <div className="space-y-1 text-sm">
+                  <div className="text-slate-300">
+                    <span className="text-slate-400">Difficulty:</span> {graphManager.current.calculateDifficultyScore(nodeId).toFixed(1)}/10
+                  </div>
+                  <div className="text-slate-300">
+                    <span className="text-slate-400">Equipment:</span> {exercise.equipment.join(', ')}
+                  </div>
+                  <div className="text-slate-300">
+                    <span className="text-slate-400">Muscles:</span> {exercise.targetMuscles.slice(0, 3).join(', ')}
+                    {exercise.targetMuscles.length > 3 && '...'}
+                  </div>
+                  <div className="text-slate-300">
+                    <span className="text-slate-400">Path Depth:</span> {node.data('pathDepth') || 0}/{node.data('maxPathDepth') || 0}
+                  </div>
+                </div>
+              </div>
+            )
+          })
+        }
+      }
+    })
+
+    cy.on('mouseout', 'node', () => {
+      setTooltip({ visible: false, x: 0, y: 0, content: null })
+    })
+
+    cy.on('mouseover', 'edge', (evt) => {
+      const edge = evt.target as EdgeSingular
+      const edgeData = edge.data()
+      
+      const position = evt.renderedPosition || evt.position
+      const container = cyRef.current?.getBoundingClientRect()
+      
+      if (container) {
+        const sourceExercise = graphData.exercises[edgeData.source]
+        const targetExercise = graphData.exercises[edgeData.target]
+        
+        setTooltip({
+          visible: true,
+          x: container.left + position.x + 10,
+          y: container.top + position.y - 10,
+          content: (
+            <div className="bg-slate-800 border border-slate-600 rounded-lg p-3 shadow-lg max-w-sm">
+              <h4 className="font-semibold text-white mb-2">Exercise Relationship</h4>
+              <div className="space-y-2 text-sm">
+                <div className="text-slate-300">
+                  <span className="text-slate-400">From:</span> {sourceExercise?.name || edgeData.source}
+                </div>
+                <div className="text-slate-300">
+                  <span className="text-slate-400">To:</span> {targetExercise?.name || edgeData.target}
+                </div>
+                <div className="text-slate-300">
+                  <span className="text-slate-400">Type:</span> {edgeData.relationship}
+                </div>
+                <div className="text-slate-300">
+                  <span className="text-slate-400">Difficulty Change:</span> 
+                  <span className={edgeData.difficultyChange > 0 ? 'text-green-400' : edgeData.difficultyChange < 0 ? 'text-red-400' : 'text-slate-300'}>
+                    {edgeData.difficultyChange > 0 ? '+' : ''}{edgeData.difficultyChange}
+                  </span>
+                </div>
+                {edgeData.reason && (
+                  <div className="text-slate-300">
+                    <span className="text-slate-400">Reason:</span> {edgeData.reason}
+                  </div>
+                )}
+              </div>
+            </div>
+          )
+        })
+      }
+    })
+
+    cy.on('mouseout', 'edge', () => {
+      setTooltip({ visible: false, x: 0, y: 0, content: null })
     })
 
     return () => {
@@ -135,28 +308,46 @@ export default function ExerciseGraphVisualizer({
 
   }, [config, selectedSubgraph, graphData])
 
-  const getCytoscapeStyle = () => [
-    // Node styles
-    {
-      selector: 'node',
-      style: {
-        'label': 'data(label)',
-        'text-valign': 'center',
-        'text-halign': 'center',
-        'font-size': '10px',
-        'font-weight': 'bold',
-        'color': '#ffffff',
-        'text-outline-width': 2,
-        'text-outline-color': '#000000',
-        'background-color': '#6366f1',
-        'width': '60px',
-        'height': '60px',
-        'border-width': 2,
-        'border-color': '#4f46e5',
-        'text-wrap': 'wrap',
-        'text-max-width': '80px'
-      }
-    },
+  // Generate HSV-based colors for equipment
+  const generateEquipmentColor = (equipment: string, alpha: number = 1): string => {
+    const equipmentTypes = [
+      'bodyweight', 'dumbbells', 'barbell', 'kettlebells', 'pull-up-bar', 
+      'rings', 'parallettes', 'resistance-bands', 'landmine', 'bench',
+      'cable-machine', 'smith-machine', 'suspension-trainer', 'medicine-ball',
+      'foam-roller', 'stability-ball', 'bosu-ball', 'battle-ropes', 'sleds'
+    ]
+    
+    const index = equipmentTypes.indexOf(equipment)
+    const hue = index >= 0 ? (index * 360 / equipmentTypes.length) : (equipment.charCodeAt(0) * 137.508) % 360
+    const saturation = 70 // Good saturation for visibility
+    const lightness = 55 // Good lightness for visibility
+    
+    return `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`
+  }
+
+  const getCytoscapeStyle = () => {
+    const baseStyles = [
+      // Node styles
+      {
+        selector: 'node',
+        style: {
+          'label': 'data(label)',
+          'text-valign': 'center' as any,
+          'text-halign': 'center' as any,
+          'font-size': '10px',
+          'font-weight': 'bold' as any,
+          'color': '#ffffff',
+          'text-outline-width': 2,
+          'text-outline-color': '#000000',
+          'background-color': '#6366f1',
+          'width': '60px',
+          'height': '60px',
+          'border-width': 2,
+          'border-color': '#4f46e5',
+          'text-wrap': 'wrap' as any,
+          'text-max-width': '80px'
+        }
+      },
     // Difficulty-based coloring
     {
       selector: 'node.difficulty-0',
@@ -200,20 +391,52 @@ export default function ExerciseGraphVisualizer({
         'border-color': '#f59e0b'
       }
     },
+    // Equipment group (compound node) styles
+    {
+      selector: 'node.equipment-group',
+      style: {
+        'background-color': 'transparent',
+        'border-width': 2,
+        'border-style': 'dashed',
+        'border-color': '#64748b',
+        'label': 'data(label)',
+        'text-valign': 'top',
+        'text-halign': 'center' as any,
+        'font-size': '16px',
+        'font-weight': 'bold' as any,
+        'color': '#e2e8f0',
+        'text-outline-width': 2,
+        'text-outline-color': '#1e293b',
+        'padding': '20px',
+        'z-index': 0
+      }
+    },
     // Highlighted states
     {
       selector: 'node.highlighted',
       style: {
         'border-width': 4,
         'border-color': '#ffffff',
-        'z-index': 100
+        'z-index': 100,
+        'opacity': 1,
+        'width': '70px',
+        'height': '70px'
       }
     },
     {
       selector: 'node.connected',
       style: {
-        'opacity': 0.8,
-        'border-color': '#fbbf24'
+        'opacity': 1,
+        'border-width': 3,
+        'border-color': '#fbbf24',
+        'z-index': 90
+      }
+    },
+    {
+      selector: 'node.dimmed',
+      style: {
+        'opacity': 0.2,
+        'z-index': 1
       }
     },
     // Edge styles
@@ -255,19 +478,66 @@ export default function ExerciseGraphVisualizer({
       style: { 'width': 6 }
     },
     {
+      selector: 'edge.highlighted',
+      style: {
+        'opacity': 1,
+        'width': 5,
+        'line-color': '#ffffff',
+        'target-arrow-color': '#ffffff',
+        'z-index': 100
+      }
+    },
+    {
       selector: 'edge.connected',
       style: {
         'opacity': 1,
-        'z-index': 50
+        'width': 4,
+        'line-color': '#fbbf24',
+        'target-arrow-color': '#fbbf24',
+        'z-index': 90
+      }
+    },
+    {
+      selector: 'edge.dimmed',
+      style: {
+        'opacity': 0.15,
+        'z-index': 1
       }
     }
   ]
 
+  // Add dynamic equipment color styles
+  const equipmentTypes = [
+    'bodyweight', 'dumbbells', 'barbell', 'kettlebells', 'pull-up-bar', 
+    'rings', 'parallettes', 'resistance-bands', 'landmine', 'bench',
+    'cable-machine', 'smith-machine', 'suspension-trainer', 'medicine-ball',
+    'foam-roller', 'stability-ball', 'bosu-ball', 'battle-ropes', 'sleds'
+  ]
+
+  equipmentTypes.forEach(equipment => {
+    const color = generateEquipmentColor(equipment)
+    const borderColor = generateEquipmentColor(equipment, 0.8)
+    
+    baseStyles.push({
+      selector: `node.equipment-${equipment}`,
+      style: {
+        'background-color': color,
+        'border-color': borderColor
+      }
+    })
+  })
+
+  return baseStyles
+}
+
   const getLayoutConfig = (layout: string) => {
     const baseConfig = {
-      name: layout === 'hierarchical' ? 'dagre' : layout === 'force-directed' ? 'fcose' : layout,
+      name: layout === 'hierarchical' ? 'dagre' : 
+            layout === 'force-directed' ? 'fcose' : 
+            layout === 'fcose' ? 'fcose' : 
+            layout,
       animate: true,
-      animationDuration: 500,
+      animationDuration: config.animationDuration || 500,
       fit: true,
       padding: 50
     }
@@ -292,9 +562,91 @@ export default function ExerciseGraphVisualizer({
         return {
           ...baseConfig,
           name: 'fcose',
-          idealEdgeLength: 100,
-          nodeRepulsion: 4000,
-          nodeOverlap: 10
+          // Quality vs Performance (longer iterations for better layout)
+          quality: 'proof',
+          
+          // Separation (tunable)
+          idealEdgeLength: config.nodeSpacing || 80,
+          edgeElasticity: 0.45,
+          
+          // Force Strengths (increased repulsion for more spacing)
+          nodeRepulsion: (_node: any) => (config.nodeSpacing || 80) * 75,
+          nodeOverlap: (config.nodeSpacing || 80) * 0.25,
+          
+          // Layout options
+          randomize: false,
+          tile: true,
+          tilingPaddingVertical: Math.max(10, (config.nodeSpacing || 80) * 0.125),
+          tilingPaddingHorizontal: Math.max(10, (config.nodeSpacing || 80) * 0.125),
+          
+          // Gravity (tunable)
+          gravity: config.gravity || 0.25,
+          gravityRangeCompound: (config.gravity || 0.25) * 6,
+          
+          // Compound node settings
+          packComponents: true,
+          
+          // fCoSE specific compound settings
+          nodeDimensionsIncludeLabels: true,
+          uniformNodeDimensions: false,
+          allowNodesInsideCompound: true,
+          
+          // Incremental layout (longer iterations for better convergence)
+          step: 'all',
+          numIter: 2500,
+          
+          // Initial positions
+          fixedNodeConstraint: undefined,
+          alignmentConstraint: undefined,
+          relativePlacementConstraint: undefined,
+          
+          // Animation
+          animate: true,
+          animationDuration: config.animationDuration || 800,
+          animationEasing: 'ease-out'
+        }
+      case 'fcose':
+        return {
+          ...baseConfig,
+          name: 'fcose',
+          // Optimized for exercise relationship graphs
+          quality: 'default',
+          
+          // Tunable clustering for related exercises
+          idealEdgeLength: config.nodeSpacing || 80,
+          edgeElasticity: 0.45,
+          
+          // Tunable repulsion for readability
+          nodeRepulsion: (_node: any) => (config.nodeSpacing || 80) * 56.25, // maintains ratio
+          nodeOverlap: Math.max(10, (config.nodeSpacing || 80) * 0.125),
+          
+          // Compact layout with tunable spacing
+          tile: true,
+          tilingPaddingVertical: Math.max(5, (config.nodeSpacing || 80) * 0.0625),
+          tilingPaddingHorizontal: Math.max(5, (config.nodeSpacing || 80) * 0.0625),
+          
+          // Tunable gravity to center groups
+          gravity: config.gravity || 0.35,
+          gravityRangeCompound: (config.gravity || 0.35) * 5.7,
+          
+          // Component packing
+          packComponents: true,
+          
+          // fCoSE specific compound settings
+          nodeDimensionsIncludeLabels: true,
+          uniformNodeDimensions: false,
+          allowNodesInsideCompound: true,
+          
+          // Tunable animation
+          animate: true,
+          animationDuration: config.animationDuration || 600,
+          animationEasing: 'ease-in-out',
+          
+          // Better convergence with longer iterations
+          initialTemp: 1000,
+          coolingFactor: 0.99,
+          minTemp: 1.0,
+          numIter: 2500
         }
       case 'grid':
         return {
@@ -356,6 +708,20 @@ export default function ExerciseGraphVisualizer({
 
   return (
     <div className={`space-y-4 ${className}`}>
+      {/* Tooltip */}
+      {tooltip.visible && (
+        <div
+          className="fixed z-50 pointer-events-none"
+          style={{
+            left: tooltip.x,
+            top: tooltip.y,
+            transform: 'translate(0, -100%)'
+          }}
+        >
+          {tooltip.content}
+        </div>
+      )}
+
       {/* Controls */}
       <Card className="bg-slate-800/30 border-slate-700/50">
         <CardHeader className="pb-4">
@@ -392,7 +758,8 @@ export default function ExerciseGraphVisualizer({
                 <SelectContent className="bg-slate-700 border-slate-600">
                   <SelectItem value="hierarchical" className="text-white hover:bg-slate-600">Hierarchical</SelectItem>
                   <SelectItem value="circular" className="text-white hover:bg-slate-600">Circular</SelectItem>
-                  <SelectItem value="force-directed" className="text-white hover:bg-slate-600">Force Directed</SelectItem>
+                  <SelectItem value="force-directed" className="text-white hover:bg-slate-600">Force Directed (Advanced)</SelectItem>  
+                  <SelectItem value="fcose" className="text-white hover:bg-slate-600">fCoSE (Optimized)</SelectItem>
                   <SelectItem value="grid" className="text-white hover:bg-slate-600">Grid</SelectItem>
                 </SelectContent>
               </Select>
@@ -426,6 +793,75 @@ export default function ExerciseGraphVisualizer({
                   <SelectItem value="5" className="text-white hover:bg-slate-600">5 Levels</SelectItem>
                 </SelectContent>
               </Select>
+            </div>
+          </div>
+
+          {/* Equipment Grouping Toggle */}
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="groupByEquipment"
+              checked={config.groupByEquipment}
+              onChange={(e) => setConfig({...config, groupByEquipment: e.target.checked})}
+              className="rounded border-slate-600 bg-slate-700 text-purple-600 focus:ring-purple-500"
+            />
+            <label htmlFor="groupByEquipment" className="text-sm text-slate-300">
+              Group exercises by equipment type
+            </label>
+          </div>
+
+          {/* Layout Tuning Controls */}
+          <div className="space-y-4">
+            <h4 className="text-sm font-medium text-slate-300">Layout Tuning</h4>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="space-y-2">
+                <label className="text-sm text-slate-400 flex justify-between">
+                  Node Spacing
+                  <span className="text-purple-300">{config.nodeSpacing}</span>
+                </label>
+                <input
+                  type="range"
+                  min="40"
+                  max="200"
+                  step="10"
+                  value={config.nodeSpacing || 80}
+                  onChange={(e) => setConfig({...config, nodeSpacing: parseInt(e.target.value)})}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm text-slate-400 flex justify-between">
+                  Gravity
+                  <span className="text-purple-300">{config.gravity}</span>
+                </label>
+                <input
+                  type="range"
+                  min="0.1"
+                  max="1.0"
+                  step="0.05"
+                  value={config.gravity || 0.1}
+                  onChange={(e) => setConfig({...config, gravity: parseFloat(e.target.value)})}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm text-slate-400 flex justify-between">
+                  Animation Duration (ms)
+                  <span className="text-purple-300">{config.animationDuration}</span>
+                </label>
+                <input
+                  type="range"
+                  min="200"
+                  max="2000"
+                  step="100"
+                  value={config.animationDuration || 600}
+                  onChange={(e) => setConfig({...config, animationDuration: parseInt(e.target.value)})}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                />
+              </div>
             </div>
           </div>
 

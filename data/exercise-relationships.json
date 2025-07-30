@@ -583,6 +583,11 @@
           "exerciseId": "pendlay-row",
           "reason": "Explosive from dead stop",
           "difficulty": 1.3
+        },
+        {
+          "exerciseId": "yates-row",
+          "reason": "More upright torso",
+          "difficulty": 1.1
         }
       ]
     },
@@ -700,6 +705,1343 @@
           "exerciseId": "advanced-tuck-planche",
           "reason": "Flatter back position",
           "difficulty": 1.5
+        }
+      ]
+    },
+    "diamond-push-ups": {
+      "regressions": [
+        {
+          "exerciseId": "push-ups",
+          "reason": "Standard hand position is easier",
+          "difficulty": 0.7
+        },
+        {
+          "exerciseId": "incline-diamond-push-ups",
+          "reason": "Elevated surface reduces load",
+          "difficulty": 0.5
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "decline-diamond-push-ups",
+          "reason": "Feet elevation increases difficulty",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "archer-push-ups",
+          "reason": "Unilateral loading progression",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "knee-push-ups": {
+      "regressions": [
+        {
+          "exerciseId": "wall-push-ups",
+          "reason": "Most reduced load position",
+          "difficulty": 0.3
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "incline-push-ups",
+          "reason": "Transition to full push-up position",
+          "difficulty": 1.4
+        },
+        {
+          "exerciseId": "push-ups",
+          "reason": "Full bodyweight push-up",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "incline-push-ups": {
+      "regressions": [
+        {
+          "exerciseId": "knee-push-ups",
+          "reason": "Reduced lever length",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "push-ups",
+          "reason": "Full horizontal position",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "decline-push-ups": {
+      "regressions": [
+        {
+          "exerciseId": "push-ups",
+          "reason": "Standard position is easier",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "pike-push-ups",
+          "reason": "More vertical pressing angle",
+          "difficulty": 1.2
+        },
+        {
+          "exerciseId": "handstand-push-ups",
+          "reason": "Full vertical press",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "wide-grip-push-ups": {
+      "regressions": [
+        {
+          "exerciseId": "push-ups",
+          "reason": "Standard grip is more balanced",
+          "difficulty": 0.9
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "archer-push-ups",
+          "reason": "Transitions to unilateral work",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "close-grip-bench-press": {
+      "regressions": [
+        {
+          "exerciseId": "barbell-bench-press",
+          "reason": "Standard grip uses more chest",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "weighted-dips",
+          "reason": "More tricep-focused compound movement",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "weighted-dips": {
+      "regressions": [
+        {
+          "exerciseId": "parallette-dips",
+          "reason": "Bodyweight version",
+          "difficulty": 0.7
+        },
+        {
+          "exerciseId": "bench-dips",
+          "reason": "Easier angle and support",
+          "difficulty": 0.5
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "ring-dips",
+          "reason": "Adds instability challenge",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "feet-elevated-bench-dips": {
+      "regressions": [
+        {
+          "exerciseId": "bench-dips",
+          "reason": "Feet on ground reduces load",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "parallette-dips",
+          "reason": "Full bodyweight dip position",
+          "difficulty": 1.2
+        }
+      ]
+    },
+    "wide-grip-pull-ups": {
+      "regressions": [
+        {
+          "exerciseId": "pull-ups",
+          "reason": "Standard grip is easier",
+          "difficulty": 0.9
+        },
+        {
+          "exerciseId": "lat-pulldowns",
+          "reason": "Machine assistance",
+          "difficulty": 0.6
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "weighted-wide-grip-pull-ups",
+          "reason": "Added external load",
+          "difficulty": 1.4
+        },
+        {
+          "exerciseId": "muscle-ups",
+          "reason": "Explosive pull to support",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "neutral-grip-pull-ups": {
+      "regressions": [
+        {
+          "exerciseId": "chin-ups",
+          "reason": "Supinated grip often easier",
+          "difficulty": 0.9
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "pull-ups",
+          "reason": "Pronated grip is typically harder",
+          "difficulty": 1.1
+        },
+        {
+          "exerciseId": "commando-pull-ups",
+          "reason": "Alternating head position adds challenge",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "box-pistol-squat": {
+      "regressions": [
+        {
+          "exerciseId": "assisted-pistol-squat",
+          "reason": "Use support for balance",
+          "difficulty": 0.6
+        },
+        {
+          "exerciseId": "bulgarian-split-squats",
+          "reason": "Bilateral support with rear leg",
+          "difficulty": 0.5
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "pistol-squat",
+          "reason": "Full range of motion",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "elevated-pistol-squat": {
+      "regressions": [
+        {
+          "exerciseId": "pistol-squat",
+          "reason": "Standard height is easier",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "weighted-pistol-squat",
+          "reason": "Add external load",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "cossack-squats": {
+      "regressions": [
+        {
+          "exerciseId": "lateral-lunges",
+          "reason": "Less flexibility required",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "weighted-cossack-squats",
+          "reason": "Add external load",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "pistol-squat",
+          "reason": "Full single leg squat",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "split-squats": {
+      "regressions": [
+        {
+          "exerciseId": "bodyweight-squats",
+          "reason": "Bilateral is more stable",
+          "difficulty": 0.6
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "bulgarian-split-squats",
+          "reason": "Rear foot elevated",
+          "difficulty": 1.4
+        },
+        {
+          "exerciseId": "walking-lunges",
+          "reason": "Dynamic movement",
+          "difficulty": 1.2
+        }
+      ]
+    },
+    "pause-squat": {
+      "regressions": [
+        {
+          "exerciseId": "barbell-back-squat",
+          "reason": "No pause reduces time under tension",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "front-squat",
+          "reason": "More upright torso demand",
+          "difficulty": 1.2
+        },
+        {
+          "exerciseId": "overhead-squat",
+          "reason": "Maximum stability challenge",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "romanian-deadlift": {
+      "regressions": [
+        {
+          "exerciseId": "barbell-deadlift",
+          "reason": "Full range is often easier to learn",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "single-leg-romanian-deadlift",
+          "reason": "Unilateral balance challenge",
+          "difficulty": 1.4
+        },
+        {
+          "exerciseId": "deficit-deadlift",
+          "reason": "Increased range of motion",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "pendlay-row": {
+      "regressions": [
+        {
+          "exerciseId": "barbell-bent-over-row",
+          "reason": "Continuous tension is easier",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "kroc-rows",
+          "reason": "Heavy high-rep rows",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "meadows-row": {
+      "regressions": [
+        {
+          "exerciseId": "landmine-row",
+          "reason": "Bilateral is more stable",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "one-arm-barbell-row",
+          "reason": "Full barbell control required",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "push-press": {
+      "regressions": [
+        {
+          "exerciseId": "barbell-overhead-press",
+          "reason": "Strict press builds foundation",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "jerk",
+          "reason": "Full Olympic lift",
+          "difficulty": 1.5
+        }
+      ]
+    },
+    "arnold-press": {
+      "regressions": [
+        {
+          "exerciseId": "dumbbell-overhead-press",
+          "reason": "Simpler movement pattern",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "behind-the-neck-press",
+          "reason": "Different shoulder angle",
+          "difficulty": 1.2
+        }
+      ]
+    },
+    "single-arm-kettlebell-swings": {
+      "regressions": [
+        {
+          "exerciseId": "kettlebell-swings",
+          "reason": "Bilateral is more stable",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "kettlebell-snatches",
+          "reason": "Overhead component",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "double-kettlebell-front-squat": {
+      "regressions": [
+        {
+          "exerciseId": "kettlebell-goblet-squats",
+          "reason": "Single bell is easier to manage",
+          "difficulty": 0.6
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "barbell-front-squat",
+          "reason": "Allows heavier loading",
+          "difficulty": 1.2
+        }
+      ]
+    },
+    "bottoms-up-turkish-get-up": {
+      "regressions": [
+        {
+          "exerciseId": "turkish-get-up",
+          "reason": "Standard grip is much easier",
+          "difficulty": 0.5
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "double-kettlebell-turkish-get-up",
+          "reason": "Two bells maximum challenge",
+          "difficulty": 1.5
+        }
+      ]
+    },
+    "half-turkish-get-up": {
+      "regressions": [
+        {
+          "exerciseId": "arm-bar",
+          "reason": "Simpler shoulder stability drill",
+          "difficulty": 0.6
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "turkish-get-up",
+          "reason": "Full movement pattern",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "advanced-tuck-planche": {
+      "regressions": [
+        {
+          "exerciseId": "parallette-tuck-planche",
+          "reason": "Less flat back required",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "straddle-planche",
+          "reason": "Extended leg position",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "v-sit": {
+      "regressions": [
+        {
+          "exerciseId": "parallette-l-sit",
+          "reason": "Lower leg position",
+          "difficulty": 0.6
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "manna",
+          "reason": "Legs behind torso",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "tuck-l-sit": {
+      "regressions": [
+        {
+          "exerciseId": "support-hold",
+          "reason": "Just holding bodyweight up",
+          "difficulty": 0.5
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "parallette-l-sit",
+          "reason": "Straight leg position",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "planche-leans": {
+      "regressions": [
+        {
+          "exerciseId": "pseudo-planche-push-ups",
+          "reason": "Less forward lean required",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "parallette-tuck-planche",
+          "reason": "Feet off ground",
+          "difficulty": 2.5
+        }
+      ]
+    },
+    "landmine-push-press": {
+      "regressions": [
+        {
+          "exerciseId": "landmine-press",
+          "reason": "Strict press pattern",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "landmine-thruster",
+          "reason": "Full squat to press",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "half-kneeling-landmine-press": {
+      "regressions": [
+        {
+          "exerciseId": "tall-kneeling-landmine-press",
+          "reason": "Both knees down for stability",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "landmine-press",
+          "reason": "Standing position",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "explosive-landmine-twists": {
+      "regressions": [
+        {
+          "exerciseId": "landmine-rotational-twist",
+          "reason": "Controlled tempo",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "landmine-180s",
+          "reason": "Full semicircle rotation",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "side-plank": {
+      "regressions": [
+        {
+          "exerciseId": "knee-side-plank",
+          "reason": "Shorter lever with knees down",
+          "difficulty": 0.6
+        },
+        {
+          "exerciseId": "plank",
+          "reason": "Bilateral support is easier",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "side-plank-leg-lift",
+          "reason": "Adds hip abduction challenge",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "side-plank-rotation",
+          "reason": "Adds dynamic rotation",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "dead-bugs": {
+      "regressions": [
+        {
+          "exerciseId": "partial-dead-bugs",
+          "reason": "Arms or legs only movement",
+          "difficulty": 0.6
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "weighted-dead-bugs",
+          "reason": "Add light weights to limbs",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "hollow-body-hold",
+          "reason": "Static hold progression",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "bird-dogs": {
+      "regressions": [
+        {
+          "exerciseId": "quadruped-arm-raise",
+          "reason": "Single limb movement only",
+          "difficulty": 0.5
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "bird-dog-crunch",
+          "reason": "Adds dynamic knee to elbow",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "plank-arm-leg-lift",
+          "reason": "Higher position challenge",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "bodyweight-torso-twists": {
+      "progressions": [
+        {
+          "exerciseId": "russian-twists",
+          "reason": "Seated position with feet up",
+          "difficulty": 1.4
+        },
+        {
+          "exerciseId": "landmine-rotational-twist",
+          "reason": "Add external load",
+          "difficulty": 1.8
+        }
+      ]
+    },
+    "russian-twists": {
+      "regressions": [
+        {
+          "exerciseId": "bodyweight-torso-twists",
+          "reason": "Standing is more stable",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "weighted-russian-twists",
+          "reason": "Add dumbbell or plate",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "hanging-windshield-wipers",
+          "reason": "Hanging rotation challenge",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "wall-push-ups": {
+      "progressions": [
+        {
+          "exerciseId": "incline-push-ups",
+          "reason": "Lower angle increases load",
+          "difficulty": 1.6
+        },
+        {
+          "exerciseId": "knee-push-ups",
+          "reason": "Floor-based progression",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "archer-push-ups": {
+      "regressions": [
+        {
+          "exerciseId": "wide-grip-push-ups",
+          "reason": "Bilateral is easier",
+          "difficulty": 0.7
+        },
+        {
+          "exerciseId": "diamond-push-ups",
+          "reason": "Close grip alternative",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "one-arm-push-ups",
+          "reason": "Full unilateral push",
+          "difficulty": 1.5
+        },
+        {
+          "exerciseId": "typewriter-push-ups",
+          "reason": "Side to side movement",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "pike-push-ups": {
+      "regressions": [
+        {
+          "exerciseId": "decline-push-ups",
+          "reason": "Less vertical angle",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "wall-handstand-push-ups",
+          "reason": "Assisted vertical press",
+          "difficulty": 1.4
+        },
+        {
+          "exerciseId": "handstand-push-ups",
+          "reason": "Free-standing vertical",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "handstand-push-ups": {
+      "regressions": [
+        {
+          "exerciseId": "wall-handstand-push-ups",
+          "reason": "Wall support for balance",
+          "difficulty": 0.7
+        },
+        {
+          "exerciseId": "pike-push-ups",
+          "reason": "Feet on ground",
+          "difficulty": 0.5
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "deficit-handstand-push-ups",
+          "reason": "Increased range of motion",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "90-degree-push-ups",
+          "reason": "Extreme strength requirement",
+          "difficulty": 2.0
+        }
+      ]
+    },
+    "muscle-ups": {
+      "regressions": [
+        {
+          "exerciseId": "high-pull-ups",
+          "reason": "Pull to chest level",
+          "difficulty": 0.7
+        },
+        {
+          "exerciseId": "jumping-muscle-ups",
+          "reason": "Momentum assistance",
+          "difficulty": 0.6
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "strict-muscle-ups",
+          "reason": "No kipping allowed",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "weighted-muscle-ups",
+          "reason": "Add external load",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "front-lever": {
+      "regressions": [
+        {
+          "exerciseId": "tuck-front-lever",
+          "reason": "Shortened body position",
+          "difficulty": 0.5
+        },
+        {
+          "exerciseId": "front-lever-raises",
+          "reason": "Dynamic partial range",
+          "difficulty": 0.6
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "front-lever-pulls",
+          "reason": "Add pulling motion",
+          "difficulty": 1.4
+        },
+        {
+          "exerciseId": "front-lever-touch",
+          "reason": "Pull to inverted hang",
+          "difficulty": 1.8
+        }
+      ]
+    },
+    "back-lever": {
+      "regressions": [
+        {
+          "exerciseId": "skin-the-cat",
+          "reason": "Dynamic movement prep",
+          "difficulty": 0.6
+        },
+        {
+          "exerciseId": "tuck-back-lever",
+          "reason": "Shortened lever",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "back-lever-pulls",
+          "reason": "Add pulling component",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "human-flag": {
+      "regressions": [
+        {
+          "exerciseId": "side-lever-raises",
+          "reason": "Build lateral strength",
+          "difficulty": 0.4
+        },
+        {
+          "exerciseId": "negative-human-flags",
+          "reason": "Eccentric training",
+          "difficulty": 0.6
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "human-flag-pull-ups",
+          "reason": "Add vertical movement",
+          "difficulty": 1.5
+        }
+      ]
+    },
+    "dragon-flag": {
+      "regressions": [
+        {
+          "exerciseId": "bent-knee-dragon-flag",
+          "reason": "Shortened lever",
+          "difficulty": 0.6
+        },
+        {
+          "exerciseId": "negative-dragon-flags",
+          "reason": "Eccentric only",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "dragon-flag-scissors",
+          "reason": "Add leg movement",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "bent-knee-bench-dips": {
+      "progressions": [
+        {
+          "exerciseId": "bench-dips",
+          "reason": "Straight leg position",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "foot-assisted-dips": {
+      "progressions": [
+        {
+          "exerciseId": "parallette-dips",
+          "reason": "Full bodyweight dips",
+          "difficulty": 1.6
+        },
+        {
+          "exerciseId": "negative-dips",
+          "reason": "Eccentric focus",
+          "difficulty": 1.2
+        }
+      ]
+    },
+    "incline-dumbbell-press": {
+      "regressions": [
+        {
+          "exerciseId": "dumbbell-bench-press",
+          "reason": "Flat angle is typically easier",
+          "difficulty": 0.9
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "incline-barbell-press",
+          "reason": "Allows heavier loading",
+          "difficulty": 1.2
+        }
+      ]
+    },
+    "dumbbell-floor-press": {
+      "progressions": [
+        {
+          "exerciseId": "dumbbell-bench-press",
+          "reason": "Full range of motion",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "seated-overhead-press": {
+      "progressions": [
+        {
+          "exerciseId": "dumbbell-overhead-press",
+          "reason": "Standing requires more stability",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "barbell-overhead-press",
+          "reason": "Standing barbell press",
+          "difficulty": 1.5
+        }
+      ]
+    },
+    "lighter-resistance-band-rows": {
+      "progressions": [
+        {
+          "exerciseId": "resistance-band-rows",
+          "reason": "Standard resistance",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "single-arm-band-rows": {
+      "regressions": [
+        {
+          "exerciseId": "resistance-band-rows",
+          "reason": "Bilateral is more stable",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "single-arm-dumbbell-rows",
+          "reason": "Free weight progression",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "wider-grip-band-pull-aparts": {
+      "progressions": [
+        {
+          "exerciseId": "band-pull-aparts",
+          "reason": "Standard grip width",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "pause-band-pull-aparts": {
+      "regressions": [
+        {
+          "exerciseId": "band-pull-aparts",
+          "reason": "Continuous motion easier",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "face-pulls",
+          "reason": "Cable or band to face",
+          "difficulty": 1.2
+        }
+      ]
+    },
+    "lower-step-ups": {
+      "progressions": [
+        {
+          "exerciseId": "step-ups",
+          "reason": "Standard height",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "weighted-step-ups": {
+      "regressions": [
+        {
+          "exerciseId": "step-ups",
+          "reason": "Bodyweight only",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "step-up-to-reverse-lunge",
+          "reason": "Combined movement pattern",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "tuck-jump-box": {
+      "regressions": [
+        {
+          "exerciseId": "box-jumps",
+          "reason": "Standard jump",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "depth-jumps",
+          "reason": "Reactive plyometric",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "incline-parallette-push-ups": {
+      "progressions": [
+        {
+          "exerciseId": "parallette-push-ups",
+          "reason": "Flat position",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "feet-elevated-parallette-push-ups": {
+      "regressions": [
+        {
+          "exerciseId": "parallette-push-ups",
+          "reason": "Flat position easier",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "parallette-archer-push-ups",
+          "reason": "Unilateral challenge",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "bodyweight-bulgarian-split-squats": {
+      "progressions": [
+        {
+          "exerciseId": "bulgarian-split-squats",
+          "reason": "Add external load",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "deficit-bulgarian-split-squats": {
+      "regressions": [
+        {
+          "exerciseId": "bulgarian-split-squats",
+          "reason": "Standard range of motion",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "bulgarian-split-squat-jumps",
+          "reason": "Add explosive component",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "chest-supported-row": {
+      "progressions": [
+        {
+          "exerciseId": "bent-over-dumbbell-rows",
+          "reason": "Free-standing position",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "seal-rows",
+          "reason": "Bench barbell rows",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "tuck-hollow-hold": {
+      "progressions": [
+        {
+          "exerciseId": "hollow-body-hold",
+          "reason": "Extended position",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "alternating-superman": {
+      "progressions": [
+        {
+          "exerciseId": "superman",
+          "reason": "Full body lift",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "superman-flutter-kicks": {
+      "regressions": [
+        {
+          "exerciseId": "superman",
+          "reason": "Static hold easier",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "superman-swimmers",
+          "reason": "Arms and legs swimming motion",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "slow-mountain-climbers": {
+      "progressions": [
+        {
+          "exerciseId": "mountain-climbers",
+          "reason": "Standard tempo",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "cross-body-mountain-climbers": {
+      "regressions": [
+        {
+          "exerciseId": "mountain-climbers",
+          "reason": "Straight knee drive",
+          "difficulty": 0.8
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "spiderman-mountain-climbers",
+          "reason": "Knee to outside elbow",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "no-push-up-burpee": {
+      "progressions": [
+        {
+          "exerciseId": "burpees",
+          "reason": "Full burpee with push-up",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "burpee-tuck-jump": {
+      "regressions": [
+        {
+          "exerciseId": "burpees",
+          "reason": "Standard jump",
+          "difficulty": 0.7
+        }
+      ],
+      "progressions": [
+        {
+          "exerciseId": "burpee-box-jump",
+          "reason": "Jump onto elevated surface",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "partial-glute-bridges": {
+      "progressions": [
+        {
+          "exerciseId": "glute-bridges",
+          "reason": "Full range of motion",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "single-leg-glute-bridge": {
+      "progressions": [
+        {
+          "exerciseId": "hip-thrusts",
+          "reason": "Shoulders elevated version",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "single-leg-hip-thrust",
+          "reason": "Unilateral hip thrust",
+          "difficulty": 1.5
+        }
+      ]
+    },
+    "static-split-squats": {
+      "progressions": [
+        {
+          "exerciseId": "forward-lunges",
+          "reason": "Dynamic stepping motion",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "walking-lunges": {
+      "progressions": [
+        {
+          "exerciseId": "weighted-walking-lunges",
+          "reason": "Add external load",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "walking-lunge-with-rotation",
+          "reason": "Add torso rotation",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "negative-chin-ups": {
+      "progressions": [
+        {
+          "exerciseId": "chin-ups",
+          "reason": "Full range both directions",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "band-assisted-pull-ups": {
+      "progressions": [
+        {
+          "exerciseId": "pull-ups",
+          "reason": "Unassisted pull-ups",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "weighted-pull-ups": {
+      "progressions": [
+        {
+          "exerciseId": "one-arm-pull-up",
+          "reason": "Ultimate pulling strength",
+          "difficulty": 2.0
+        },
+        {
+          "exerciseId": "archer-pull-ups",
+          "reason": "Unilateral emphasis",
+          "difficulty": 1.4
+        }
+      ]
+    },
+    "hanging-knee-raises": {
+      "progressions": [
+        {
+          "exerciseId": "hanging-leg-raises",
+          "reason": "Straight leg position",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "toes-to-bar": {
+      "progressions": [
+        {
+          "exerciseId": "toes-to-bar-strict",
+          "reason": "No kipping allowed",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "hanging-windshield-wipers",
+          "reason": "Side to side at top",
+          "difficulty": 1.5
+        }
+      ]
+    },
+    "seated-bicep-curls": {
+      "progressions": [
+        {
+          "exerciseId": "dumbbell-bicep-curls",
+          "reason": "Standing position",
+          "difficulty": 1.1
+        }
+      ]
+    },
+    "incline-dumbbell-curls": {
+      "progressions": [
+        {
+          "exerciseId": "preacher-curls",
+          "reason": "Supported arm position",
+          "difficulty": 1.2
+        },
+        {
+          "exerciseId": "21s-bicep-curls",
+          "reason": "Partial rep scheme",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "box-squats": {
+      "progressions": [
+        {
+          "exerciseId": "bodyweight-squats",
+          "reason": "Full range unsupported",
+          "difficulty": 1.3
+        }
+      ]
+    },
+    "jump-squats": {
+      "progressions": [
+        {
+          "exerciseId": "weighted-jump-squats",
+          "reason": "Add external load",
+          "difficulty": 1.3
+        },
+        {
+          "exerciseId": "depth-jump-to-box",
+          "reason": "Reactive plyometric",
+          "difficulty": 1.5
+        }
+      ]
+    },
+    "knee-plank": {
+      "progressions": [
+        {
+          "exerciseId": "plank",
+          "reason": "Full plank position",
+          "difficulty": 1.6
+        }
+      ]
+    },
+    "plank-arm-leg-lift": {
+      "progressions": [
+        {
+          "exerciseId": "plank-to-downward-dog",
+          "reason": "Dynamic hip movement",
+          "difficulty": 1.2
+        },
+        {
+          "exerciseId": "plank-jacks",
+          "reason": "Jumping jack motion",
+          "difficulty": 1.3
         }
       ]
     }
