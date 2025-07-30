@@ -60,8 +60,21 @@ export default function ExerciseGraphVisualizer({
     colorScheme: 'equipment',
     groupByEquipment: true,
     nodeSpacing: 80,
-    gravity: 0.1,
+    gravity: 0.35,
     animationDuration: 600,
+    // Advanced fCoSE parameters
+    edgeElasticity: 0.45,
+    nodeRepulsionMultiplier: 1.0,
+    numIterations: 2500,
+    quality: 'default',
+    coolingFactor: 0.99,
+    // Layout structure options
+    tile: true,
+    packComponents: true,
+    randomize: false,
+    // Fine-tuning parameters
+    initialTemp: 1000,
+    minTemp: 1.0,
     ...defaultConfig
   })
 
@@ -562,20 +575,20 @@ export default function ExerciseGraphVisualizer({
         return {
           ...baseConfig,
           name: 'fcose',
-          // Quality vs Performance (longer iterations for better layout)
-          quality: 'proof',
+          // Quality vs Performance (tunable)
+          quality: config.quality || 'proof',
           
           // Separation (tunable)
           idealEdgeLength: config.nodeSpacing || 80,
-          edgeElasticity: 0.45,
+          edgeElasticity: config.edgeElasticity || 0.45,
           
-          // Force Strengths (increased repulsion for more spacing)
-          nodeRepulsion: (_node: any) => (config.nodeSpacing || 80) * 75,
+          // Force Strengths (tunable repulsion)
+          nodeRepulsion: (_node: any) => (config.nodeSpacing || 80) * 75 * (config.nodeRepulsionMultiplier || 1.0),
           nodeOverlap: (config.nodeSpacing || 80) * 0.25,
           
-          // Layout options
-          randomize: false,
-          tile: true,
+          // Layout options (tunable)
+          randomize: config.randomize ?? false,
+          tile: config.tile ?? true,
           tilingPaddingVertical: Math.max(10, (config.nodeSpacing || 80) * 0.125),
           tilingPaddingHorizontal: Math.max(10, (config.nodeSpacing || 80) * 0.125),
           
@@ -583,17 +596,22 @@ export default function ExerciseGraphVisualizer({
           gravity: config.gravity || 0.25,
           gravityRangeCompound: (config.gravity || 0.25) * 6,
           
-          // Compound node settings
-          packComponents: true,
+          // Compound node settings (tunable)
+          packComponents: config.packComponents ?? true,
           
           // fCoSE specific compound settings
           nodeDimensionsIncludeLabels: true,
           uniformNodeDimensions: false,
           allowNodesInsideCompound: true,
           
-          // Incremental layout (longer iterations for better convergence)
+          // Incremental layout (tunable iterations)
           step: 'all',
-          numIter: 2500,
+          numIter: config.numIterations || 2500,
+          
+          // Cooling (tunable)
+          initialTemp: config.initialTemp || 1000,
+          coolingFactor: config.coolingFactor || 0.99,
+          minTemp: config.minTemp || 1.0,
           
           // Initial positions
           fixedNodeConstraint: undefined,
@@ -609,28 +627,29 @@ export default function ExerciseGraphVisualizer({
         return {
           ...baseConfig,
           name: 'fcose',
-          // Optimized for exercise relationship graphs
-          quality: 'default',
+          // Optimized for exercise relationship graphs (tunable quality)
+          quality: config.quality || 'default',
           
           // Tunable clustering for related exercises
           idealEdgeLength: config.nodeSpacing || 80,
-          edgeElasticity: 0.45,
+          edgeElasticity: config.edgeElasticity || 0.45,
           
           // Tunable repulsion for readability
-          nodeRepulsion: (_node: any) => (config.nodeSpacing || 80) * 56.25, // maintains ratio
+          nodeRepulsion: (_node: any) => (config.nodeSpacing || 80) * 56.25 * (config.nodeRepulsionMultiplier || 1.0),
           nodeOverlap: Math.max(10, (config.nodeSpacing || 80) * 0.125),
           
           // Compact layout with tunable spacing
-          tile: true,
+          tile: config.tile ?? true,
           tilingPaddingVertical: Math.max(5, (config.nodeSpacing || 80) * 0.0625),
           tilingPaddingHorizontal: Math.max(5, (config.nodeSpacing || 80) * 0.0625),
+          randomize: config.randomize ?? false,
           
           // Tunable gravity to center groups
           gravity: config.gravity || 0.35,
           gravityRangeCompound: (config.gravity || 0.35) * 5.7,
           
-          // Component packing
-          packComponents: true,
+          // Component packing (tunable)
+          packComponents: config.packComponents ?? true,
           
           // fCoSE specific compound settings
           nodeDimensionsIncludeLabels: true,
@@ -642,11 +661,11 @@ export default function ExerciseGraphVisualizer({
           animationDuration: config.animationDuration || 600,
           animationEasing: 'ease-in-out',
           
-          // Better convergence with longer iterations
-          initialTemp: 1000,
-          coolingFactor: 0.99,
-          minTemp: 1.0,
-          numIter: 2500
+          // Better convergence with tunable parameters
+          initialTemp: config.initialTemp || 1000,
+          coolingFactor: config.coolingFactor || 0.99,
+          minTemp: config.minTemp || 1.0,
+          numIter: config.numIterations || 2500
         }
       case 'grid':
         return {
@@ -812,7 +831,7 @@ export default function ExerciseGraphVisualizer({
 
           {/* Layout Tuning Controls */}
           <div className="space-y-4">
-            <h4 className="text-sm font-medium text-slate-300">Layout Tuning</h4>
+            <h4 className="text-sm font-medium text-slate-300">Basic Layout Tuning</h4>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="space-y-2">
@@ -841,7 +860,7 @@ export default function ExerciseGraphVisualizer({
                   min="0.1"
                   max="1.0"
                   step="0.05"
-                  value={config.gravity || 0.1}
+                  value={config.gravity || 0.35}
                   onChange={(e) => setConfig({...config, gravity: parseFloat(e.target.value)})}
                   className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
                 />
@@ -864,6 +883,175 @@ export default function ExerciseGraphVisualizer({
               </div>
             </div>
           </div>
+
+          {/* Advanced fCoSE Controls */}
+          {(config.layout === 'fcose' || config.layout === 'force-directed') && (
+            <div className="space-y-4">
+              <h4 className="text-sm font-medium text-slate-300">Advanced fCoSE Settings</h4>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="space-y-2">
+                  <label className="text-sm text-slate-400 flex justify-between">
+                    Edge Elasticity
+                    <span className="text-purple-300">{config.edgeElasticity?.toFixed(2)}</span>
+                  </label>
+                  <input
+                    type="range"
+                    min="0.1"
+                    max="1.0"
+                    step="0.05"
+                    value={config.edgeElasticity || 0.45}
+                    onChange={(e) => setConfig({...config, edgeElasticity: parseFloat(e.target.value)})}
+                    className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                  />
+                  <p className="text-xs text-slate-500">Controls edge stiffness</p>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm text-slate-400 flex justify-between">
+                    Node Repulsion
+                    <span className="text-purple-300">{config.nodeRepulsionMultiplier?.toFixed(1)}x</span>
+                  </label>
+                  <input
+                    type="range"
+                    min="0.5"
+                    max="3.0"
+                    step="0.1"
+                    value={config.nodeRepulsionMultiplier || 1.0}
+                    onChange={(e) => setConfig({...config, nodeRepulsionMultiplier: parseFloat(e.target.value)})}
+                    className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                  />
+                  <p className="text-xs text-slate-500">Node separation force</p>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm text-slate-400 flex justify-between">
+                    Iterations
+                    <span className="text-purple-300">{config.numIterations}</span>
+                  </label>
+                  <input
+                    type="range"
+                    min="500"
+                    max="5000"
+                    step="250"
+                    value={config.numIterations || 2500}
+                    onChange={(e) => setConfig({...config, numIterations: parseInt(e.target.value)})}
+                    className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                  />
+                  <p className="text-xs text-slate-500">Quality vs speed</p>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm text-slate-400">Algorithm Quality</label>
+                  <select
+                    value={config.quality || 'default'}
+                    onChange={(e) => setConfig({...config, quality: e.target.value as 'default' | 'proof'})}
+                    className="w-full bg-slate-700 border border-slate-600 text-white rounded px-3 py-1 text-sm"
+                  >
+                    <option value="default">Default (Fast)</option>
+                    <option value="proof">Proof (High Quality)</option>
+                  </select>
+                  <p className="text-xs text-slate-500">Algorithm precision</p>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm text-slate-400 flex justify-between">
+                    Cooling Factor
+                    <span className="text-purple-300">{config.coolingFactor?.toFixed(3)}</span>
+                  </label>
+                  <input
+                    type="range"
+                    min="0.90"
+                    max="0.99"
+                    step="0.005"
+                    value={config.coolingFactor || 0.99}
+                    onChange={(e) => setConfig({...config, coolingFactor: parseFloat(e.target.value)})}
+                    className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                  />
+                  <p className="text-xs text-slate-500">Convergence speed</p>
+                </div>
+              </div>
+
+              {/* Expert Settings */}
+              <div className="mt-6 pt-4 border-t border-slate-600">
+                <h5 className="text-sm font-medium text-slate-300 mb-4">Expert Settings</h5>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-sm text-slate-400">
+                      <input
+                        type="checkbox"
+                        checked={config.tile ?? true}
+                        onChange={(e) => setConfig({...config, tile: e.target.checked})}
+                        className="mr-2"
+                      />
+                      Grid Layout
+                    </label>
+                    <p className="text-xs text-slate-500">Arrange components in grid</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm text-slate-400">
+                      <input
+                        type="checkbox"
+                        checked={config.packComponents ?? true}
+                        onChange={(e) => setConfig({...config, packComponents: e.target.checked})}
+                        className="mr-2"
+                      />
+                      Pack Components
+                    </label>
+                    <p className="text-xs text-slate-500">Tightly pack disconnected groups</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm text-slate-400">
+                      <input
+                        type="checkbox"
+                        checked={config.randomize ?? false}
+                        onChange={(e) => setConfig({...config, randomize: e.target.checked})}
+                        className="mr-2"
+                      />
+                      Randomize Start
+                    </label>
+                    <p className="text-xs text-slate-500">Start with random positions</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm text-slate-400 flex justify-between">
+                      Initial Temperature
+                      <span className="text-purple-300">{config.initialTemp}</span>
+                    </label>
+                    <input
+                      type="range"
+                      min="100"
+                      max="2000"
+                      step="100"
+                      value={config.initialTemp || 1000}
+                      onChange={(e) => setConfig({...config, initialTemp: parseInt(e.target.value)})}
+                      className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                    />
+                    <p className="text-xs text-slate-500">Starting simulation energy</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm text-slate-400 flex justify-between">
+                      Minimum Temperature
+                      <span className="text-purple-300">{config.minTemp}</span>
+                    </label>
+                    <input
+                      type="range"
+                      min="0.1"
+                      max="10"
+                      step="0.1"
+                      value={config.minTemp || 1.0}
+                      onChange={(e) => setConfig({...config, minTemp: parseFloat(e.target.value)})}
+                      className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                    />
+                    <p className="text-xs text-slate-500">Stopping threshold</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           <Separator className="bg-slate-600" />
 

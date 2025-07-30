@@ -150,6 +150,19 @@ export interface GraphVisualizationConfig {
   nodeSpacing?: number
   gravity?: number
   animationDuration?: number
+  // Advanced fCoSE parameters
+  edgeElasticity?: number
+  nodeRepulsionMultiplier?: number
+  numIterations?: number
+  quality?: 'default' | 'proof'
+  coolingFactor?: number
+  // Layout structure options
+  tile?: boolean
+  packComponents?: boolean
+  randomize?: boolean
+  // Fine-tuning parameters
+  initialTemp?: number
+  minTemp?: number
 }
 
 /**
