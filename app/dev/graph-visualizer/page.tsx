@@ -5,7 +5,7 @@ import ExerciseGraphVisualizer from '@/components/exercise-graph-visualizer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ArrowLeft, Database, Layers, Network, Loader2 } from 'lucide-react'
+import { ArrowLeft, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import { loadAndMigrateFullCatalog } from '@/lib/migrate-to-graph'
 import { ExerciseGraph } from '@/types/exercise-graph'
@@ -70,6 +70,7 @@ export default function GraphVisualizerDemoPage() {
               ? 'bg-purple-600 hover:bg-purple-700 text-white' 
               : 'border-slate-500 text-slate-300 hover:bg-slate-800/50'
             }
+            data-testid="visualizer-tab"
           >
             Visualizer
           </Button>
@@ -80,6 +81,7 @@ export default function GraphVisualizerDemoPage() {
               ? 'bg-purple-600 hover:bg-purple-700 text-white' 
               : 'border-slate-500 text-slate-300 hover:bg-slate-800/50'
             }
+            data-testid="statistics-tab"
           >
             Statistics
           </Button>
@@ -109,7 +111,7 @@ export default function GraphVisualizerDemoPage() {
                 graphData={graphData}
                 height={700}
                 defaultConfig={{
-                  layout: 'fcose',
+                  layout: 'hierarchical',
                   colorScheme: 'equipment',
                   maxDepth: 3,
                   showDifficulty: true

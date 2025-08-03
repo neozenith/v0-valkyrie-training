@@ -736,7 +736,7 @@ export default function ExerciseGraphVisualizer({
             <div className="space-y-2">
               <label className="text-sm text-slate-300">Focus</label>
               <Select value={selectedSubgraph} onValueChange={setSelectedSubgraph}>
-                <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
+                <SelectTrigger className="bg-slate-700 border-slate-600 text-white" data-testid="subgraph-select-trigger">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-slate-700 border-slate-600">
@@ -752,7 +752,7 @@ export default function ExerciseGraphVisualizer({
             <div className="space-y-2">
               <label className="text-sm text-slate-300">Layout</label>
               <Select value={config.layout} onValueChange={(value: any) => setConfig({...config, layout: value})}>
-                <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
+                <SelectTrigger className="bg-slate-700 border-slate-600 text-white" data-testid="layout-select-trigger">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-slate-700 border-slate-600">
@@ -768,7 +768,7 @@ export default function ExerciseGraphVisualizer({
             <div className="space-y-2">
               <label className="text-sm text-slate-300">Color By</label>
               <Select value={config.colorScheme} onValueChange={(value: any) => setConfig({...config, colorScheme: value})}>
-                <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
+                <SelectTrigger className="bg-slate-700 border-slate-600 text-white" data-testid="color-scheme-select-trigger">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-slate-700 border-slate-600">
@@ -783,7 +783,7 @@ export default function ExerciseGraphVisualizer({
             <div className="space-y-2">
               <label className="text-sm text-slate-300">Max Depth</label>
               <Select value={config.maxDepth.toString()} onValueChange={(value) => setConfig({...config, maxDepth: parseInt(value)})}>
-                <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
+                <SelectTrigger className="bg-slate-700 border-slate-600 text-white" data-testid="max-depth-select-trigger">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-slate-700 border-slate-600">
@@ -804,6 +804,7 @@ export default function ExerciseGraphVisualizer({
               checked={config.groupByEquipment}
               onChange={(e) => setConfig({...config, groupByEquipment: e.target.checked})}
               className="rounded border-slate-600 bg-slate-700 text-purple-600 focus:ring-purple-500"
+              data-testid="group-by-equipment-checkbox"
             />
             <label htmlFor="groupByEquipment" className="text-sm text-slate-300">
               Group exercises by equipment type
@@ -828,6 +829,7 @@ export default function ExerciseGraphVisualizer({
                   value={config.nodeSpacing || 80}
                   onChange={(e) => setConfig({...config, nodeSpacing: parseInt(e.target.value)})}
                   className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                  data-testid="node-spacing-slider"
                 />
               </div>
 
@@ -844,6 +846,7 @@ export default function ExerciseGraphVisualizer({
                   value={config.gravity || 0.1}
                   onChange={(e) => setConfig({...config, gravity: parseFloat(e.target.value)})}
                   className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                  data-testid="gravity-slider"
                 />
               </div>
 
@@ -860,6 +863,7 @@ export default function ExerciseGraphVisualizer({
                   value={config.animationDuration || 600}
                   onChange={(e) => setConfig({...config, animationDuration: parseInt(e.target.value)})}
                   className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                  data-testid="animation-duration-slider"
                 />
               </div>
             </div>
@@ -944,7 +948,7 @@ export default function ExerciseGraphVisualizer({
         </Card>
 
         {/* Exercise Details Panel */}
-        <Card className="bg-slate-800/30 border-slate-700/50">
+        <Card className="bg-slate-800/30 border-slate-700/50" data-testid="exercise-details-panel">
           <CardHeader className="pb-3">
             <CardTitle className="text-lg text-white">
               {selectedExercise ? 'Exercise Details' : 'Graph Legend'}
