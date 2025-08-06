@@ -2,6 +2,7 @@
 
 ### Expand exercise catalog
 
+Read scripts/CLAUDE.md and make as many helper scripts as need be in there.
 Expand the exercise catalog using the data from https://github.com/yuhonas/free-exercise-db/
 
 ### Add React Protected Routes
