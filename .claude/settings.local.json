@@ -40,7 +40,8 @@
       "mcp__sequential-thinking__sequentialthinking",
       "Bash(jq:*)",
       "Bash(grep:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(git clone:*)"
     ],
     "deny": []
   }
