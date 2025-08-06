@@ -41,7 +41,11 @@
       "Bash(jq:*)",
       "Bash(grep:*)",
       "Bash(python:*)",
-      "Bash(git clone:*)"
+      "Bash(git clone:*)",
+      "Bash(git pull:*)",
+      "Bash(uv run:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }
