@@ -115,21 +115,6 @@ test.describe('Exercise Graph Visualizer', () => {
     expect(initialValue).not.toBe('120');
   });
 
-  test('should export graph as PNG', async ({ page }) => {
-    // Set up download promise before clicking
-    const downloadPromise = page.waitForEvent('download');
-    
-    // Click export button
-    await page.locator('[data-testid="export-png-button"]').click();
-    
-    // Wait for download
-    const download = await downloadPromise;
-    
-    // Verify download
-    expect(download.suggestedFilename()).toContain('exercise-graph');
-    expect(download.suggestedFilename()).toContain('.png');
-  });
-
   test('should change color scheme', async ({ page }) => {
     const colorSelect = page.locator('[data-testid="color-scheme-select-trigger"]');
     

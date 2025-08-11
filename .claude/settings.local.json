@@ -45,7 +45,12 @@
       "Bash(git pull:*)",
       "Bash(uv run:*)",
       "Bash(cp:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(uvx ruff format:*)",
+      "Bash(uvx ruff check:*)",
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(cat:*)"
     ],
     "deny": []
   }

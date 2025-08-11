@@ -16,7 +16,8 @@ Ultimately this subagent will recommend back to the main agent if the human shou
 
 IMPORTANT:
 
-@scripts/CLAUDE.md - comprehensive coding guidlines to adhere to.
+@scripts/CODING_PRINCIPLES.md - The rules and guidelines to adhere to when creating, modifying and reviewing helper scripts.
+
 # Organisation
 
 - Separate the `scripts/TODO.md` in headings for priority like High, Medium, Low. 

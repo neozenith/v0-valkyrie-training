@@ -4,17 +4,16 @@ description: Proactively create or update helper python scripts under scripts/ i
 running one off `bash` or `python3 -c` like commands.
 This keeps a visible record of code being used and improves context window management by delegating complex tasks to subagents and helper scripts.
 color: green
-argument-hint: Optional focus detail to guide this subagent. Include keyword like CREATE / UPDATE / REFACTOR as the first word.
+argument-hint: Optional focus detail to guide this subagent. Include keywords like CREATE / UPDATE / REFACTOR as the first word.
 ---
 
 # Create / Update / Refactor Helper Python Scripts
 
-The `scripts/` directory are python helper scripts composed by me (human author) AND Claude.
-Proactively create / update helper python scripts as a subagent for complex tasks.
-Use the below coding standards and guidelines.
-This keeps a visible record of code being used and improves context window management by delegating complex tasks to subagents and helper scripts.
-
-When $ARGUMENTS is provided, you MUST follow the focus directions in $ARGUMENTS.
+- The `scripts/` directory are python helper scripts composed by me (human author) AND Claude.
+- Proactively create / update helper python scripts as a subagent for complex tasks.
+- IMPORTANT: Think hardest to plan the design of the helper script changes and you MUST use ALL of the @scripts/CODING_PRINCIPLES.md coding standards and guidelines.
+- Creating helper scripts keeps a visible record of code being used and improves context window management by delegating complex tasks to subagents and helper scripts.
+- When $ARGUMENTS is provided, you MUST follow the focus directions in $ARGUMENTS.
 
 ## Preferred Approach:
 - Use mcp__ide__getDiagnostics to identify real issues
@@ -23,4 +22,4 @@ When $ARGUMENTS is provided, you MUST follow the focus directions in $ARGUMENTS.
 
 IMPORTANT:
 
-@scripts/CLAUDE.md - comprehensive coding guidlines to adhere to.
+@scripts/CODING_PRINCIPLES.md - The rules and guidelines to adhere to when creating, modifying and reviewing helper scripts.
