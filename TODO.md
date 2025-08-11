@@ -37,6 +37,9 @@
 - Audit file demonstrating that all exercises were migrated
 - I can delete the audit file and manually run the verification script and get an accurate audit the exercises migrated
 
+### Update Catalog Relationships
+
+
 
 ### Add React Protected Routes
 
