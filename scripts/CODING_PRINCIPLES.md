@@ -59,6 +59,34 @@ load_dotenv()
 
 Scan for `.env.sample` to see what enviroment variables should be available and exported.
 
+### Git Integration
+
+For scripts that need Git context, use subprocess with shlex for clean command execution:
+
+```python
+import subprocess
+from shlex import split
+
+_run = lambda cmd: subprocess.check_output(split(cmd), text=True).strip()
+
+GIT_ROOT = Path(_run("git rev-parse --show-toplevel"))
+GIT_BRANCH = _run("git rev-parse --abbrev-ref HEAD")
+```
+
+### Helper Functions
+
+Define minimal helper lambdas at the top of the script for common operations. Use `# noqa: E731` to suppress Ruff's lambda assignment warnings:
+
+```python
+# Command execution helper
+_run = lambda cmd: subprocess.check_output(split(cmd), text=True).strip()  # noqa: E731
+
+# Cache validation helper - both values must be positive for valid cache
+_is_cache_valid = lambda time_tuple: all(x > 0 for x in time_tuple)  # noqa: E731
+```
+
+Note: E731 warns against lambda assignments, but for simple one-liners they're more concise than `def` statements.
+
 ### Interacting with AWS
 
 - ASSUME that `AWS_PROFILE` is already exported in the current session to provide credentials for the target AWS account.
@@ -66,7 +94,7 @@ Scan for `.env.sample` to see what enviroment variables should be available and 
 - Make use of exporting JSON output results to `tmp/claude_cache/{script_name}/*.json`. This is helpful when triaging and analysing problems.
 - Scripts with known cache files should list them as `pathlib.Path` variables at the top of the script as well as their cache timeout which should default to 5 minutes (300 seconds).
 - Leverage helper caching checking script like:
-    ```python
+  ```python
     """
     Usage:
         python cache_check.py <target_file> [cache_timeout_seconds]
@@ -81,13 +109,7 @@ Scan for `.env.sample` to see what enviroment variables should be available and 
     file = Path(sys.argv[1])
     cache_timeout = int(sys.argv[2]) if len(sys.argv) > 2 else 300
     sys.exit(int(max(0, min(255, cache_timeout - (time.time() - file.stat().st_mtime)))))
-    ```
-
-### Caching Files
-
-Use `tmp/claude_cache/{script_name}/` to output temporary files any script needs to leverage between runs.
-
-Check the `m_time` of the cahce files and default to 5 minute timeout. I can at my own discretion delete the entire cache at anytime for a fresh run. You should trust your own caching.
+  ```
 
 ### Handling Files
 
@@ -103,58 +125,160 @@ nodes = json.loads((data_path / "exercises-catalog.json").read_text(encoding="ut
 edges = nodes = json.loads((data_path / "exercise-relationships.json").read_text(encoding="utf-8"))
 ```
 
-### Configuration and Paths
+### Configuration, Paths and Caching
 
 - All key configuration should be towards the top of the file under the imports.
 - They should be all capitalised. (I know this is not "Pythonic" or PEP-8 compliant.)
 - All Paths should be relative to `SCRIPT_DIR` as shown in the code example below.
+- Use `tmp/claude_cache/{script_name}/` to output temporary files any script needs to leverage between runs.
+- Implement a `check_cache()` function that returns a tuple of (delta, remaining) times for cache validation.
+- Default cache timeout is 5 minutes (300 seconds).
 
 ```python
 from pathlib import Path
+from time import time
 
-SCRIPT_DIR = Path(__file__).parent.resolve()
-ISOCHRONE_FOOT = SCRIPT_DIR.parent / "data/geojson_fixed/foot/"
+SCRIPT = Path(__file__)
+SCRIPT_NAME = SCRIPT.stem
+SCRIPT_DIR = SCRIPT.parent.resolve()
+PROJECT_ROOT = SCRIPT_DIR.parent  # Common parent of SCRIPTS_DIR and CACHE_DIR
+
+CACHE_DIR = PROJECT_ROOT / "tmp" / "claude_cache" / SCRIPT_NAME
+
+# Input files
+DATA_DIR = PROJECT_ROOT / "data"
+INPUT_FILE_1 = DATA_DIR / "file1.json"
+INPUT_FILE_2 = DATA_DIR / "file2.json"
+ALL_INPUTS = [INPUT_FILE_1, INPUT_FILE_2]  # Can be a mixture of single files and rglobs
+
+# Output files (example: transform each .py script to a .json analysis)
+OUTPUT_SUMMARY = CACHE_DIR / "output_summary.json"
+OUTPUT_ANALYSIS = [CACHE_DIR / f.relative_to(SCRIPT_DIR).with_suffix(".json") 
+                   for f in SCRIPT_DIR.rglob("*.py") if f.is_file()]
+ALL_OUTPUTS = [OUTPUT_SUMMARY, *OUTPUT_ANALYSIS]
+
+def check_cache(cache_dir: Path, all_input_files: list[Path], timeout: int = 300, force: bool = False) -> tuple[int, int]:
+    """Check if cache is invalid, 'dirty' or expired.
+    
+    Returns tuple of (delta, remaining) where:
+    - delta: time difference between cache and inputs (positive = cache newer)
+    - remaining: time left before cache expires (positive = not expired)
+    """
+    if force or not cache_dir.exists():
+        return (-1, -1)  # Both negative = forced dirty
+    
+    cache_mtime = max([0] + [f.stat().st_mtime for f in cache_dir.rglob('*') if f.is_file()])
+    all_inputs_mtime = max([0] + [f.stat().st_mtime for f in all_input_files if f.is_file()])
+    
+    delta = int(cache_mtime - all_inputs_mtime)
+    remaining = int(timeout - (time() - cache_mtime))
+    
+    return (delta, remaining)
 ```
 
 ### Logging Output
 
-All scripts should use the standard library logger and not `print` statements. eg,
+All scripts should use the standard library logger and not `print` statements. Support `-v/--verbose` and `-q/--quiet` flags with priority given to verbose.
 
 ```python
 import logging
-log = logging.getLoggerName(__name__)
+log = logging.getLogger(__name__)
 
 # Body of code here
 
-def main():
+def main(dry_run: bool = False, force: bool = False):
     ...
 
 if __name__ == "__main__":
+    # Parser setup here (see CLI section)
+    
     logging.basicConfig(
-        level=logging.INFO, format="%(asctime)s|%(name)s|%(levelname)s|%(filename)s:%(lineno)d - %(message)s", 
+        level=logging.DEBUG if args.verbose else logging.ERROR if args.quiet else logging.INFO,
+        format="%(asctime)s|%(name)s|%(levelname)s|%(filename)s:%(lineno)d - %(message)s", 
         datefmt="%Y-%m-%d %H:%M:%S"
     )
-    main()
-
+    
+    main(dry_run=args.dry_run, force=args.force)
 ```
 
-### Minimal CLI Argument Parser
+### CLI Argument Parser
 
-- Always implement a minimal `ArgumentParser` that includes a definition of the script itself.
-  This makes it easier for people and agentic coding tools to leverage the `--help` flag to index how to use it.
+- Always implement an `ArgumentParser` that includes a comprehensive description of the script.
+- Use `RawDescriptionHelpFormatter` for multi-line descriptions with `textwrap.dedent()`.
+- Include standard flags with shorthand options:
+  - `-v/--verbose`: Enable debug logging
+  - `-q/--quiet`: Show only errors
+  - `-f/--force`: Force reprocessing, ignoring cache
+  - `-n/--dry-run`: Run without making changes
+  - `--cache-check`: Check cache status only
 - DO NOT replace capitalised config variables with CLI arguments or flags.
-- **"Minimal" means description only** - avoid adding arguments unless specifically required for the task.
+- Document INPUTS and OUTPUTS in the description.
 
 ```python
 import argparse
+from textwrap import dedent
 
+def _format_file_list(files: list[Path], max_show: int = 5) -> str:
+    """Format paths relative to project root."""
+    formatted = '\n        '.join(f"- {p.relative_to(PROJECT_ROOT)}" for p in files[:max_show])
+    if len(files) > max_show:
+        formatted += f"\n        ... and {len(files) - max_show} more files"
+    return formatted
 
 if __name__ == "__main__":
-    # logger setup excluded in this example
     parser = argparse.ArgumentParser(
-        description="Always implement a minimal argument parser that includes a definition of the script itself"
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description=dedent(f"""\
+        {SCRIPT_NAME} - Brief description of what this script does.
+        
+        INPUTS:
+        {_format_file_list(ALL_INPUTS)}
+        
+        OUTPUTS:
+        {_format_file_list(ALL_OUTPUTS)}
+        
+        CACHE: tmp/claude_cache/{SCRIPT_NAME}/
+        """)
     )
+    parser.add_argument("-q", "--quiet", action="store_true", help="Run script in quiet mode")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Run script in verbose mode")
+    parser.add_argument("--cache-check", action="store_true", 
+                       help="ONLY Check if cache is up to date. Does not run main processing.")
+    parser.add_argument("-f", "--force", action="store_true", help="Force reprocessing of all inputs.")
+    parser.add_argument("-n", "--dry-run", action="store_true", 
+                       help="Run the script without making any output changes.")
     args = parser.parse_args()
+```
+
+### Main Function Integration
+
+The main function should accept standard flags and integrate with cache checking:
+
+```python
+def main(dry_run: bool = False, force: bool = False):
+    cache_status = check_cache(CACHE_DIR, ALL_INPUTS, force=force)
+    if not _is_cache_valid(cache_status):
+        log.info("Cache is invalid or expired, processing...")
+        # Main processing logic here
+        if dry_run:
+            log.info("DRY RUN: Would process files but not write output")
+        else:
+            # Actual processing
+            pass
+    else:
+        log.info("Cache is valid, skipping processing.")
+
+if __name__ == "__main__":
+    # ... parser setup ...
+    
+    if args.cache_check:
+        delta, remaining = check_cache(CACHE_DIR, ALL_INPUTS, force=args.force)
+        if _is_cache_valid((delta, remaining)):
+            log.info(f"Cache is up to date. Delta: {delta}s, Remaining: {remaining}s")
+        else:
+            log.warning(f"Cache is not up to date. Delta: {delta}s, Remaining: {remaining}s")
+    else:
+        main(dry_run=args.dry_run, force=args.force)
 ```
 
 ### Quality Assurance

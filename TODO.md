@@ -39,7 +39,30 @@
 
 ### Update Catalog Relationships
 
+- How would you create a script that iterates all pairwise permutaions of exercises in data/exercises-catalog.json to see if there is a relationship entry in data/exercise-relationships.json AND then have yourself make a determination comparing the two exercises to see if there should be a progression or a regression relationship? It is quite a large space to explore. Would there be a strategy where we could run a script in small batches?
 
+### Mobile Friendly workout Timer
+
+#### Context
+
+I am not happy with the UX of the workout timer on mobile. It doesn't keep all the information I need on the same screen.
+
+#### Workflow
+
+- Leveraging Playwright MCP constrain the view of the webapp to the same pixel size as an iPhone 11 using Chrome.
+- Run through the workout timer using both HIIT and Tabata for only 2 sets and 3 exercises.
+- With the mind of a Senior UX Designer come up with your top 2 recommendations that would mnake the best impact.
+- With the mind of a Senior UX Designer, what recommendations would you make with a focus on keeping the following pieces of information all on the one screen:
+    - Play Pause Controls
+    - Current Exercise
+    - Next Exercise
+    - Cues
+    - Current Time
+    - Summarised Exercise progress bar
+
+#### Success Criteria
+
+- Create a "One Pager" with a highlevel plan for me to review and iterate on feedback
 
 ### Add React Protected Routes
 
